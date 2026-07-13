@@ -1,0 +1,1087 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Ashok Kumar Misra | General Manager (Retd.), Western Railway</title>
+<meta name="description" content="The 37-year journey of Ashok Kumar Misra, IRSME (SCRA 1986), from the steam workshops of Dahod to General Manager, Western Railway.">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400;0,600;0,700;0,900;1,400;1,600&family=DM+Sans:opsz,wght@9..40,300;9..40,400;9..40,500;9..40,700&family=Space+Mono:wght@400;700&family=Noto+Sans+Devanagari:wght@400;600&display=swap" rel="stylesheet">
+<style>
+:root{
+  --navy:#25618F; --navy-d:#1B4F72; --navy-xd:#143C5C;
+  --gold:#D4A843; --gold-d:#B8860B; --gold-l:#E8C97A;
+  --ivory:#FAFAF5; --ivory-w:#F5F3ED; --ink:#22303C; --mut:#5D6D7A;
+  --ease:cubic-bezier(0.16,1,0.3,1);
+  --pd: clamp(24px, 6vw, 96px);
+}
+*{margin:0;padding:0;box-sizing:border-box}
+html{scroll-behavior:smooth}
+body{font-family:'DM Sans',sans-serif;background:var(--ivory);color:var(--ink);overflow-x:hidden;line-height:1.6;-webkit-font-smoothing:antialiased}
+::selection{background:var(--gold);color:var(--navy-xd)}
+h1,h2,h3,.serif{font-family:'Playfair Display',serif}
+.mono{font-family:'Space Mono',monospace}
+.hindi{font-family:'Noto Sans Devanagari',sans-serif}
+img{max-width:100%;display:block}
+a{color:inherit}
+
+/* ---------- preloader ---------- */
+#preloader{position:fixed;inset:0;z-index:200;background:var(--navy-xd);display:flex;flex-direction:column;align-items:center;justify-content:center;gap:22px;transition:opacity .7s var(--ease), visibility .7s}
+#preloader.done{opacity:0;visibility:hidden}
+.pl-mono{width:74px;height:74px;border:2px solid var(--gold);border-radius:50%;display:flex;align-items:center;justify-content:center;font-family:'Playfair Display',serif;font-size:26px;color:var(--gold);letter-spacing:2px}
+.pl-scene{width:240px;height:64px;overflow:visible}
+.pl-rail-d{stroke:rgba(212,168,67,.35);stroke-width:2;stroke-dasharray:10 8;animation:plrail .5s linear infinite}
+@keyframes plrail{to{stroke-dashoffset:-18}}
+.pl-loco{animation:plbob 1.4s ease-in-out infinite}
+@keyframes plbob{0%,100%{transform:translateY(0)}50%{transform:translateY(-1.2px)}}
+.pl-wheel{transform-box:fill-box;transform-origin:center;animation:plspin .7s linear infinite}
+@keyframes plspin{to{transform:rotate(360deg)}}
+.pl-puff{fill:rgba(250,250,245,.35);opacity:0;animation:plpuff 2.1s ease-out infinite}
+.pl-puff.p2{animation-delay:.7s}
+.pl-puff.p3{animation-delay:1.4s}
+@keyframes plpuff{0%{opacity:0;transform:translate(0,0) scale(.4)}15%{opacity:.85}100%{opacity:0;transform:translate(-14px,-22px) scale(1.5)}}
+.pl-cap{color:rgba(232,201,122,.9);font-size:12px;letter-spacing:.35em;text-transform:uppercase;font-family:'Space Mono',monospace}
+
+/* ---------- golden track layer ---------- */
+#track-layer,#loco-layer{position:absolute;top:0;left:0;width:100%;pointer-events:none}
+#track-layer{z-index:1}
+#loco-layer{z-index:1}
+#track-layer svg,#loco-layer svg{display:block;width:100%;height:100%;overflow:visible}
+.trk-bed{fill:none;stroke:rgba(184,134,11,.06);stroke-width:26;stroke-linecap:round}
+.trk-sleeper{fill:none;stroke:rgba(184,134,11,.20);stroke-width:18;stroke-dasharray:2.5 15}
+.trk-rail{fill:none;stroke:rgba(184,134,11,.28);stroke-width:5}
+.trk-rail-i{fill:none;stroke:rgba(250,250,245,.55);stroke-width:1.4}
+.trk-gold{fill:none;stroke:url(#trkGrad);stroke-width:4;stroke-linecap:round;filter:drop-shadow(0 0 9px rgba(212,168,67,.75))}
+#loco-glyph{filter:drop-shadow(0 0 7px rgba(212,168,67,.6)) drop-shadow(0 4px 10px rgba(13,43,66,.4))}
+.tk-beam{animation:beamflk 3.2s ease-in-out infinite}
+@keyframes beamflk{0%,100%{opacity:.4}50%{opacity:.62}}
+.tk-spark{fill:#E8C97A;opacity:0;animation:sparkle 1.9s ease-in-out infinite}
+.tk-spark.s2{animation-delay:.6s}
+.tk-spark.s3{animation-delay:1.2s}
+@keyframes sparkle{0%,100%{opacity:0;transform:scale(.4)}45%{opacity:.95;transform:scale(1.15)}}
+.tk-wheel{transform-box:fill-box;transform-origin:center;animation:plspin .9s linear infinite}
+.tk-puff{fill:rgba(93,109,122,.4);opacity:0;animation:tkpuff 2.4s ease-out infinite}
+.tk-puff.q2{animation-delay:.8s}
+.tk-puff.q3{animation-delay:1.6s}
+@keyframes tkpuff{0%{opacity:0;transform:translate(0,0) scale(.4)}14%{opacity:.8}100%{opacity:0;transform:translate(10px,-16px) scale(1.6)}}
+@media(max-width:960px){#track-layer,#loco-layer{display:none}}
+
+/* ---------- nav ---------- */
+nav{position:fixed;top:0;left:0;right:0;z-index:100;display:flex;align-items:center;justify-content:space-between;padding:18px var(--pd);transition:transform .5s var(--ease), background .4s, box-shadow .4s, padding .4s}
+nav.scrolled{background:rgba(250,250,245,.82);backdrop-filter:blur(14px);-webkit-backdrop-filter:blur(14px);box-shadow:0 1px 0 rgba(27,79,114,.08), 0 12px 32px -18px rgba(13,43,66,.25);padding:12px var(--pd)}
+nav.hidden{transform:translateY(-110%)}
+.nav-mono{width:46px;height:46px;border:1.5px solid var(--gold);border-radius:50%;display:flex;align-items:center;justify-content:center;font-family:'Playfair Display',serif;font-size:16px;color:var(--navy);letter-spacing:1px;background:rgba(250,250,245,.6);flex:none}
+nav.on-hero .nav-mono{color:var(--ivory);background:transparent}
+.nav-links{display:flex;gap:34px;list-style:none}
+.nav-links a{text-decoration:none;font-size:13px;font-weight:500;letter-spacing:.14em;text-transform:uppercase;color:var(--ink);position:relative;padding:4px 0}
+nav.on-hero .nav-links a{color:rgba(250,250,245,.85)}
+.nav-links a::after{content:'';position:absolute;left:0;bottom:0;width:0;height:1.5px;background:var(--gold);transition:width .35s var(--ease)}
+.nav-links a:hover::after{width:100%}
+#burger{display:none;background:none;border:none;cursor:pointer;width:40px;height:40px;position:relative;z-index:110}
+#burger span{display:block;width:22px;height:2px;background:var(--navy);margin:5px auto;transition:.35s var(--ease)}
+nav.on-hero #burger span{background:var(--ivory)}
+@media(max-width:820px){
+  .nav-links{position:fixed;inset:0;background:var(--navy-xd);flex-direction:column;align-items:flex-start;justify-content:center;gap:26px;padding:0 clamp(36px,12vw,80px);clip-path:circle(0 at calc(100% - 40px) 40px);transition:clip-path .6s var(--ease);counter-reset:nl}
+  .nav-links.open{clip-path:circle(150% at calc(100% - 40px) 40px)}
+  .nav-links a{color:var(--ivory)!important;font-size:19px;font-family:'Playfair Display',serif;letter-spacing:.08em;display:flex;align-items:baseline;gap:16px}
+  .nav-links a::before{counter-increment:nl;content:"0" counter(nl);font-family:'Space Mono',monospace;font-size:11px;color:var(--gold);letter-spacing:.2em}
+  .nav-links a::after{background:var(--gold);height:1px}
+  .nav-links li{opacity:0;transform:translateY(16px);transition:opacity .45s var(--ease),transform .45s var(--ease)}
+  .nav-links.open li{opacity:1;transform:none}
+  .nav-links.open li:nth-child(2){transition-delay:.05s}
+  .nav-links.open li:nth-child(3){transition-delay:.1s}
+  .nav-links.open li:nth-child(4){transition-delay:.15s}
+  .nav-links.open li:nth-child(5){transition-delay:.2s}
+  .nav-links.open li:nth-child(6){transition-delay:.25s}
+  #burger{display:block}
+  #burger.open span:nth-child(1){transform:translateY(7px) rotate(45deg);background:var(--ivory)}
+  #burger.open span:nth-child(2){opacity:0}
+  #burger.open span:nth-child(3){transform:translateY(-7px) rotate(-45deg);background:var(--ivory)}
+}
+
+/* ---------- hero ---------- */
+#hero{position:relative;min-height:100vh;display:flex;flex-direction:column;justify-content:flex-end;color:var(--ivory);isolation:isolate;overflow:hidden}
+.hero-bg{position:absolute;inset:0;z-index:-2}
+.hero-bg img{width:100%;height:100%;object-fit:cover;object-position:center 60%}
+.hero-veil{position:absolute;inset:0;z-index:-1;background:linear-gradient(112deg, rgba(20,60,92,.84) 0%, rgba(20,60,92,.58) 34%, rgba(20,60,92,.22) 62%, rgba(20,60,92,.10) 100%), linear-gradient(0deg, rgba(20,60,92,.74) 0%, rgba(20,60,92,0) 42%)}
+.hero-inner{padding:0 var(--pd);max-width:1280px;width:100%;margin:0 auto;flex:1;display:flex;flex-direction:column;justify-content:center;padding-top:110px;padding-bottom:64px}
+.hero-badge{display:inline-flex;align-items:center;gap:12px;border:1px solid rgba(212,168,67,.55);border-radius:100px;padding:8px 20px;font-family:'Space Mono',monospace;font-size:12px;letter-spacing:.22em;color:var(--gold-l);width:max-content;background:rgba(13,43,66,.35);backdrop-filter:blur(4px)}
+.hero-badge .dot{width:7px;height:7px;border-radius:50%;background:var(--gold);box-shadow:0 0 10px var(--gold);animation:pulse 2.4s infinite;flex:none}
+@media(max-width:520px){.hero-badge{white-space:normal;font-size:10px;letter-spacing:.14em;max-width:100%;flex-wrap:wrap;row-gap:4px;line-height:1.5}}
+@keyframes pulse{0%,100%{opacity:1}50%{opacity:.35}}
+#hero h1{font-size:clamp(46px,8.2vw,108px);line-height:1.02;font-weight:700;margin:26px 0 18px;letter-spacing:-.01em;text-shadow:0 3px 28px rgba(9,30,46,.55),0 1px 8px rgba(9,30,46,.4)}
+#hero h1 .l1{display:block;color:var(--ivory)}
+#hero h1 .l2{display:block;font-style:italic;background:linear-gradient(100deg,var(--gold-l),var(--gold) 45%,var(--gold-d));-webkit-background-clip:text;background-clip:text;color:transparent;padding-right:.12em}
+.hero-sub{max-width:560px;font-size:clamp(15px,1.6vw,18px);font-weight:300;color:rgba(250,250,245,.82);line-height:1.75}
+.hero-sub strong{color:var(--gold-l);font-weight:500}
+.hero-rule{display:flex;align-items:center;gap:16px;margin-top:34px}
+.hero-rule .bar{height:1px;width:70px;background:var(--gold)}
+.hero-rule span{font-family:'Space Mono',monospace;font-size:12px;letter-spacing:.3em;text-transform:uppercase;color:rgba(250,250,245,.55)}
+/* hero CTAs */
+.hero-cta{display:flex;gap:16px;margin-top:32px;flex-wrap:wrap}
+.btn{position:relative;display:inline-flex;align-items:center;gap:10px;padding:14px 30px;border-radius:100px;font-family:'DM Sans',sans-serif;font-size:13.5px;font-weight:600;letter-spacing:.09em;text-transform:uppercase;text-decoration:none;transition:.45s var(--ease);overflow:hidden;cursor:pointer}
+.btn i{font-style:normal;transition:transform .45s var(--ease)}
+.btn:hover i{transform:translateX(5px)}
+.btn-gold{background:linear-gradient(120deg,var(--gold-l),var(--gold) 55%,var(--gold-d));color:var(--navy-xd);box-shadow:0 14px 30px -12px rgba(212,168,67,.55)}
+.btn-gold::after{content:'';position:absolute;top:0;left:-80%;width:50%;height:100%;background:linear-gradient(100deg,transparent,rgba(255,255,255,.55),transparent);transform:skewX(-20deg);transition:left .7s var(--ease)}
+.btn-gold:hover::after{left:130%}
+.btn-gold:hover{transform:translateY(-3px);box-shadow:0 22px 44px -14px rgba(212,168,67,.75)}
+.btn-ghost{border:1.5px solid rgba(250,250,245,.55);color:var(--ivory);background:rgba(13,43,66,.25);backdrop-filter:blur(4px)}
+.btn-ghost:hover{border-color:var(--gold);color:var(--gold-l);transform:translateY(-3px);background:rgba(13,43,66,.5)}
+/* hero portrait card */
+.hero-flex{display:flex;align-items:center;gap:clamp(34px,5vw,80px)}
+.hero-text{flex:1;min-width:0}
+.hero-port{flex:0 0 clamp(240px,23vw,330px);position:relative;border-radius:14px;overflow:hidden;background:var(--navy-d);box-shadow:0 34px 70px -28px rgba(0,0,0,.65);margin:0}
+.hero-port::before{content:'';position:absolute;inset:12px;border:1px solid rgba(212,168,67,.55);border-radius:8px;z-index:2;pointer-events:none}
+.hero-port img{width:100%;aspect-ratio:4/5;object-fit:cover;object-position:top center;display:block}
+.hero-port figcaption{position:absolute;left:0;right:0;bottom:0;z-index:1;padding:44px 24px 20px;background:linear-gradient(0deg,rgba(9,30,46,.94) 0%,rgba(9,30,46,.55) 60%,transparent 100%);text-align:center}
+.hero-port .hp-name{display:block;font-family:'Playfair Display',serif;font-size:19px;color:var(--ivory);letter-spacing:.03em}
+.hero-port .hp-role{display:block;margin-top:5px;font-family:'Space Mono',monospace;font-size:9.5px;letter-spacing:.22em;text-transform:uppercase;color:var(--gold-l)}
+.hero-port .hp-pin{position:absolute;top:20px;left:50%;transform:translateX(-50%);z-index:2;font-family:'Space Mono',monospace;font-size:9px;letter-spacing:.26em;color:var(--navy-xd);background:var(--gold);padding:3px 12px;border-radius:3px;text-transform:uppercase}
+@media(max-width:960px){.hero-flex{flex-direction:column;align-items:flex-start;gap:34px}.hero-port{flex:none;width:min(300px,74%);margin-top:6px}}
+/* departure board stats */
+.board{margin:0 auto;width:min(1280px,calc(100% - 2*var(--pd)));border:1px solid rgba(212,168,67,.35);border-bottom:none;border-radius:18px 18px 0 0;background:rgba(9,30,46,.72);backdrop-filter:blur(12px);-webkit-backdrop-filter:blur(12px);padding:30px clamp(20px,3.4vw,48px) 26px;display:grid;grid-template-columns:repeat(6,1fr);gap:8px;position:relative}
+.board::before{content:'DEPARTURES · 37+ YEARS OF SERVICE · भारतीय रेल';position:absolute;top:-11px;left:32px;background:var(--gold);color:var(--navy-xd);font-family:'Space Mono',monospace;font-size:10px;font-weight:700;letter-spacing:.18em;padding:3px 14px;border-radius:4px}
+.stat{text-align:left;padding:6px 10px;border-left:1px solid rgba(212,168,67,.18);transition:.35s var(--ease)}
+.stat:first-child{border-left:none}
+.stat:hover .num{text-shadow:0 0 20px rgba(212,168,67,.65)}
+.stat .num{font-family:'Space Mono',monospace;font-size:clamp(22px,2.6vw,34px);font-weight:700;color:var(--gold);letter-spacing:.01em;white-space:nowrap}
+.stat .lbl{font-size:10.5px;letter-spacing:.14em;text-transform:uppercase;color:rgba(250,250,245,.55);margin-top:4px;line-height:1.5}
+@media(max-width:960px){.board{grid-template-columns:repeat(3,1fr);row-gap:22px}.stat:nth-child(4){border-left:none}}
+@media(max-width:560px){.board{grid-template-columns:repeat(2,1fr)}.stat{border-left:none;border-top:1px dashed rgba(212,168,67,.16);padding-top:12px}.stat:nth-child(-n+2){border-top:none}}
+
+/* ---------- section chrome ---------- */
+section{position:relative}
+.wrap{max-width:1200px;margin:0 auto;padding:clamp(64px,8vw,110px) var(--pd);position:relative;z-index:2}
+/* station signboard heading */
+.signboard{display:flex;flex-direction:column;align-items:center;margin-bottom:clamp(36px,5vw,60px);position:relative;z-index:4}
+.sign-plate{background:var(--navy);border:3px solid var(--gold);border-radius:10px;box-shadow:0 10px 30px -12px rgba(13,43,66,.45), inset 0 0 0 2px var(--navy), inset 0 0 0 3.5px rgba(212,168,67,.45);padding:18px clamp(28px,5vw,64px) 15px;text-align:center;position:relative}
+.sign-plate .hindi{font-size:clamp(13px,1.6vw,17px);color:var(--gold-l);letter-spacing:normal;display:block;margin-bottom:2px}
+.sign-plate .en{font-family:'Playfair Display',serif;font-size:clamp(26px,4vw,44px);font-weight:700;color:var(--ivory);letter-spacing:.06em;text-transform:uppercase;line-height:1.15}
+.sign-plate .alt{font-family:'Space Mono',monospace;font-size:11px;letter-spacing:.4em;color:rgba(250,250,245,.45);text-transform:uppercase;display:block;margin-top:6px}
+.sign-posts{display:flex;gap:calc(100% - 96px);justify-content:center;width:100%;max-width:420px}
+.sign-posts i{width:5px;height:34px;background:linear-gradient(var(--navy),rgba(27,79,114,.25));border-radius:0 0 3px 3px}
+.kicker{font-family:'Space Mono',monospace;font-size:12px;letter-spacing:.34em;text-transform:uppercase;color:var(--gold-d);display:flex;align-items:center;gap:14px;margin-bottom:18px}
+.kicker::before{content:'';width:44px;height:1px;background:var(--gold)}
+
+/* ---------- about ---------- */
+#about{background:var(--ivory-w)}
+.about-grid{display:grid;grid-template-columns:minmax(280px,420px) 1fr;gap:clamp(40px,6vw,90px);align-items:start}
+.crest-card{position:relative;border-radius:14px;background:var(--navy-xd);overflow:hidden;aspect-ratio:4/5;display:flex;flex-direction:column;align-items:center;justify-content:center;gap:18px;box-shadow:0 30px 60px -30px rgba(13,43,66,.55)}
+.crest-card::before{content:'';position:absolute;inset:14px;border:1px solid rgba(212,168,67,.4);border-radius:9px;pointer-events:none;z-index:2}
+.crest-card .corner{position:absolute;width:34px;height:34px;border-color:var(--gold);border-style:solid;border-width:0;z-index:2}
+.crest-card .c1{top:14px;left:14px;border-top-width:3px;border-left-width:3px;border-radius:9px 0 0 0}
+.crest-card .c2{top:14px;right:14px;border-top-width:3px;border-right-width:3px;border-radius:0 9px 0 0}
+.crest-card .c3{bottom:14px;left:14px;border-bottom-width:3px;border-left-width:3px;border-radius:0 0 0 9px}
+.crest-card .c4{bottom:14px;right:14px;border-bottom-width:3px;border-right-width:3px;border-radius:0 0 9px 0}
+.crest-ring{width:130px;height:130px;border:2px solid var(--gold);border-radius:50%;display:flex;align-items:center;justify-content:center;font-family:'Playfair Display',serif;font-size:44px;color:var(--gold);letter-spacing:2px;background:radial-gradient(circle at 35% 30%, rgba(212,168,67,.14), transparent 60%)}
+.crest-card .crest-name{font-family:'Playfair Display',serif;color:var(--ivory);font-size:21px;letter-spacing:.04em;text-align:center;line-height:1.35;padding:0 20px}
+.crest-card .crest-sub{font-family:'Space Mono',monospace;font-size:11px;letter-spacing:.28em;color:rgba(250,250,245,.5);text-transform:uppercase;text-align:center}
+.crest-card .crest-note{position:absolute;bottom:26px;font-size:10.5px;letter-spacing:.16em;color:rgba(250,250,245,.35);text-transform:uppercase}
+.crest-photo{position:absolute;inset:0;width:100%;height:100%;object-fit:cover;object-position:top center}
+.crest-plate{position:absolute;left:0;right:0;bottom:0;z-index:1;padding:52px 24px 22px;background:linear-gradient(0deg,rgba(9,30,46,.95) 0%,rgba(9,30,46,.6) 62%,transparent 100%);text-align:center}
+.crest-plate .crest-name{font-size:22px}
+.crest-plate .crest-sub{margin-top:6px;color:var(--gold-l)}
+.about-copy p{margin-bottom:1.35em;font-size:clamp(15.5px,1.45vw,17.5px);color:var(--ink);font-weight:300;line-height:1.85}
+.about-copy p:first-of-type::first-letter{font-family:'Playfair Display',serif;font-size:4.15em;float:left;line-height:.82;padding:6px 12px 0 0;color:var(--navy);font-weight:700}
+.about-copy .em{color:var(--navy-d);font-weight:600;box-shadow:inset 0 -8px 0 rgba(212,168,67,.24)}
+.edu-block{margin-top:clamp(44px,6vw,70px)}
+.edu-block h3{font-size:clamp(20px,2.2vw,26px);color:var(--navy);margin:0 0 20px;display:flex;align-items:center;gap:14px}
+.edu-block h3::after{content:'';flex:1;height:1px;background:linear-gradient(90deg,rgba(212,168,67,.6),transparent)}
+.edu-list{display:grid;grid-template-columns:repeat(auto-fit,minmax(230px,1fr));gap:14px}
+.edu-card{background:var(--ivory);border:1px solid rgba(27,79,114,.1);border-radius:10px;padding:18px 20px;position:relative;transition:transform .4s var(--ease), box-shadow .4s var(--ease), border-color .4s}
+.edu-card:hover{transform:translateY(-4px);box-shadow:0 18px 36px -20px rgba(13,43,66,.35);border-color:rgba(212,168,67,.5)}
+.edu-card .yr{font-family:'Space Mono',monospace;font-size:11px;color:var(--gold-d);letter-spacing:.2em}
+.edu-card .dg{font-weight:600;color:var(--navy);font-size:15.5px;margin:6px 0 3px;line-height:1.4}
+.edu-card .in{font-size:13px;color:var(--mut);line-height:1.5}
+.edu-card .nt{display:inline-block;margin-top:8px;font-size:10.5px;letter-spacing:.1em;text-transform:uppercase;color:var(--navy);background:rgba(212,168,67,.18);border:1px solid rgba(212,168,67,.4);padding:2px 10px;border-radius:100px}
+@media(max-width:880px){.about-grid{grid-template-columns:1fr}.crest-card{width:100%;max-width:380px;margin:0 auto}}
+
+/* ---------- journey ---------- */
+#journey{background:linear-gradient(180deg,var(--ivory) 0%,#EEF3F6 50%,var(--ivory) 100%)}
+.j-grid{display:grid;grid-template-columns:1.05fr .95fr;gap:clamp(30px,4.5vw,70px);align-items:start}
+.map-box{position:sticky;top:90px}
+.map-frame{background:radial-gradient(120% 120% at 30% 20%, #1E5A82 0%, var(--navy-xd) 70%);border-radius:16px;padding:clamp(16px,2.4vw,30px);box-shadow:0 36px 70px -34px rgba(13,43,66,.6);position:relative;overflow:hidden}
+.map-frame::after{content:'';position:absolute;inset:10px;border:1px solid rgba(212,168,67,.22);border-radius:11px;pointer-events:none}
+.map-head{display:flex;justify-content:space-between;align-items:center;margin-bottom:8px;padding:2px 6px}
+.map-head .t{font-family:'Space Mono',monospace;font-size:11px;letter-spacing:.3em;color:var(--gold-l);text-transform:uppercase}
+#autoplay-btn{background:none;border:1px solid rgba(212,168,67,.5);color:var(--gold-l);border-radius:100px;font-family:'Space Mono',monospace;font-size:10.5px;letter-spacing:.14em;padding:6px 16px;cursor:pointer;transition:.3s;pointer-events:auto}
+#autoplay-btn:hover,#autoplay-btn.playing{background:var(--gold);color:var(--navy-xd)}
+#indiamap{width:100%;height:auto;display:block}
+.in-outline{fill:rgba(250,250,245,.045);stroke:rgba(212,168,67,.55);stroke-width:1.1}
+.route-base{fill:none;stroke:rgba(250,250,245,.16);stroke-width:1.6;stroke-dasharray:4 5}
+.route-done{fill:none;stroke:var(--gold);stroke-width:2;filter:drop-shadow(0 0 4px rgba(212,168,67,.7))}
+.city-dot{fill:#0D2B42;stroke:rgba(250,250,245,.5);stroke-width:1.4;cursor:pointer;transition:.3s}
+.city-dot.visited{fill:var(--gold);stroke:var(--gold-l)}
+.city-dot.active{fill:var(--ivory);stroke:var(--gold);stroke-width:2}
+.city-halo{fill:none;stroke:var(--gold);opacity:0;pointer-events:none}
+.city-lbl{font-family:'DM Sans',sans-serif;font-size:13px;font-weight:500;fill:rgba(250,250,245,.92);pointer-events:none;transition:.3s;paint-order:stroke;stroke:rgba(13,43,66,.8);stroke-width:3px}
+.city-lbl.active{fill:var(--gold-l);font-weight:700;font-size:14px}
+@media(max-width:600px){.city-lbl{font-size:15px}.city-lbl.active{font-size:16px}}
+#map-train{filter:drop-shadow(0 0 6px rgba(212,168,67,.8))}
+/* station detail card */
+.st-card{background:var(--ivory);border-radius:16px;border:1px solid rgba(27,79,114,.1);box-shadow:0 26px 60px -30px rgba(13,43,66,.35);overflow:hidden;position:relative;align-self:center}
+.st-top{background:var(--navy);padding:22px 28px 20px;position:relative;color:var(--ivory)}
+.st-top::after{content:'';position:absolute;left:0;right:0;bottom:0;height:3px;background:repeating-linear-gradient(90deg,var(--gold) 0 26px, transparent 26px 40px)}
+.st-no{font-family:'Space Mono',monospace;font-size:11px;letter-spacing:.3em;color:var(--gold-l);text-transform:uppercase}
+.st-city{font-family:'Playfair Display',serif;font-size:clamp(26px,3.2vw,38px);font-weight:700;line-height:1.1;margin-top:6px}
+.st-meta{display:flex;gap:10px;flex-wrap:wrap;margin-top:10px}
+.chip{font-family:'Space Mono',monospace;font-size:10.5px;letter-spacing:.12em;border:1px solid rgba(212,168,67,.5);color:var(--gold-l);border-radius:100px;padding:4px 13px;text-transform:uppercase}
+.chip.solid{background:var(--gold);color:var(--navy-xd);border-color:var(--gold)}
+.st-body{padding:26px 28px 28px;display:flex;flex-direction:column}
+.st-fill{margin-top:auto;padding-top:22px;display:flex;align-items:center;gap:14px;opacity:.5}
+.st-fill::before,.st-fill::after{content:'';flex:1;height:1px;background:repeating-linear-gradient(90deg,rgba(184,134,11,.55) 0 8px,transparent 8px 16px)}
+.st-fill svg{width:30px;height:16px;color:var(--gold-d);flex:none}
+.st-roles{list-style:none;margin-bottom:18px}
+.st-roles li{position:relative;padding:7px 0 7px 26px;font-weight:500;color:var(--navy);font-size:14.5px;border-bottom:1px dashed rgba(27,79,114,.12)}
+.st-roles li:last-child{border-bottom:none}
+.st-roles li::before{content:'';position:absolute;left:4px;top:14px;width:8px;height:8px;border:2px solid var(--gold-d);border-radius:50%}
+.st-story{font-size:15px;font-weight:300;color:var(--ink);line-height:1.8}
+.st-nav{display:flex;align-items:center;justify-content:space-between;padding:16px 28px;border-top:1px solid rgba(27,79,114,.08);background:var(--ivory-w)}
+.st-btn{display:flex;align-items:center;gap:8px;background:none;border:1.5px solid var(--navy);color:var(--navy);border-radius:100px;padding:9px 20px;font-family:'DM Sans',sans-serif;font-size:13px;font-weight:600;letter-spacing:.06em;cursor:pointer;transition:.3s var(--ease)}
+.st-btn:hover:not(:disabled){background:var(--navy);color:var(--ivory);transform:translateX(0) scale(1.03)}
+.st-btn:disabled{opacity:.3;cursor:default}
+.st-count{font-family:'Space Mono',monospace;font-size:12px;letter-spacing:.2em;color:var(--mut)}
+@media(max-width:520px){.st-nav{gap:10px;padding:14px 16px}.st-btn{padding:8px 13px;font-size:11.5px;letter-spacing:.03em}.st-count{font-size:11px;letter-spacing:.12em}}
+.st-progress{height:3px;background:rgba(27,79,114,.08)}
+.st-progress i{display:block;height:100%;background:linear-gradient(90deg,var(--gold-d),var(--gold));width:0;transition:width .6s var(--ease)}
+@media(max-width:960px){.j-grid{grid-template-columns:1fr}.map-box{position:relative;top:0}}
+
+/* ---------- achievements (coaches) ---------- */
+#achv{background:var(--navy-d);color:var(--ivory);overflow:hidden}
+#achv .sign-plate{box-shadow:0 10px 30px -12px rgba(0,0,0,.6), inset 0 0 0 2px var(--navy), inset 0 0 0 3.5px rgba(212,168,67,.45)}
+#achv .sign-posts i{background:linear-gradient(var(--gold),rgba(212,168,67,.15))}
+.coach-rail{position:relative;z-index:2}
+.coach-rail::before,.coach-rail::after{content:'';position:absolute;top:0;bottom:0;width:96px;z-index:3;pointer-events:none}
+.coach-rail::before{left:0;background:linear-gradient(90deg,var(--navy-d),transparent)}
+.coach-rail::after{right:0;background:linear-gradient(270deg,var(--navy-d),transparent)}
+.coach-track{display:flex;gap:26px;padding:10px var(--pd) 30px;overflow-x:auto;scroll-snap-type:x proximity;-webkit-overflow-scrolling:touch;scrollbar-width:none;cursor:grab}
+.coach-track::-webkit-scrollbar{display:none}
+.coach-track.dragging{cursor:grabbing;scroll-snap-type:none}
+.coach-track.dragging .coach{pointer-events:none}
+.coach{scroll-snap-align:center}
+.rail-btn{position:absolute;top:50%;transform:translateY(-50%);z-index:4;width:46px;height:46px;border-radius:50%;border:1.5px solid rgba(212,168,67,.6);background:rgba(13,43,66,.75);color:var(--gold-l);font-size:17px;cursor:pointer;backdrop-filter:blur(4px);transition:.3s var(--ease);display:flex;align-items:center;justify-content:center}
+.rail-btn:hover{background:var(--gold);color:var(--navy-xd);border-color:var(--gold)}
+#coach-prev{left:clamp(8px,1.6vw,22px)}
+#coach-next{right:clamp(8px,1.6vw,22px)}
+@media(max-width:700px){.rail-btn{display:none}}
+.coach{flex:0 0 clamp(300px,38vw,460px);background:linear-gradient(165deg,#2E6E9E 0%,var(--navy) 55%,var(--navy-d) 100%);border:1px solid rgba(212,168,67,.3);border-radius:18px;padding:0;position:relative;overflow:hidden;transition:transform .45s var(--ease), box-shadow .45s var(--ease)}
+.coach:hover{transform:translateY(-8px);box-shadow:0 30px 60px -24px rgba(0,0,0,.6)}
+.coach::before{content:'';position:absolute;top:0;left:0;right:0;height:7px;background:linear-gradient(90deg,var(--gold-d),var(--gold),var(--gold-d))}
+.coach-head{padding:30px 30px 0;display:flex;justify-content:space-between;align-items:flex-start;gap:12px}
+.coach-no{font-family:'Space Mono',monospace;font-size:11px;color:rgba(250,250,245,.4);letter-spacing:.25em}
+.coach h3{font-size:clamp(19px,2vw,24px);color:var(--ivory);line-height:1.25;padding:8px 30px 0}
+.coach .metric{font-family:'Space Mono',monospace;font-size:clamp(24px,2.6vw,32px);font-weight:700;color:var(--gold);padding:14px 30px 2px;letter-spacing:-.01em}
+.coach .sub{font-family:'Space Mono',monospace;font-size:12px;color:var(--gold-l);opacity:.75;padding:0 30px;letter-spacing:.06em}
+.coach p{padding:16px 30px 26px;font-size:13.8px;font-weight:300;color:rgba(250,250,245,.78);line-height:1.75}
+.coach-wheels{display:flex;justify-content:space-between;padding:0 44px 20px;margin-top:auto}
+.coach-wheels i{width:12px;height:12px;border-radius:50%;border:2.5px solid rgba(212,168,67,.5);position:relative}
+.coach-wheels i::after{content:'';position:absolute;inset:2.5px;border-radius:50%;background:rgba(212,168,67,.35)}
+.coupler{flex:none;align-self:center;width:26px;height:8px;background:linear-gradient(90deg,rgba(212,168,67,.15),rgba(212,168,67,.55),rgba(212,168,67,.15));border-radius:4px;margin:0 -26px 0 0;z-index:1}
+.achv-hint{text-align:center;font-family:'Space Mono',monospace;font-size:12px;letter-spacing:.3em;text-transform:uppercase;color:rgba(232,201,122,.85);padding-bottom:40px;position:relative;z-index:2}
+@media(max-width:700px){.hint-arrows{display:none}}
+
+/* ---------- expertise ---------- */
+#expertise{background:var(--ivory-w)}
+.exp-grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(200px,1fr));gap:16px}
+@media(min-width:1100px){.exp-grid{grid-template-columns:repeat(5,1fr)}}
+.exp-card{background:var(--ivory);border:1px solid rgba(27,79,114,.1);border-radius:12px;padding:26px 22px 22px;position:relative;overflow:hidden;transition:.45s var(--ease)}
+.exp-card::before{content:'';position:absolute;left:0;top:0;bottom:0;width:3px;background:var(--gold);transform:scaleY(0);transform-origin:top;transition:transform .45s var(--ease)}
+.exp-card:hover{transform:translateY(-5px);box-shadow:0 20px 40px -22px rgba(13,43,66,.4);border-color:rgba(212,168,67,.45)}
+.exp-card:hover::before{transform:scaleY(1)}
+.exp-card .ic{width:42px;height:42px;border-radius:11px;border:1px solid rgba(212,168,67,.45);display:flex;align-items:center;justify-content:center;color:var(--gold-d);margin-bottom:14px;background:rgba(212,168,67,.08);transition:.45s var(--ease)}
+.exp-card:hover .ic{background:var(--gold);color:var(--navy-xd);transform:rotate(-6deg) scale(1.07)}
+.exp-card .ic svg{width:21px;height:21px}
+.exp-card .no{font-family:'Space Mono',monospace;font-size:11px;color:var(--gold-d);letter-spacing:.22em}
+.exp-card .nm{font-weight:600;color:var(--navy);margin-top:8px;font-size:15.5px;line-height:1.4}
+.mem-note{margin-top:36px;text-align:center;font-size:14px;color:var(--mut)}
+.mem-note b{color:var(--navy);font-weight:600}
+
+/* ---------- gallery ---------- */
+#gallery{background:var(--ivory)}
+.gal-grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(260px,1fr));gap:20px}
+.gal-item{position:relative;border-radius:14px;overflow:hidden;cursor:pointer;aspect-ratio:4/3;background:var(--navy-d)}
+.gal-item img{width:100%;height:100%;object-fit:cover;transition:transform .8s var(--ease)}
+.gal-item:hover img{transform:scale(1.06)}
+.gal-item .cap{position:absolute;left:0;right:0;bottom:0;padding:38px 20px 16px;background:linear-gradient(0deg,rgba(13,43,66,.85),transparent);color:var(--ivory);font-size:13px;letter-spacing:.05em;opacity:0;transform:translateY(8px);transition:.5s var(--ease)}
+.gal-item:hover .cap{opacity:1;transform:none}
+@media(max-width:960px){.gal-item .cap{opacity:1;transform:none}}
+.gal-item .tag{position:absolute;top:14px;left:14px;font-family:'Space Mono',monospace;font-size:9.5px;letter-spacing:.18em;text-transform:uppercase;background:rgba(13,43,66,.7);border:1px solid rgba(212,168,67,.5);color:var(--gold-l);padding:4px 12px;border-radius:100px;backdrop-filter:blur(4px)}
+.gal-note{text-align:center;margin-top:26px;font-size:13px;color:var(--mut);font-style:italic}
+#lightbox{position:fixed;inset:0;z-index:150;background:rgba(9,30,46,.94);display:flex;align-items:center;justify-content:center;opacity:0;visibility:hidden;transition:.45s var(--ease);padding:5vh 5vw}
+#lightbox.open{opacity:1;visibility:visible}
+#lightbox img{max-width:100%;max-height:82vh;border-radius:10px;box-shadow:0 40px 90px -30px rgba(0,0,0,.8)}
+#lightbox .lb-cap{position:absolute;bottom:5vh;left:0;right:0;text-align:center;color:rgba(250,250,245,.75);font-size:14px;letter-spacing:.06em}
+#lightbox .lb-x{position:absolute;top:26px;right:34px;background:none;border:1px solid rgba(250,250,245,.35);color:var(--ivory);width:44px;height:44px;border-radius:50%;font-size:17px;cursor:pointer;transition:.3s}
+#lightbox .lb-x:hover{border-color:var(--gold);color:var(--gold)}
+
+/* ---------- contact ---------- */
+#contact{background:var(--ivory-w)}
+.con-grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(220px,1fr));gap:18px;max-width:980px;margin:0 auto}
+.con-card{background:var(--ivory);border:1px solid rgba(27,79,114,.1);border-radius:14px;padding:34px 26px;text-align:center;text-decoration:none;transition:.45s var(--ease);position:relative;overflow:hidden}
+.con-card:hover{transform:translateY(-6px);box-shadow:0 24px 48px -24px rgba(13,43,66,.4);border-color:rgba(212,168,67,.5)}
+.con-ic{width:54px;height:54px;margin:0 auto 16px;border-radius:50%;border:1.5px solid var(--gold);display:flex;align-items:center;justify-content:center;color:var(--gold-d);transition:.4s}
+.con-card:hover .con-ic{background:var(--gold);color:var(--navy-xd)}
+.con-ic svg{width:22px;height:22px}
+.con-card .k{font-family:'Space Mono',monospace;font-size:10.5px;letter-spacing:.26em;text-transform:uppercase;color:var(--mut)}
+.con-card .v{margin-top:8px;font-weight:600;color:var(--navy);font-size:15px;word-break:break-word}
+
+/* ---------- footer / terminus ---------- */
+footer{background:var(--navy-xd);color:rgba(250,250,245,.7);position:relative;overflow:hidden}
+.term-buffer{display:flex;justify-content:center;align-items:center;gap:120px;padding-top:56px}
+.term-loco{width:54px;height:28px;color:var(--gold);opacity:.85;flex:none;filter:drop-shadow(0 0 10px rgba(212,168,67,.4));display:none}
+@media(max-width:960px){.term-loco{display:block}}
+@media(max-width:560px){.term-buffer{gap:52px}.foot-base{justify-content:center;text-align:center;row-gap:6px}}
+.term-buffer i{width:26px;height:26px;border-left:4px solid rgba(212,168,67,.55);border-right:4px solid rgba(212,168,67,.55);position:relative;transform:skewX(0)}
+.term-buffer i::after{content:'';position:absolute;left:-11px;right:-11px;top:1px;height:8px;background:var(--gold);border-radius:4px;box-shadow:0 0 14px rgba(212,168,67,.45)}
+.term-buffer i::before{content:'';position:absolute;left:50%;top:-11px;transform:translateX(-50%);width:8px;height:8px;border-radius:50%;background:#C0392B;box-shadow:0 0 12px rgba(192,57,43,.9);animation:pulse 2.4s infinite}
+.foot-wrap{max-width:1100px;margin:0 auto;padding:40px var(--pd) 30px;text-align:center}
+.foot-mono{width:64px;height:64px;border:1.5px solid var(--gold);border-radius:50%;display:flex;align-items:center;justify-content:center;font-family:'Playfair Display',serif;font-size:22px;color:var(--gold);margin:0 auto 20px;letter-spacing:1px}
+.foot-quote{font-family:'Playfair Display',serif;font-style:italic;font-size:clamp(19px,2.4vw,26px);color:var(--ivory);max-width:640px;margin:0 auto 10px;line-height:1.5}
+.foot-quote-sub{font-family:'Space Mono',monospace;font-size:11px;letter-spacing:.3em;text-transform:uppercase;color:var(--gold-l);opacity:.8}
+.foot-cycle{margin:34px auto 0;display:flex;align-items:center;justify-content:center;gap:14px;color:rgba(250,250,245,.45);font-size:12.5px;letter-spacing:.08em}
+.foot-cycle svg{width:30px;height:20px;color:var(--gold);flex:none}
+.foot-rule{height:1px;background:rgba(212,168,67,.18);margin:34px 0 22px}
+.foot-base{display:flex;justify-content:space-between;gap:14px;flex-wrap:wrap;font-size:12px;color:rgba(250,250,245,.4);letter-spacing:.06em}
+.reveal{opacity:0;transform:translateY(36px)}
+@media(prefers-reduced-motion:reduce){.reveal{opacity:1;transform:none}}
+</style>
+</head>
+<body>
+
+<div id="preloader">
+  <div class="pl-mono">AKM</div>
+  <svg class="pl-scene" viewBox="0 0 240 64" aria-hidden="true">
+    <line class="pl-rail-d" x1="0" y1="56" x2="240" y2="56"/>
+    <circle class="pl-puff p1" cx="106" cy="18" r="4"/>
+    <circle class="pl-puff p2" cx="106" cy="18" r="3.4"/>
+    <circle class="pl-puff p3" cx="106" cy="18" r="4.4"/>
+    <g class="pl-loco">
+      <rect x="88" y="24" width="46" height="20" rx="4" fill="#1B4F72" stroke="#D4A843" stroke-width="1.6"/>
+      <rect x="126" y="14" width="18" height="30" rx="3" fill="#123A57" stroke="#D4A843" stroke-width="1.6"/>
+      <rect x="129.5" y="19" width="11" height="8" rx="1.5" fill="#E8C97A"/>
+      <rect x="100" y="14" width="8" height="12" rx="1.5" fill="#123A57" stroke="#D4A843" stroke-width="1.4"/>
+      <rect x="92" y="29" width="30" height="6" rx="3" fill="#D4A843" opacity=".85"/>
+      <path d="M88 44 L80 52 L92 52 Z" fill="#D4A843"/>
+      <g class="pl-wheel"><circle cx="100" cy="50" r="6" fill="#0D2B42" stroke="#D4A843" stroke-width="1.6"/><line x1="100" y1="45.4" x2="100" y2="54.6" stroke="#D4A843" stroke-width="1.2"/><line x1="95.4" y1="50" x2="104.6" y2="50" stroke="#D4A843" stroke-width="1.2"/></g>
+      <g class="pl-wheel"><circle cx="118" cy="50" r="6" fill="#0D2B42" stroke="#D4A843" stroke-width="1.6"/><line x1="118" y1="45.4" x2="118" y2="54.6" stroke="#D4A843" stroke-width="1.2"/><line x1="113.4" y1="50" x2="122.6" y2="50" stroke="#D4A843" stroke-width="1.2"/></g>
+      <g class="pl-wheel"><circle cx="136" cy="50" r="6" fill="#0D2B42" stroke="#D4A843" stroke-width="1.6"/><line x1="136" y1="45.4" x2="136" y2="54.6" stroke="#D4A843" stroke-width="1.2"/><line x1="131.4" y1="50" x2="140.6" y2="50" stroke="#D4A843" stroke-width="1.2"/></g>
+    </g>
+  </svg>
+  <div class="pl-cap">Departing Shortly</div>
+</div>
+
+<div id="track-layer"><svg id="track-svg" aria-hidden="true">
+  <defs>
+    <linearGradient id="trkGrad" x1="0" y1="0" x2="0" y2="1">
+      <stop offset="0" stop-color="#E8C97A"/><stop offset=".5" stop-color="#D4A843"/><stop offset="1" stop-color="#B8860B"/>
+    </linearGradient>
+  </defs>
+  <path class="trk-bed" id="trk-bed"/>
+  <path class="trk-sleeper" id="trk-sleeper"/>
+  <path class="trk-rail" id="trk-rail"/>
+  <path class="trk-rail-i" id="trk-rail-i"/>
+  <path class="trk-gold" id="trk-gold"/>
+</svg></div>
+<div id="loco-layer"><svg id="loco-svg" aria-hidden="true">
+  <defs>
+    <linearGradient id="beamGrad" x1="0" y1="0" x2="1" y2="0">
+      <stop offset="0" stop-color="rgba(232,201,122,.6)"/><stop offset="1" stop-color="rgba(232,201,122,0)"/>
+    </linearGradient>
+  </defs>
+  <g id="loco-glyph">
+    <g id="loco-inner" transform="translate(-32,-16)">
+      <!-- heritage steam locomotive, facing right, 64x30 -->
+      <path class="tk-beam" d="M55 12 L86 5 L86 25 L55 18 Z" fill="url(#beamGrad)"/>
+      <circle class="tk-spark s1" cx="-6" cy="10" r="1.6"/>
+      <circle class="tk-spark s2" cx="-12" cy="18" r="1.2"/>
+      <circle class="tk-spark s3" cx="-9" cy="25" r="1.4"/>
+      <circle class="tk-puff q1" cx="47" cy="4" r="4"/>
+      <circle class="tk-puff q2" cx="47" cy="4" r="3.2"/>
+      <circle class="tk-puff q3" cx="47" cy="4" r="4.6"/>
+      <!-- cab -->
+      <rect x="2" y="4" width="15" height="18" rx="2" fill="#123A57" stroke="#D4A843" stroke-width="1.3"/>
+      <rect x="5" y="7.5" width="9" height="6.5" rx="1.2" fill="#E8C97A"/>
+      <rect x="0.5" y="2.5" width="18" height="3.4" rx="1.6" fill="#D4A843"/>
+      <!-- boiler -->
+      <rect x="17" y="8" width="33" height="14" rx="6.5" fill="#1B4F72" stroke="#D4A843" stroke-width="1.3"/>
+      <line x1="24" y1="8.6" x2="24" y2="21.4" stroke="rgba(212,168,67,.55)" stroke-width="1"/>
+      <line x1="33" y1="8.6" x2="33" y2="21.4" stroke="rgba(212,168,67,.55)" stroke-width="1"/>
+      <!-- steam dome + chimney -->
+      <path d="M36 8 q3.5 -5 7 0 Z" fill="#B8860B"/>
+      <rect x="44" y="1.5" width="5.5" height="7.5" rx="1.4" fill="#0D2B42" stroke="#D4A843" stroke-width="1.1"/>
+      <rect x="43" y="0.5" width="7.5" height="2.6" rx="1.3" fill="#D4A843"/>
+      <!-- smokebox door + headlamp -->
+      <circle cx="50" cy="15" r="4.6" fill="#0D2B42" stroke="#D4A843" stroke-width="1.2"/>
+      <circle cx="50" cy="15" r="1.7" fill="#E8C97A"/>
+      <!-- running board -->
+      <rect x="1" y="22" width="53" height="2.6" rx="1.3" fill="#D4A843"/>
+      <!-- cowcatcher -->
+      <path d="M54 22 L63 29.5 L54 29.5 Z" fill="#D4A843"/>
+      <!-- wheels -->
+      <g class="tk-wheel"><circle cx="10" cy="26" r="4" fill="#0D2B42" stroke="#D4A843" stroke-width="1.3"/><line x1="10" y1="23" x2="10" y2="29" stroke="#D4A843" stroke-width="1"/><line x1="7" y1="26" x2="13" y2="26" stroke="#D4A843" stroke-width="1"/></g>
+      <g class="tk-wheel"><circle cx="26" cy="26" r="4" fill="#0D2B42" stroke="#D4A843" stroke-width="1.3"/><line x1="26" y1="23" x2="26" y2="29" stroke="#D4A843" stroke-width="1"/><line x1="23" y1="26" x2="29" y2="26" stroke="#D4A843" stroke-width="1"/></g>
+      <g class="tk-wheel"><circle cx="42" cy="26" r="4" fill="#0D2B42" stroke="#D4A843" stroke-width="1.3"/><line x1="42" y1="23" x2="42" y2="29" stroke="#D4A843" stroke-width="1"/><line x1="39" y1="26" x2="45" y2="26" stroke="#D4A843" stroke-width="1"/></g>
+      <!-- coupling rod -->
+      <rect x="8" y="25.2" width="36" height="1.6" rx=".8" fill="rgba(232,201,122,.75)"/>
+    </g>
+  </g>
+</svg></div>
+
+<nav id="nav" class="on-hero">
+  <div class="nav-mono">AKM</div>
+  <button id="burger" aria-label="Menu"><span></span><span></span><span></span></button>
+  <ul class="nav-links" id="navlinks">
+    <li><a href="#about">About</a></li>
+    <li><a href="#journey">Journey</a></li>
+    <li><a href="#achv">Achievements</a></li>
+    <li><a href="#expertise">Expertise</a></li>
+    <li><a href="#gallery">Gallery</a></li>
+    <li><a href="#contact">Contact</a></li>
+  </ul>
+</nav>
+
+<header id="hero">
+  <div class="hero-bg"><img src="assets/hero.webp" alt="" fetchpriority="high"></div>
+  <div class="hero-veil"></div>
+  <div class="hero-inner">
+    <div class="hero-flex">
+      <div class="hero-text">
+        <span class="hero-badge reveal"><span class="dot"></span>IRSME · SCRA 1986 · LEVEL 16 (APEX GRADE)</span>
+        <h1><span class="l1 reveal">Ashok Kumar</span><span class="l2 reveal">Misra</span></h1>
+        <p class="hero-sub reveal">General Manager (Retd.), <strong>Western Railway</strong>. A 37-year journey across eleven cities in the service of Indian Railways, from the steam locomotive workshops of Dahod to the leadership of a workforce of <strong>95,000</strong>.</p>
+        <div class="hero-rule reveal"><span class="bar"></span><span>1990 to 2025 · दहोद से मुंबई तक</span></div>
+        <div class="hero-cta reveal">
+          <a class="btn btn-gold" href="#journey"><span>Explore the Journey</span><i>→</i></a>
+          <a class="btn btn-ghost" href="#contact"><span>Get in Touch</span></a>
+        </div>
+      </div>
+    </div>
+  </div>
+  <div class="board reveal" id="board">
+    <div class="stat"><div class="num" data-to="37" data-suf="+">0</div><div class="lbl">Years of Service</div></div>
+    <div class="stat"><div class="num" data-to="11" data-suf="">0</div><div class="lbl">Cities Served</div></div>
+    <div class="stat"><div class="num" data-to="95000" data-suf="+" data-in="1">0</div><div class="lbl">Employees Led</div></div>
+    <div class="stat"><div class="num" data-to="6" data-suf="">0</div><div class="lbl">Divisions Managed</div></div>
+    <div class="stat"><div class="num" data-to="565" data-suf=" km">0</div><div class="lbl">Fencing in 11 Months</div></div>
+    <div class="stat"><div class="num" data-to="400" data-pre="₹" data-suf=" Cr">0</div><div class="lbl">Saved Annually via TPI</div></div>
+  </div>
+</header>
+
+<section id="about">
+  <div class="wrap">
+    <div class="signboard reveal">
+      <div class="sign-plate"><span class="hindi">परिचय</span><span class="en">About</span><span class="alt">The Officer · IRSME</span></div>
+      <div class="sign-posts"><i></i><i></i></div>
+    </div>
+    <div class="about-grid">
+      <div class="crest-card reveal">
+        <img class="crest-photo" src="assets/photos/portrait-office.jpg" alt="Ashok Kumar Misra, General Manager, Western Railway" loading="lazy" onerror="this.style.display='none'">
+        <span class="corner c1"></span><span class="corner c2"></span><span class="corner c3"></span><span class="corner c4"></span>
+        <div class="crest-plate">
+          <div class="crest-name">Ashok Kumar Misra</div>
+          <div class="crest-sub">General Manager (Retd.) · Western Railway</div>
+        </div>
+      </div>
+      <div class="about-copy">
+        <div class="kicker reveal">Thirty-seven years on the line</div>
+        <p class="reveal">Selected through the prestigious <span class="em">Special Class Railway Apprentice (SCRA) examination in 1986</span>, Ashok Kumar Misra joined the Indian Railway Service of Mechanical Engineers and gave the next thirty-seven years to the railways that move India. His career began in 1990 amid the steam locomotives of Dahod Workshop, and ended, in a turn of poetic symmetry, overseeing the creation of a ₹20,000-crore electric locomotive factory in that very town.</p>
+        <p class="reveal">Across eleven cities and five railway zones, he served as Divisional Railway Manager of Jhansi, Principal Chief Mechanical Engineer of East Central Railway, Additional General Manager of North Eastern Railway, and ultimately <span class="em">General Manager of Western Railway</span>, leading more than 1,100 officers and a workforce of nearly 95,000 across six divisions, from the headquarters at Churchgate, Mumbai.</p>
+        <p class="reveal">An engineer by training and an administrator by temperament, he retired on 30 June 2025, marking the occasion not with ceremony, but with a 20-kilometre farewell bicycle ride.</p>
+      </div>
+    </div>
+    <div class="edu-block reveal">
+      <h3>Education &amp; Qualifications</h3>
+      <div class="edu-list">
+        <div class="edu-card"><div class="yr">1986</div><div class="dg">Mechanical Engineering</div><div class="in">Engineering Council, United Kingdom</div></div>
+        <div class="edu-card"><div class="yr">1988</div><div class="dg">Railway Mechanical Engineering</div><div class="in">IRIMEE, Jamalpur</div><span class="nt">Honours · Distinction</span></div>
+        <div class="edu-card"><div class="yr">1988</div><div class="dg">AMIE · Mechanical</div><div class="in">Institution of Engineers, India</div></div>
+        <div class="edu-card"><div class="yr">1988</div><div class="dg">AMIE · Metallurgy</div><div class="in">Institution of Engineers, Kolkata</div></div>
+        <div class="edu-card"><div class="yr">1997</div><div class="dg">MBA · Operations</div><div class="in">IGNOU</div><span class="nt">First Division</span></div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section id="journey">
+  <div class="wrap">
+    <div class="signboard reveal">
+      <div class="sign-plate"><span class="hindi">यात्रा</span><span class="en">The Journey</span><span class="alt">11 Stations · 1990 to 2025</span></div>
+      <div class="sign-posts"><i></i><i></i></div>
+    </div>
+    <div class="j-grid">
+      <div class="map-box reveal">
+        <div class="map-frame">
+          <div class="map-head"><span class="t">Route Map · भारत</span><button id="autoplay-btn">▶ Play Journey</button></div>
+          <svg id="indiamap" viewBox="0 0 612 696" xmlns="http://www.w3.org/2000/svg">
+            <path class="in-outline" d="M0.0 327.8l2.7 0.9l2.1 -3.5l5.0 -2.4l-4.7 5.1l-0.1 2.5l1.4 0.1l-1.8 1.6l2.9 0.4l-0.3 3.2l4.6 4.3l9.2 5.5l10.6 2.2l1.9 -2.5l9.2 -2.8l2.8 1.2l-4.5 8.4l-4.0 -0.6l-3.5 3.6l-3.6 -0.9l0.0 2.3l-2.7 -1.7l-0.3 2.2l-5.1 1.7l-1.6 -1.2l0.6 -2.5l-2.7 -1.3l-2.7 3.8l6.2 8.4l18.2 18.9l7.1 5.7l8.0 3.6l12.9 -4.0l14.1 -7.3l-0.5 -1.4l4.5 -8.3l-1.1 -6.3l1.4 -4.6l2.4 -3.2l1.1 1.2l3.8 -1.3l-2.5 2.4l-0.9 4.4l1.3 3.3l-1.2 2.5l3.2 1.0l-1.3 2.4l1.2 1.9l-1.4 4.0l0.8 4.8l2.0 0.3l3.7 10.7l-5.2 16.6l3.0 11.4l0.3 9.7l1.3 -2.3l1.6 0.5l-1.9 6.1l2.3 8.5l-0.7 2.1l6.3 19.5l-0.9 0.8l2.1 4.8l0.6 12.4l2.9 10.0l4.3 5.9l2.6 8.1l2.3 1.7l0.4 5.4l3.9 4.2l-0.0 2.0l3.6 1.9l7.1 18.4l4.5 21.8l8.0 18.2l1.3 0.0l5.7 6.8l4.1 7.1l17.0 52.2l9.0 11.0l7.1 5.6l4.9 0.9l10.8 -6.2l1.3 -2.7l-0.5 -3.3l2.6 -2.0l-1.4 -1.0l0.1 -1.9l5.0 -4.8l11.5 -3.5l4.9 -0.1l5.2 2.5l-2.7 -3.6l-5.1 0.6l-2.6 -2.2l-0.2 -4.3l7.0 -9.2l-0.8 -2.2l1.5 -2.6l1.9 -1.1l10.2 0.4l-0.9 -22.6l-1.7 -4.6l2.6 -10.5l5.7 -8.8l3.9 -17.3l-4.5 -18.3l1.4 -10.1l-3.1 -10.6l4.7 -13.0l3.3 -2.8l5.2 -1.6l2.3 0.8l0.7 2.8l3.0 -0.4l6.4 -12.0l5.6 -1.6l3.8 1.1l12.3 -5.6l0.9 -6.2l-2.1 -1.5l2.4 -4.4l17.7 -10.4l7.6 -9.4l11.5 -6.4l16.5 -21.0l15.7 -10.6l14.7 -4.8l3.9 -5.6l4.8 -3.1l-0.9 -1.7l1.0 -2.5l5.4 -3.9l-4.7 -10.8l6.0 -7.1l14.2 -4.2l7.0 -6.3l1.0 1.3l-2.8 6.0l3.0 -0.1l1.3 1.9l4.3 -1.3l0.9 -2.7l0.8 1.7l-1.0 2.6l1.0 0.3l2.9 -6.9l1.4 6.2l3.5 0.4l-1.2 -1.2l0.8 -1.1l2.5 1.2l2.0 -1.0l-1.8 -5.6l1.8 -5.9l-2.3 -4.1l-1.2 -9.5l0.9 -2.0l-2.1 -3.0l0.2 -2.7l2.5 -2.7l-5.7 -0.9l1.6 -5.5l-1.4 0.1l-3.5 -3.9l0.6 -4.4l3.7 -3.1l-1.4 -3.9l0.7 -2.8l-8.4 -2.6l-6.5 -6.3l3.3 -4.6l-0.3 -1.8l1.4 -0.3l2.0 2.0l1.6 -1.8l1.3 -5.9l9.6 0.8l1.8 -2.9l-3.4 -1.5l-0.8 -3.8l-2.7 1.1l-2.3 -0.9l-6.3 -6.9l-3.2 0.2l-0.5 -2.8l2.0 -2.4l-0.1 -2.8l7.2 -5.1l-0.8 -2.4l-2.8 -0.9l0.5 -2.2l9.8 8.3l1.1 -1.3l1.5 1.1l3.0 -0.7l1.0 3.2l4.0 3.0l4.8 1.0l1.5 -2.2l-0.7 -2.4l2.8 0.4l2.5 5.3l-1.3 2.5l1.5 4.4l-1.0 7.7l12.9 3.5l17.1 -1.4l7.9 1.9l8.8 -1.5l7.4 3.7l1.7 3.2l-2.1 1.0l-3.3 -1.1l1.1 3.8l-2.8 6.9l-5.0 2.3l-0.4 4.1l-3.3 -2.1l0.1 2.0l-1.7 -1.6l-1.0 3.0l-5.1 -0.2l0.1 2.6l-3.0 1.5l-1.5 7.5l4.4 12.3l0.9 0.1l-0.7 -2.8l1.3 -1.7l3.2 6.8l4.8 -3.2l-1.2 -4.2l4.1 -4.6l-0.5 -5.0l2.5 1.3l1.7 -1.8l1.5 1.5l1.3 -1.1l2.3 10.0l-0.4 7.6l3.3 6.3l1.6 15.5l2.4 -3.7l3.0 2.0l0.9 2.4l0.6 -1.4l1.5 0.6l1.0 -4.8l2.0 0.4l1.1 -1.9l-2.4 -10.1l1.5 -4.9l-0.7 -2.7l3.4 0.7l2.0 -3.0l-0.5 -4.7l1.6 -7.7l-2.2 -9.1l1.6 -0.0l2.1 3.0l4.8 -1.4l1.5 1.8l2.9 -0.5l4.4 2.2l3.5 -11.1l8.2 -14.0l0.6 -4.5l-3.3 -2.0l0.8 -3.7l5.7 -4.3l3.1 -4.5l-0.6 -3.5l3.4 -3.9l-1.4 -0.9l0.3 -6.3l-1.3 -1.8l1.7 -3.7l5.7 -1.9l2.1 -2.9l4.2 -1.5l1.6 -3.0l2.7 -0.9l2.2 -3.4l4.1 -2.1l6.0 -0.2l4.3 -1.9l3.2 2.7l-0.1 1.6l5.7 2.1l-4.8 -8.3l-0.3 -3.9l7.4 -6.8l2.8 0.3l0.5 -3.0l-1.8 -1.7l1.5 -2.5l-6.4 -4.0l-2.2 1.2l-6.8 -3.5l-5.3 2.5l-2.5 -0.9l1.6 -2.1l-0.6 -1.5l5.7 -5.5l-2.8 -5.1l0.9 -2.2l-7.7 3.6l-0.2 -3.6l4.1 -2.2l1.0 -2.1l-3.2 0.4l-3.4 -5.4l-10.1 4.9l-3.3 5.4l-9.3 -3.3l-4.0 -0.0l-3.8 -4.2l-1.5 2.8l-2.6 0.2l-4.5 3.4l-6.0 9.6l-12.4 1.0l-3.2 4.8l0.7 2.4l-4.0 0.8l-0.2 1.4l-6.8 2.8l0.9 3.5l-3.5 3.6l-5.0 1.1l-2.4 -1.8l-6.2 3.3l-1.8 -2.2l-5.9 -1.1l2.0 2.0l-1.7 3.3l1.9 3.5l7.9 0.6l1.4 3.9l-1.4 3.1l1.7 3.8l-0.5 3.3l-4.7 -1.3l-3.6 2.5l-5.9 -0.7l-1.6 1.2l-5.0 -0.8l-8.0 1.2l-6.4 -3.2l-4.1 1.1l-1.4 2.3l-6.6 1.1l-9.6 -3.7l-5.2 1.3l-7.5 -8.0l3.1 -4.1l-2.3 -1.9l-0.9 -3.6l2.4 -7.2l-1.1 -3.6l-4.6 -2.8l-4.6 3.5l-5.7 0.8l1.5 4.0l-3.1 6.8l-1.1 9.2l2.8 2.8l1.3 4.9l-2.0 7.9l-1.8 1.2l-2.5 -2.4l-2.8 1.8l-3.1 0.7l-2.9 -1.3l-2.9 1.7l-4.8 -1.9l-0.6 -3.3l-7.3 3.7l-8.3 -4.5l-6.2 -1.1l-3.3 1.9l-2.8 -1.5l-0.1 -3.4l-2.1 -1.8l-6.3 3.0l-2.4 -0.3l-0.5 -2.5l-2.4 0.1l-5.2 -3.7l-3.5 -0.5l0.6 -4.1l-1.5 -2.9l-6.7 -1.1l-3.1 -3.1l-2.6 1.9l-3.3 0.2l-0.4 1.6l-4.9 -2.6l-4.7 -0.2l0.2 1.9l-1.8 1.5l-2.6 -2.8l-9.1 -1.3l-1.0 -5.1l-5.5 0.9l-7.9 -5.7l-3.9 1.5l-8.2 -5.1l-1.0 -2.1l-2.3 -0.1l-2.5 -4.6l-8.7 -3.8l-4.7 -4.0l-1.6 1.9l-2.7 -0.7l-6.1 -4.8l1.6 -6.3l3.2 -2.4l0.4 -2.6l-1.5 -2.7l3.4 -4.1l-0.7 -3.8l7.8 -6.1l3.4 -5.2l2.3 -0.8l-4.3 -1.6l-4.8 -4.1l-1.4 0.6l-6.1 -2.9l-0.1 -4.5l-6.4 -3.1l-1.3 -2.1l-2.4 -0.7l-3.4 1.4l-1.7 -2.2l-1.8 -0.1l-6.0 -9.7l-1.7 -0.8l-3.7 4.4l-3.3 -5.4l2.4 -2.6l-2.8 -4.4l1.6 -5.1l-3.7 -3.2l-0.0 -2.2l-2.7 -1.2l1.2 -3.8l-2.2 -3.4l6.4 -3.2l1.3 5.1l4.1 3.3l2.7 -0.7l2.0 -3.4l2.3 0.6l4.9 -3.0l-0.3 -3.8l-3.8 -5.6l1.2 -4.9l-6.7 -1.1l-3.3 -4.6l0.3 -3.7l2.9 -3.1l-3.4 -7.1l4.9 -2.4l5.5 0.7l2.9 -6.0l-1.4 -4.9l4.8 -0.8l1.0 -3.4l5.0 -2.5l4.7 -15.9l-0.3 -6.4l-3.8 -2.4l-2.5 -4.1l-3.5 1.4l-6.8 -1.7l-4.0 -3.6l-2.9 1.8l-1.0 3.2l-4.9 -1.8l-3.5 0.3l-6.9 3.0l-4.4 5.2l-10.2 2.7l-3.3 -0.4l-4.3 -6.4l-9.7 -2.0l-1.8 -3.5l0.3 -3.4l-2.3 -2.5l-2.7 -0.4l-4.1 -4.1l-12.7 -7.5l-7.5 -10.7l-1.6 -0.8l-6.9 2.0l-4.0 -2.3l-3.9 -0.1l-9.9 5.7l-6.3 -1.8l-0.8 1.2l2.6 3.3l-12.5 -0.6l-2.0 1.3l-3.1 5.6l-7.1 6.3l-1.3 8.8l0.8 1.2l4.2 -1.4l3.0 0.7l2.6 1.3l3.5 6.1l9.9 1.2l1.0 2.1l-1.9 2.1l0.3 3.1l7.4 4.5l-1.7 6.9l-5.9 1.2l-1.5 4.2l-5.0 2.7l0.8 12.0l2.2 4.4l-1.0 2.8l1.5 1.7l-0.3 14.5l3.2 3.7l3.2 0.1l9.6 5.9l6.4 -0.9l1.2 6.8l7.9 0.1l5.1 3.6l0.9 2.6l-2.4 3.3l-7.8 1.2l-1.5 2.3l-4.2 1.8l-1.7 3.5l1.7 4.4l-0.7 1.6l1.5 1.0l-2.7 4.6l0.6 6.7l-12.6 13.1l-1.3 2.3l1.8 4.4l-3.6 2.9l-8.3 3.1l-2.5 9.2l-6.9 12.6l-11.7 6.4l-4.2 9.7l-5.3 5.5l-0.9 4.0l-4.9 2.1l-8.1 0.7l-8.3 3.4l-2.6 -0.6l-4.0 -7.0l-4.1 0.3l-4.4 4.2l-3.0 6.6l-9.1 9.2l-1.5 9.8l6.4 3.7l7.4 1.1l-1.5 14.1l3.8 5.7l8.1 0.3l0.2 6.9l4.6 5.7l4.2 10.3l-2.0 3.6l0.2 2.3l2.2 1.2l-6.3 3.8l-3.2 -0.0l-1.7 -0.8l-0.1 -3.7l-9.5 3.0l-2.6 2.9l-5.6 -0.2l-2.6 -2.3l-12.4 1.1l-1.2 -1.0l-1.6 1.7l-1.0 -2.5l-1.1 0.3l-0.6 7.4l-8.1 -0.1l-3.1 3.3l0.5 3.7l-1.0 1.1ZM509.3 587.5l2.0 4.7l-1.6 1.6l2.3 0.7l-0.8 3.7l1.9 -0.5l1.4 -6.3l0.7 -5.1l-1.0 -1.5l4.2 -6.6l-1.7 -2.2l1.5 0.5l0.5 -1.2l0.5 -6.3l-1.3 -4.2l1.3 -0.6l2.3 -8.6l-1.3 -5.1l-2.3 0.8l-1.6 2.9l-1.8 12.2l-0.7 -3.1l-1.1 0.4l1.6 14.9l-4.9 9.0ZM533.2 687.9l0.2 2.5l3.4 5.3l2.5 -4.3l-1.3 -5.2l-1.6 -0.6l-3.2 2.3ZM506.4 610.3l0.2 5.3l2.7 0.4l1.8 -3.6l-0.8 -3.9l-1.2 -0.6l-2.6 2.3Z"/>
+            <path class="route-base" id="route-base"/>
+            <path class="route-done" id="route-done"/>
+            <g id="map-cities"></g>
+            <g id="map-train">
+              <g id="mt-inner" transform="scale(1.5) translate(-13,-4.5)">
+                <!-- Vande Bharat, side view: white body with tapered aerodynamic nose (right), navy window band, gold stripe, coach joints, wheels -->
+                <path d="M1 1.1 H18.6 C22.4 1.1 24.7 2.5 25.6 4.5 C24.7 6.5 22.4 7.9 18.6 7.9 H1 Q.4 7.9 .4 7.3 V1.7 Q.4 1.1 1 1.1 Z" fill="#FAFAF5" stroke="#143C5C" stroke-width=".5"/>
+                <path d="M2 2.2 H18.2 C20.6 2.2 22.2 2.9 23.2 3.9 L23.2 4.1 H2 Q1.6 4.1 1.6 3.7 V2.6 Q1.6 2.2 2 2.2 Z" fill="#1B4F72"/>
+                <rect x=".9" y="5" width="22.6" height="1.3" rx=".65" fill="#D4A843"/>
+                <path d="M9 1.3 V7.7 M17 1.3 V7.7" stroke="#143C5C" stroke-width=".4" opacity=".55"/>
+                <circle cx="24.6" cy="4.5" r=".55" fill="#E8C97A"/>
+                <circle cx="4" cy="8.2" r=".8" fill="#143C5C"/>
+                <circle cx="7" cy="8.2" r=".8" fill="#143C5C"/>
+                <circle cx="12" cy="8.2" r=".8" fill="#143C5C"/>
+                <circle cx="15" cy="8.2" r=".8" fill="#143C5C"/>
+                <circle cx="20" cy="8.2" r=".8" fill="#143C5C"/>
+              </g>
+            </g>
+          </svg>
+        </div>
+      </div>
+      <div class="st-wrap reveal">
+        <div class="st-card">
+          <div class="st-top">
+            <div class="st-no" id="st-no">Station 01 / 11</div>
+            <div class="st-city" id="st-city">Dahod</div>
+            <div class="st-meta" id="st-meta"></div>
+          </div>
+          <div class="st-progress"><i id="st-bar"></i></div>
+          <div class="st-body">
+            <ul class="st-roles" id="st-roles"></ul>
+            <p class="st-story" id="st-story"></p>
+            <div class="st-fill" aria-hidden="true"><svg viewBox="0 0 60 32" fill="none" stroke="currentColor" stroke-width="2"><rect x="8" y="8" width="34" height="14" rx="3"/><rect x="42" y="12" width="12" height="10" rx="2"/><circle cx="16" cy="26" r="3.5"/><circle cx="32" cy="26" r="3.5"/><circle cx="48" cy="26" r="3"/><path d="M8 15h34" stroke-width="1.2"/></svg></div>
+          </div>
+          <div class="st-nav">
+            <button class="st-btn" id="st-prev">← Previous</button>
+            <span class="st-count" id="st-count">01 / 11</span>
+            <button class="st-btn" id="st-next">Next →</button>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section id="achv">
+  <div class="wrap" style="padding-bottom:20px">
+    <div class="signboard reveal">
+      <div class="sign-plate"><span class="hindi">उपलब्धियाँ</span><span class="en">Achievements</span><span class="alt">The Consist · 5 Coaches</span></div>
+      <div class="sign-posts"><i></i><i></i></div>
+    </div>
+  </div>
+  <div class="coach-rail" id="coach-rail">
+    <div class="coach-track" id="coach-track"></div>
+    <button class="rail-btn" id="coach-prev" aria-label="Previous achievement">←</button>
+    <button class="rail-btn" id="coach-next" aria-label="Next achievement">→</button>
+  </div>
+  <div class="achv-hint" id="achv-hint">Drag · Swipe<span class="hint-arrows"> · or use the arrows</span></div>
+</section>
+
+<section id="expertise">
+  <div class="wrap">
+    <div class="signboard reveal">
+      <div class="sign-plate"><span class="hindi">विशेषज्ञता</span><span class="en">Expertise</span><span class="alt">Domains of Command</span></div>
+      <div class="sign-posts"><i></i><i></i></div>
+    </div>
+    <div class="exp-grid" id="exp-grid"></div>
+    <p class="mem-note reveal">Associate Member, <b>Institution of Engineers (India)</b> · Mechanical &amp; Metallurgy divisions</p>
+  </div>
+</section>
+
+<section id="gallery">
+  <div class="wrap">
+    <div class="signboard reveal">
+      <div class="sign-plate"><span class="hindi">दीर्घा</span><span class="en">Gallery</span><span class="alt">Scenes from the Line</span></div>
+      <div class="sign-posts"><i></i><i></i></div>
+    </div>
+    <div class="gal-grid" id="gal-grid"></div>
+    <p class="gal-note reveal">Photographs from years of service on the Indian Railways.</p>
+  </div>
+</section>
+
+<section id="contact">
+  <div class="wrap">
+    <div class="signboard reveal">
+      <div class="sign-plate"><span class="hindi">संपर्क</span><span class="en">Contact</span><span class="alt">All Signals Green</span></div>
+      <div class="sign-posts"><i></i><i></i></div>
+    </div>
+    <div class="con-grid">
+      <a class="con-card reveal" href="mailto:ashok2806@gmail.com">
+        <div class="con-ic"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6"><rect x="2.5" y="5" width="19" height="14" rx="2.5"/><path d="m3.5 7 8.5 6 8.5-6"/></svg></div>
+        <div class="k">Email</div><div class="v">ashok2806@gmail.com</div>
+      </a>
+      <a class="con-card reveal" href="https://www.linkedin.com/" target="_blank" rel="noopener">
+        <div class="con-ic"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6"><rect x="3" y="3" width="18" height="18" rx="3"/><path d="M8 10.5V17M8 7.2v.1M12 17v-3.8c0-1.3.9-2.2 2.2-2.2s2.3.9 2.3 2.2V17"/></svg></div>
+        <div class="k">LinkedIn</div><div class="v">Connect on LinkedIn</div>
+      </a>
+      <div class="con-card reveal">
+        <div class="con-ic"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6"><path d="M12 21s7-6.1 7-11a7 7 0 1 0-14 0c0 4.9 7 11 7 11Z"/><circle cx="12" cy="10" r="2.6"/></svg></div>
+        <div class="k">Location</div><div class="v">Lucknow, Uttar Pradesh</div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<footer>
+  <div class="term-buffer"><i></i><svg class="term-loco" viewBox="0 0 90 44" fill="none" stroke="currentColor" stroke-width="2.4" aria-hidden="true"><rect x="10" y="10" width="52" height="20" rx="4"/><path d="M62 14h14l6 8v8H62z"/><circle cx="22" cy="36" r="5"/><circle cx="44" cy="36" r="5"/><circle cx="70" cy="36" r="4.5"/><path d="M10 20h52" stroke-width="1.4"/><path d="M76 8v6" stroke-width="2"/></svg><i></i></div>
+  <div class="foot-wrap">
+    <div class="foot-mono">AKM</div>
+    <p class="foot-quote">“Every journey on Indian Railways ends at a terminus, but the line always continues.”</p>
+    <div class="foot-quote-sub">Terminus · Mumbai Churchgate · 30 June 2025</div>
+    <div class="foot-cycle">
+      <svg viewBox="0 0 44 26" fill="none" stroke="currentColor" stroke-width="1.6"><circle cx="9" cy="18" r="6.5"/><circle cx="33" cy="18" r="6.5"/><path d="M9 18 16 8h9l6 10M16 8l4 10h13M20 5h5"/></svg>
+      <span>He rode 20 km home on his bicycle after his farewell, the last of countless journeys in uniform.</span>
+    </div>
+    <div class="foot-rule"></div>
+    <div class="foot-base">
+      <span>© 2026 Ashok Kumar Misra</span>
+      <span class="mono" style="letter-spacing:.2em">DHD → BVC → ADI → KOTA → BRC → LKO → PRYJ → JHS → HJP → GKP → CCG</span>
+      <span>Made with pride for Indian Railways</span>
+    </div>
+  </div>
+</footer>
+
+<div id="lightbox"><button class="lb-x" aria-label="Close">✕</button><img src="" alt=""><div class="lb-cap"></div></div>
+
+<script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.5/gsap.min.js"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.5/ScrollTrigger.min.js"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.5/MotionPathPlugin.min.js"></script>
+<script>
+gsap.registerPlugin(ScrollTrigger, MotionPathPlugin);
+
+/* ================= DATA ================= */
+const JOURNEY=[
+ {city:"Dahod",st:"Gujarat",zone:"Western Railway",period:"1990 – 1991",coord:[120,340],lbl:[8,-8,"start"],
+  roles:["Assistant Works Manager (Repair)","Assistant Production Engineer","Production Engineer"],
+  story:"Where the journey began: periodical overhauling of steam locomotives and planning the transition to electric traction, rising to head the manufacturing shops and production control."},
+ {city:"Bhavnagar",st:"Gujarat",zone:"Western Railway",period:"1991 – 1994",coord:[72,366],lbl:[-6,14,"end"],
+  roles:["Divisional Mechanical Engineer (C&W)"],
+  story:"Ran coaching and freight shed maintenance and operations for the division for over two years on the Saurashtra coast."},
+ {city:"Ahmedabad",st:"Vatva · Gujarat",zone:"Western Railway",period:"1994 – 1997",coord:[92,329],lbl:[-8,-6,"end"],
+  roles:["Divisional Mechanical Engineer (Diesel)"],
+  story:"Three years keeping the diesel locomotive fleet at Vatva maintained and available for operations, day after day."},
+ {city:"Kota",st:"Rajasthan",zone:"Western Railway",period:"1997",coord:[146,283],lbl:[-8,-7,"end"],
+  roles:["Sr. EDPM & Dy. Chief Mechanical Engineer (R)"],
+  story:"Headed the Electronic Data Processing section and periodical overhauling of wagons, an early bridge between engineering and information systems."},
+ {city:"Vadodara",st:"Gujarat",zone:"Western Railway",period:"1997 – 2001",coord:[104,348],lbl:[10,10,"start"],
+  roles:["Sr. Divisional Mechanical Engineer"],
+  story:"In charge of coaching, freight and locomotive operation and maintenance; establishment officer for nearly 500 staff."},
+ {city:"Lucknow",st:"Uttar Pradesh",zone:"RDSO & Northern Railway",period:"2001 – 2008",coord:[252,247],lbl:[-2,-10,"end"],
+  roles:["Director / Motive Power, RDSO","Director (Spl.) & Secretary to Director General, RDSO","Dy. Chief Mechanical Engineer, Northern Railway"],
+  story:"Seven years at the apex of railway R&D, developing electrical control systems and speedometers for diesel locomotives, then serving as Secretary to the Director General of RDSO."},
+ {city:"Prayagraj",st:"Uttar Pradesh",zone:"North Central Railway",period:"2008 – 2016",coord:[274,280],lbl:[10,5,"start"],
+  roles:["Chief Rolling Stock Engineer","Addl. Divisional Railway Manager","Chief Motive Power Engineer (Diesel)"],
+  story:"Eight years across three senior roles: rolling stock for the entire NCR system, divisional administration, and the diesel motive power of one of India's busiest corridors."},
+ {city:"Jhansi",st:"Uttar Pradesh",zone:"North Central Railway",period:"2016 – 2019",coord:[203,278],lbl:[-9,12,"end"],
+  roles:["Divisional Railway Manager"],
+  story:"Led about 100 officers and 16,500 staff as DRM, responsible for the safe transportation of passengers and goods across the historic Jhansi Division."},
+ {city:"Hajipur",st:"Bihar",zone:"East Central Railway",period:"2019 – 2022",coord:[346,274],lbl:[10,3,"start"],
+  roles:["Chief Workshop Engineer","Principal Chief Mechanical Engineer"],
+  story:"Headed the Mechanical Department of ECR through a period when freight loading grew 12% and sick-line productivity rose 176%."},
+ {city:"Gorakhpur",st:"Uttar Pradesh",zone:"North Eastern Railway",period:"2022",coord:[304,254],lbl:[6,-9,"start"],
+  roles:["Additional General Manager, entrusted with charge of General Manager"],
+  story:"Led the entire NER administration, a multidisciplinary team of officers and nearly 50,000 staff, with full statutory, administrative and financial powers."},
+ {city:"Mumbai",st:"Maharashtra",zone:"Western Railway",period:"2022 – 2025",coord:[98,432],lbl:[-9,5,"end"],
+  roles:["General Manager, Western Railway","Additional charge: General Manager, Central Railway (Dec 2022)"],
+  story:"The terminus. From Churchgate, led 1,100+ officers across six divisions and six workshops, and a workforce of nearly 95,000. The culmination of 37 years of service."}
+];
+const ACHV=[
+ {t:"Vande Bharat Cattle-Fencing Programme",m:"565 km",s:"11 months · 69% fewer incidents",
+  p:"Adapted the NHAI W-beam design for railways (16 m panels, nine concrete-founded posts, 150 mm induction gaps) and executed 565 route-km of fencing in a record 11 months, cutting cattle run-overs by 69% on the Vande Bharat corridor."},
+ {t:"Dahod 9000 HP Locomotive Factory",m:"₹20,000 Cr",s:"160 locomotives per annum",
+  p:"A poetic full circle: building the infrastructure for the IR–Siemens electric locomotive plant at Dahod, where his career began. 56.34 acres, 4,500 m of track, foundation stone laid by the Prime Minister in April 2022."},
+ {t:"e-Pariksha Computer-Based Testing",m:"1,24,190",s:"candidates · 22 days · 13 centres",
+  p:"Championed Western Railway's in-house CBT platform, transforming recruitment transparency: 2,195 departmental candidates tested and 950+ appointed since 2022, then scaled to Railway Recruitment Board exams, 1,24,190 candidates across 13 centres in 22 days, executed flawlessly by 444 officers and staff."},
+ {t:"Third-Party Inspection Digitisation",m:"₹400 Cr",s:"saved annually · 90,000 → 300 bills",
+  p:"Instituted third-party inspection of goods with WR as nodal agency for all of Indian Railways. Fully digitised the supply chain with zero manual bill-passing, collapsing 90,000 monthly bills to about 300."},
+ {t:"ECR Freight Transformation",m:"167 MT",s:"freight loading · 176% sick-line productivity",
+  p:"As PCME East Central Railway (2019–22), freight loading rose from 149.34 MT to 167.03 MT; sick-line productivity climbed from 40,903 to 113,000+ wagons and wagon speeds rose to 100 km/h empty, 75 km/h loaded."}
+];
+const EXPERTISE=[
+ {n:"Railway General Management",ic:'<path d="M12 3l7 3v5c0 4.5-3 7.6-7 10-4-2.4-7-5.5-7-10V6l7-3Z"/><circle cx="12" cy="11" r="2.6"/>'},
+ {n:"Train Operations",ic:'<rect x="9" y="3" width="6" height="12" rx="3"/><circle cx="12" cy="7" r="1.4"/><circle cx="12" cy="11.4" r="1.4"/><path d="M12 15v6M8 21h8"/>'},
+ {n:"Rolling Stock Engineering",ic:'<rect x="3" y="6.5" width="18" height="9.5" rx="1.5"/><path d="M3 10h18"/><circle cx="8" cy="18.8" r="1.7"/><circle cx="16" cy="18.8" r="1.7"/>'},
+ {n:"Diesel & Electric Traction",ic:'<path d="M13 2 5 13h5l-2 9 8-12h-5l2-8Z"/>'},
+ {n:"Workshop Management",ic:'<path d="M14.5 6.5a4 4 0 0 0-5.6 4.9L3 17.3V21h3.7l5.9-5.9a4 4 0 0 0 4.9-5.6L14 13l-3-3 3.5-3.5Z"/>'},
+ {n:"Mega-Project Execution",ic:'<path d="M3 21h18M5 21V8l7-4 7 4v13M9 21v-6h6v6"/>'},
+ {n:"Freight Operations",ic:'<rect x="3" y="12.5" width="8" height="7" rx="1"/><rect x="13" y="12.5" width="8" height="7" rx="1"/><rect x="8" y="4.5" width="8" height="7" rx="1"/>'},
+ {n:"Digital Transformation",ic:'<rect x="7" y="7" width="10" height="10" rx="2"/><path d="M9 2v3M15 2v3M9 19v3M15 19v3M2 9h3M2 15h3M19 9h3M19 15h3"/>'},
+ {n:"Financial & Budgetary Control",ic:'<path d="M7 4h10M7 8h10M7 4c5.5 0 7.5 1.5 7.5 4S12.5 12 9.5 12H7l7.5 8"/>'},
+ {n:"Public Administration",ic:'<path d="M3 21h18M5 18V9.5M9.5 18V9.5M14.5 18V9.5M19 18V9.5M3 9.5 12 3l9 6.5H3Z"/>'}
+];
+const GBASE="assets/photos/";
+const GALLERY=[
+ {img:GBASE+"01_2025-06-21_yoga-day-event.jpg",tag:"21 Jun 2025",cap:"Presiding over International Day of Yoga celebrations at Utsav Hall, Badhwar Park, Mumbai, on the theme 'Yoga for One Earth, One Health'"},
+ {img:GBASE+"02_2025-04-15_ambedkar-tribute.jpg",tag:"15 Apr 2025",cap:"Offering floral tribute on the birth anniversary of Bharat Ratna Dr. B.R. Ambedkar at WR Headquarters, Churchgate"},
+ {img:GBASE+"03_2025-03-18_mumbai-suburban-inspection.jpg",tag:"18 Mar 2025",cap:"Inspection between Mumbai Central and Borivali stations of WR's Mumbai suburban section"},
+ {img:GBASE+"04_2025-02-11_navsari-safety-inspection.jpg",tag:"11 Feb 2025",cap:"Safety inspection at Navsari station, Mumbai Division"},
+ {img:GBASE+"05_2025-01-11_surat-vadodara-inspection.jpg",tag:"10 Jan 2025",cap:"Safety inspection of the Surat-Vadodara section with DRM Vadodara and senior officers"},
+ {img:GBASE+"06_2024-12-24_bhuj-station-inspection.jpg",tag:"24 Dec 2024",cap:"Inspection at Bhuj station, reviewing the station building, circulating area, platforms and foot over bridges"},
+ {img:GBASE+"07_2024-12-18_civil-defence-day.jpg",tag:"18 Dec 2024",cap:"Presiding over Annual Civil Defence Day celebrations at Western Railway Sports Ground, Mahalaxmi"},
+ {img:GBASE+"08_2024-11-14_churchgate-andheri-cab-inspection.jpg",tag:"14 Nov 2024",cap:"Surprise motorman-cab inspection between Churchgate and Andheri stations of the Mumbai suburban section"},
+ {img:GBASE+"09_2024-11-04_foundation-day-commemorative-coin.jpg",tag:"4 Nov 2024",cap:"Releasing a commemorative coin of the heritage WR Headquarters building on the eve of Western Railway's 74th Foundation Day"},
+ {img:GBASE+"10_2024-08-26_ups-press-conference.jpg",tag:"26 Aug 2024",cap:"Addressing the media on the Unified Pension Scheme at a press conference, WR Headquarters, Churchgate"},
+ {img:GBASE+"11_2024-07-30_amrit-bharat-station-review.jpg",tag:"30 Jul 2024",cap:"Reviewing redevelopment plans for Umbergaon Road and Sanjaan stations under the Amrit Bharat Station Scheme"},
+ {img:GBASE+"12_2024-07-17_virar-carshed-inspection.jpg",tag:"17 Jul 2024",cap:"Inspecting Virar Carshed and reviewing monsoon preparedness of EMU rakes"},
+ {img:GBASE+"13_2024-06-01_tihi-tunnel-inspection.jpg",tag:"1 Jun 2024",cap:"Inspecting Tihi Tunnel and ongoing works in the Dhar area, Ratlam Division"},
+ {img:GBASE+"14_2024-04-17_book-launch-rail-week.jpg",tag:"16 Apr 2024",cap:"Unveiling 'The Lines of Prosperity' at the 69th Rail Week function"},
+ {img:GBASE+"15_2024-04-05_nabh-certificate-jrh.jpg",tag:"5 Apr 2024",cap:"Unveiling the NABH certificate at Jagjivan Ram Hospital, the first Indian Railways hospital to achieve the accreditation"},
+ {img:GBASE+"16_2024-03-01_blood-donation-camp.jpg",tag:"1 Mar 2024",cap:"Inaugurating a blood donation camp organised by Western Railway employees"},
+ {img:GBASE+"17_2024-02-08_parul-chaudhary-felicitation.jpg",tag:"8 Feb 2024",cap:"Felicitating WR's star athlete and Arjuna Awardee Ms. Parul Chaudhary"},
+ {img:GBASE+"18_2024-01-24_safety-awards-employees.jpg",tag:"24 Jan 2024",cap:"Presenting Safety Awards to 19 WR employees for alertness in averting accidents"},
+ {img:GBASE+"19_2024-01-21_tata-mumbai-marathon.jpg",tag:"21 Jan 2024",cap:"Participating in the 10 km run at Tata Mumbai Marathon 2024"},
+ {img:GBASE+"20_2024-01-11_railway-minister-pavilion-visit.jpg",tag:"11 Jan 2024",cap:"Accompanying Hon'ble Railway Minister Shri Ashwini Vaishnaw at the Indian Railways Pavilion set up by Western Railway"},
+ {img:GBASE+"21_2024-01-07_125th-anniversary-exhibition.jpg",tag:"7 Jan 2024",cap:"Inaugurating the 125th Anniversary Exhibition of Western Railway's heritage headquarters"},
+ {img:GBASE+"22_2024-01-05_coffee-table-book-release.jpg",tag:"5 Jan 2024",cap:"Releasing the coffee table book '125 Years of a Timeless Legacy' with AGM Shri Prakash Butani"},
+ {img:GBASE+"23_2023-12-27_sabarmati-station-inspection.jpg",tag:"27 Dec 2023",cap:"Inspecting Palanpur, Mahesana and Sabarmati stations of Ahmedabad Division and reviewing Sabarmati redevelopment work"}
+];
+
+/* ================= HELPERS ================= */
+const $=(s,c=document)=>c.querySelector(s), $$=(s,c=document)=>[...c.querySelectorAll(s)];
+function catmullPath(pts,k=1){ // pts: [[x,y],...] -> smooth cubic bezier path string
+  if(pts.length<2)return"";
+  let d=`M ${pts[0][0]},${pts[0][1]}`;
+  for(let i=0;i<pts.length-1;i++){
+    const p0=pts[Math.max(0,i-1)],p1=pts[i],p2=pts[i+1],p3=pts[Math.min(pts.length-1,i+2)];
+    const c1=[p1[0]+(p2[0]-p0[0])/6*k, p1[1]+(p2[1]-p0[1])/6*k];
+    const c2=[p2[0]-(p3[0]-p1[0])/6*k, p2[1]-(p3[1]-p1[1])/6*k];
+    d+=` C ${c1[0].toFixed(1)},${c1[1].toFixed(1)} ${c2[0].toFixed(1)},${c2[1].toFixed(1)} ${p2[0]},${p2[1]}`;
+  }
+  return d;
+}
+function segPath(i){ // bezier segment between city i and i+1 (matches catmullPath geometry)
+  const pts=JOURNEY.map(j=>j.coord);
+  const p0=pts[Math.max(0,i-1)],p1=pts[i],p2=pts[i+1],p3=pts[Math.min(pts.length-1,i+2)];
+  const c1=[p1[0]+(p2[0]-p0[0])/6, p1[1]+(p2[1]-p0[1])/6];
+  const c2=[p2[0]-(p3[0]-p1[0])/6, p2[1]-(p3[1]-p1[1])/6];
+  return `M ${p1[0]},${p1[1]} C ${c1[0]},${c1[1]} ${c2[0]},${c2[1]} ${p2[0]},${p2[1]}`;
+}
+
+/* ================= PRELOADER + HERO ================= */
+window.addEventListener("load",()=>{
+  $("#preloader").classList.add("done");
+  gsap.to("#hero .reveal",{opacity:1,y:0,duration:1.1,ease:"power3.out",stagger:.12,delay:.25});
+  startCounters();
+  requestAnimationFrame(()=>{buildTrack();ScrollTrigger.refresh();});
+});
+
+/* ================= NAV ================= */
+const nav=$("#nav");let lastY=0;
+window.addEventListener("scroll",()=>{
+  const y=scrollY;
+  nav.classList.toggle("scrolled",y>40);
+  nav.classList.toggle("on-hero",y<innerHeight-120);
+  nav.classList.toggle("hidden",y>lastY&&y>420&&!$("#navlinks").classList.contains("open"));
+  lastY=y;
+},{passive:true});
+$("#burger").addEventListener("click",()=>{$("#burger").classList.toggle("open");$("#navlinks").classList.toggle("open");});
+$$("#navlinks a").forEach(a=>a.addEventListener("click",()=>{$("#burger").classList.remove("open");$("#navlinks").classList.remove("open");}));
+
+/* ================= COUNTERS ================= */
+function startCounters(){
+  $$(".stat .num").forEach(el=>{
+    const to=+el.dataset.to,suf=el.dataset.suf||"",pre=el.dataset.pre||"",indian=el.dataset.in;
+    const o={v:0};
+    gsap.to(o,{v:to,duration:2.2,ease:"power2.out",delay:.7,onUpdate(){
+      const n=Math.round(o.v);
+      el.textContent=pre+(indian?n.toLocaleString("en-IN"):n)+suf;
+    }});
+  });
+}
+
+/* ================= SCROLL REVEALS ================= */
+$$(".reveal").forEach(el=>{
+  if(el.closest("#hero"))return;
+  gsap.to(el,{opacity:1,y:0,duration:1.05,ease:"power3.out",
+    scrollTrigger:{trigger:el,start:"top 86%"}});
+});
+
+/* ================= GOLDEN TRACK ================= */
+let trackTriggers=[];
+function buildTrack(){
+  if(innerWidth<960)return;
+  trackTriggers.forEach(t=>{t.animation&&t.animation.kill();t.kill();});trackTriggers=[];
+  const svg=$("#track-svg"),layer=$("#track-layer"),lsvg=$("#loco-svg"),llayer=$("#loco-layer");
+  const H=document.documentElement.scrollHeight,W=innerWidth;
+  layer.style.height=H+"px";llayer.style.height=H+"px";
+  [svg,lsvg].forEach(s=>{
+    s.setAttribute("viewBox",`0 0 ${W} ${H}`);
+    s.setAttribute("width",W);s.setAttribute("height",H);
+  });
+  /* Path geometry, hand-built beziers: the line starts BELOW the hero
+     departures board, hugs the page margins beside each section's content,
+     and crosses the page only inside the whitespace bands between sections.
+     Control points never leave the [m, W-m] corridor, so the locomotive can
+     never overshoot the margins and slip off-screen. */
+  const secs=["#about","#journey","#achv","#expertise","#gallery","#contact"].map(s=>$(s));
+  const m=Math.max(84,W*.055);
+  const cx=W*.5;
+  const startY=secs[0].offsetTop+16;
+  let d=`M ${cx},${startY}`;
+  let px=cx,py=startY;
+  secs.forEach((el,i)=>{
+    const x=i%2===0?W-m:m;
+    const yA=el.offsetTop+(i===0?86:30);
+    const yB=el.offsetTop+el.offsetHeight-44;
+    const dc=Math.max(36,(yA-py)*.55);
+    d+=` C ${px},${py+dc} ${x},${yA-dc} ${x},${yA}`; /* sweep across whitespace */
+    d+=` L ${x},${yB}`;                               /* straight run beside content */
+    px=x;py=yB;
+  });
+  const foot=$("footer");
+  const endY=foot.offsetTop+46;
+  const de=Math.max(36,(endY-py)*.55);
+  d+=` C ${px},${py+de} ${cx},${endY-de} ${cx},${endY}`;
+  ["#trk-bed","#trk-sleeper","#trk-rail","#trk-rail-i","#trk-gold"].forEach(id=>$(id).setAttribute("d",d));
+  const gold=$("#trk-gold"),len=gold.getTotalLength();
+  gold.style.strokeDasharray=len;gold.style.strokeDashoffset=len;
+  /* The locomotive is parameterized by VIEWPORT Y, not path length. Path y
+     is monotonic top-to-bottom, so for a target y (a fixed anchor line ~62%
+     down the viewport) we binary-search the matching path length. Horizontal
+     sweeps then cost zero scroll: the loco glides across them smoothly via
+     the ticker's lerp instead of teleporting, and it can never outrun the
+     viewport or vanish above/below it. The gold rail is revealed from the
+     same smoothed length, so the train always rides visible track. */
+  const NPTS=1400,pts=new Array(NPTS+1);
+  for(let i=0;i<=NPTS;i++){const l=len*i/NPTS;const p=gold.getPointAtLength(l);pts[i]={l,y:p.y};}
+  function lenAtY(y){
+    if(y<=pts[0].y)return 0;
+    if(y>=pts[NPTS].y)return len;
+    let lo=0,hi=NPTS;
+    while(hi-lo>1){const mid=(lo+hi)>>1;(pts[mid].y<y)?lo=mid:hi=mid;}
+    const a=pts[lo],b=pts[hi];
+    return a.l+(b.l-a.l)*((y-a.y)/Math.max(1e-6,b.y-a.y));
+  }
+  const glyph=$("#loco-glyph"),inner=$("#loco-inner");
+  let curL=lenAtY(scrollY+innerHeight*.62);
+  if(window._locoTick)gsap.ticker.remove(window._locoTick);
+  const tick=()=>{
+    const T=lenAtY(scrollY+innerHeight*.62);
+    curL+=(T-curL)*.14;
+    if(Math.abs(T-curL)<.05)curL=T;
+    const p=gold.getPointAtLength(curL);
+    const p0=gold.getPointAtLength(Math.max(0,curL-2)),p1=gold.getPointAtLength(Math.min(len,curL+2));
+    const a=Math.atan2(p1.y-p0.y,p1.x-p0.x)*180/Math.PI;
+    glyph.setAttribute("transform",`translate(${p.x},${p.y}) rotate(${a})`);
+    inner.setAttribute("transform",`translate(-32,-16)${(a>100||a<-100)?" scale(1,-1) translate(0,-30)":""}`);
+    gold.style.strokeDashoffset=Math.max(0,len-Math.min(len,curL+40));
+  };
+  window._locoTick=tick;gsap.ticker.add(tick);tick();
+}
+let rsT;window.addEventListener("resize",()=>{clearTimeout(rsT);rsT=setTimeout(()=>{buildTrack();lockCardHeight();ScrollTrigger.refresh();},350);});
+if(document.fonts&&document.fonts.ready)document.fonts.ready.then(()=>{buildTrack();lockCardHeight();ScrollTrigger.refresh();});
+
+/* ================= INDIA MAP JOURNEY ================= */
+const mapSvg=$("#indiamap"),cityG=$("#map-cities");
+const NS="http://www.w3.org/2000/svg";
+$("#route-base").setAttribute("d",catmullPath(JOURNEY.map(j=>j.coord)));
+const segEls=JOURNEY.slice(0,-1).map((_,i)=>{
+  const p=document.createElementNS(NS,"path");
+  p.setAttribute("d",segPath(i));p.setAttribute("fill","none");p.style.visibility="hidden";
+  mapSvg.appendChild(p);return p;
+});
+JOURNEY.forEach((j,i)=>{
+  const [x,y]=j.coord,[dx,dy,anch]=j.lbl;
+  const halo=document.createElementNS(NS,"circle");
+  halo.setAttribute("cx",x);halo.setAttribute("cy",y);halo.setAttribute("r",6);halo.setAttribute("class","city-halo");halo.id="halo-"+i;
+  const dot=document.createElementNS(NS,"circle");
+  dot.setAttribute("cx",x);dot.setAttribute("cy",y);dot.setAttribute("r",4.4);dot.setAttribute("class","city-dot");dot.id="dot-"+i;
+  dot.style.pointerEvents="auto";
+  dot.addEventListener("click",()=>goStation(i,true));
+  const t=document.createElementNS(NS,"text");
+  t.setAttribute("x",x+dx);t.setAttribute("y",y+dy+(dy>0?6:0));t.setAttribute("text-anchor",anch);
+  t.setAttribute("class","city-lbl");t.id="lbl-"+i;t.textContent=j.city;
+  cityG.append(halo,dot,t);
+});
+let cur=0,animating=false,autoTimer=null;
+const train=$("#map-train");
+function renderCard(i){
+  $("#st-no").textContent=`Station ${String(i+1).padStart(2,"0")} / ${JOURNEY.length}`;
+  $("#st-city").textContent=JOURNEY[i].city;
+  $("#st-meta").innerHTML=`<span class="chip solid">${JOURNEY[i].period}</span><span class="chip">${JOURNEY[i].zone}</span><span class="chip">${JOURNEY[i].st}</span>`;
+  $("#st-roles").innerHTML=JOURNEY[i].roles.map(r=>`<li>${r}</li>`).join("");
+  $("#st-story").textContent=JOURNEY[i].story;
+  $("#st-count").textContent=`${String(i+1).padStart(2,"0")} / ${JOURNEY.length}`;
+  $("#st-bar").style.width=((i)/(JOURNEY.length-1)*100)+"%";
+  $("#st-prev").disabled=i===0;$("#st-next").disabled=i===JOURNEY.length-1;
+  gsap.fromTo(".st-body",{opacity:0,y:14},{opacity:1,y:0,duration:.55,ease:"power2.out"});
+  gsap.fromTo(".st-top",{opacity:.5},{opacity:1,duration:.4});
+}
+function paintMap(i){
+  let done="";for(let s=0;s<i;s++)done+=(done?" ":"")+segPath(s);
+  $("#route-done").setAttribute("d",done||"M 0,0");
+  JOURNEY.forEach((_,k)=>{
+    $("#dot-"+k).classList.toggle("visited",k<i);
+    $("#dot-"+k).classList.toggle("active",k===i);
+    $("#lbl-"+k).classList.toggle("active",k===i);
+  });
+  const h=$("#halo-"+i);
+  gsap.fromTo(h,{attr:{r:6},opacity:.9},{attr:{r:16},opacity:0,duration:1.1,ease:"power2.out"});
+}
+function placeTrain(i){
+  const [x,y]=JOURNEY[i].coord;
+  gsap.set(train,{x,y,rotation:0});
+}
+function goStation(i,user){
+  if(animating||i===cur||i<0||i>=JOURNEY.length)return;
+  if(user)stopAuto();
+  const from=cur;cur=i;animating=true;
+  renderCard(i);
+  // travel along segments sequentially
+  const dir=i>from?1:-1;
+  const tl=gsap.timeline({onComplete(){animating=false;paintMap(i);}});
+  let step=from;
+  const mtInner=$("#mt-inner");
+  while(step!==i){
+    const s=dir>0?step:step-1;
+    /* face the side-view trainset toward its direction of travel */
+    const A=JOURNEY[s].coord,B=JOURNEY[s+1].coord;
+    const dx=dir>0?B[0]-A[0]:A[0]-B[0];
+    tl.add(()=>mtInner.setAttribute("transform",(dx<0?"scale(-1.5,1.5)":"scale(1.5)")+" translate(-13,-4.5)"));
+    tl.to(train,{duration:.7,ease:"power1.inOut",
+      motionPath:{path:segEls[s],align:segEls[s],alignOrigin:[.5,.5],autoRotate:false,start:dir>0?0:1,end:dir>0?1:0}},">-0.05");
+    step+=dir;
+  }
+  tl.eventCallback("onUpdate",null);
+  paintMap(from); // keep old paint until arrival; halo on arrival:
+  tl.add(()=>paintMap(i));
+}
+$("#st-prev").addEventListener("click",()=>goStation(cur-1,true));
+$("#st-next").addEventListener("click",()=>goStation(cur+1,true));
+function stopAuto(){if(autoTimer){clearInterval(autoTimer);autoTimer=null;$("#autoplay-btn").classList.remove("playing");$("#autoplay-btn").textContent="▶ Play Journey";}}
+$("#autoplay-btn").addEventListener("click",()=>{
+  if(autoTimer){stopAuto();return;}
+  $("#autoplay-btn").classList.add("playing");$("#autoplay-btn").textContent="◼ Stop";
+  if(cur===JOURNEY.length-1)goStation(0,false);
+  autoTimer=setInterval(()=>{
+    if(cur===JOURNEY.length-1){stopAuto();return;}
+    if(!animating)goStation(cur+1,false);
+  },2600);
+});
+/* swipe on card (mobile) */
+(function(){
+  let sx=null;const el=$(".st-card");
+  el.addEventListener("touchstart",e=>sx=e.touches[0].clientX,{passive:true});
+  el.addEventListener("touchend",e=>{
+    if(sx===null)return;const dx=e.changedTouches[0].clientX-sx;
+    if(Math.abs(dx)>48)goStation(cur+(dx<0?1:-1),true);
+    sx=null;
+  },{passive:true});
+})();
+/* Lock the card body/header heights to the tallest station so the
+   prev/next buttons never move as content changes. */
+function lockCardHeight(){
+  const body=$(".st-body"),top=$(".st-top");
+  body.style.minHeight="";top.style.minHeight="";
+  const keep=cur;let maxB=0,maxT=0;
+  JOURNEY.forEach((j,i)=>{
+    $("#st-city").textContent=j.city;
+    $("#st-meta").innerHTML=`<span class="chip solid">${j.period}</span><span class="chip">${j.zone}</span><span class="chip">${j.st}</span>`;
+    $("#st-roles").innerHTML=j.roles.map(r=>`<li>${r}</li>`).join("");
+    $("#st-story").textContent=j.story;
+    maxB=Math.max(maxB,body.offsetHeight);
+    maxT=Math.max(maxT,top.offsetHeight);
+  });
+  body.style.minHeight=maxB+"px";
+  top.style.minHeight=maxT+"px";
+  $("#st-city").textContent=JOURNEY[keep].city;
+  $("#st-meta").innerHTML=`<span class="chip solid">${JOURNEY[keep].period}</span><span class="chip">${JOURNEY[keep].zone}</span><span class="chip">${JOURNEY[keep].st}</span>`;
+  $("#st-roles").innerHTML=JOURNEY[keep].roles.map(r=>`<li>${r}</li>`).join("");
+  $("#st-story").textContent=JOURNEY[keep].story;
+}
+renderCard(0);paintMap(0);placeTrain(0);lockCardHeight();
+
+/* ================= ACHIEVEMENT COACHES ================= */
+const track=$("#coach-track");
+ACHV.forEach((a,i)=>{
+  const c=document.createElement("article");c.className="coach";
+  c.innerHTML=`<div class="coach-head"><span class="coach-no">COACH ${String(i+1).padStart(2,"0")} · AKM-${1986+i}</span></div>
+  <h3>${a.t}</h3><div class="metric">${a.m}</div><div class="sub">${a.s}</div><p>${a.p}</p>
+  <div class="coach-wheels"><i></i><i></i></div>`;
+  track.appendChild(c);
+  if(i<ACHV.length-1){const k=document.createElement("div");k.className="coupler";track.appendChild(k);}
+});
+/* Free carousel: drag, swipe, arrow buttons, gentle auto-advance.
+   Normal vertical page scroll is never hijacked. */
+function setupCoachRail(){
+  const rail=$("#coach-rail");
+  const step=()=>{const c=$(".coach");return c?c.offsetWidth+26:420;};
+  const maxScroll=()=>track.scrollWidth-track.clientWidth;
+  $("#coach-prev").addEventListener("click",()=>{pause();track.scrollBy({left:-step(),behavior:"smooth"});});
+  $("#coach-next").addEventListener("click",()=>{pause();track.scrollBy({left:step(),behavior:"smooth"});});
+  /* pointer drag (desktop) */
+  let down=false,startX=0,startL=0,moved=false;
+  track.addEventListener("pointerdown",e=>{
+    if(e.pointerType!=="mouse")return;
+    down=true;moved=false;startX=e.clientX;startL=track.scrollLeft;pause();
+  });
+  window.addEventListener("pointermove",e=>{
+    if(!down)return;
+    const dx=e.clientX-startX;
+    if(Math.abs(dx)>4){moved=true;track.classList.add("dragging");}
+    if(moved)track.scrollLeft=startL-dx;
+  });
+  window.addEventListener("pointerup",()=>{
+    if(!down)return;down=false;
+    setTimeout(()=>track.classList.remove("dragging"),40);
+  });
+  track.addEventListener("touchstart",pause,{passive:true});
+  track.addEventListener("wheel",pause,{passive:true});
+  /* gentle auto-advance while section is on screen */
+  let autoI=null,pausedUntil=0;
+  function pause(){pausedUntil=Date.now()+12000;}
+  function tick(){
+    if(matchMedia("(prefers-reduced-motion: reduce)").matches)return;
+    if(Date.now()<pausedUntil)return;
+    if(track.scrollLeft>=maxScroll()-8)track.scrollTo({left:0,behavior:"smooth"});
+    else track.scrollBy({left:step(),behavior:"smooth"});
+  }
+  if("IntersectionObserver"in window){
+    new IntersectionObserver(en=>{
+      if(en[0].isIntersecting){if(!autoI)autoI=setInterval(tick,4600);}
+      else if(autoI){clearInterval(autoI);autoI=null;}
+    },{threshold:.3}).observe(rail);
+  }
+}
+setupCoachRail();
+
+/* ================= EXPERTISE ================= */
+$("#exp-grid").innerHTML=EXPERTISE.map((e,i)=>`<div class="exp-card reveal"><div class="ic"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round">${e.ic}</svg></div><div class="no">${String(i+1).padStart(2,"0")}</div><div class="nm">${e.n}</div></div>`).join("");
+$$("#exp-grid .reveal").forEach((el,i)=>{
+  gsap.to(el,{opacity:1,y:0,duration:.9,ease:"power3.out",delay:(i%5)*.07,
+    scrollTrigger:{trigger:el,start:"top 90%"}});
+});
+
+/* ================= GALLERY ================= */
+$("#gal-grid").innerHTML=GALLERY.map((g,i)=>`<figure class="gal-item reveal" data-i="${i}"><img src="${g.img}" alt="${g.cap}" loading="lazy" onerror="this.closest('.gal-item').style.display='none'"><span class="tag">${g.tag}</span><figcaption class="cap">${g.cap}</figcaption></figure>`).join("");
+$$("#gal-grid .reveal").forEach(el=>gsap.to(el,{opacity:1,y:0,duration:1,ease:"power3.out",scrollTrigger:{trigger:el,start:"top 88%"}}));
+const lb=$("#lightbox");let lbI=0;
+function showLb(i){
+  lbI=(i+GALLERY.length)%GALLERY.length;
+  const g=GALLERY[lbI];
+  lb.querySelector("img").src=g.img;lb.querySelector(".lb-cap").textContent=g.cap;
+}
+$$(".gal-item").forEach(f=>f.addEventListener("click",()=>{
+  showLb(+f.dataset.i);
+  lb.classList.add("open");document.body.style.overflow="hidden";
+}));
+function closeLb(){lb.classList.remove("open");document.body.style.overflow="";}
+lb.addEventListener("click",e=>{if(e.target===lb||e.target.classList.contains("lb-x"))closeLb();});
+addEventListener("keydown",e=>{
+  if(e.key==="Escape")closeLb();
+  if(!lb.classList.contains("open"))return;
+  if(e.key==="ArrowRight")showLb(lbI+1);
+  if(e.key==="ArrowLeft")showLb(lbI-1);
+});
+</script>
+<script>
+/* safety net: if the GSAP CDN failed, dismiss the preloader and reveal content */
+setTimeout(function(){
+  if(!window.gsap||!window.ScrollTrigger){
+    var p=document.getElementById("preloader");
+    if(p){p.style.opacity=0;p.style.visibility="hidden";}
+    document.querySelectorAll(".reveal").forEach(function(e){e.style.opacity=1;e.style.transform="none";});
+  }
+},2500);
+</script>
+</body>
+</html>
