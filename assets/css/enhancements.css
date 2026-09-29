@@ -281,6 +281,7 @@ select:focus-visible{outline:2px solid var(--gold-l);outline-offset:4px}
 }
 @media(max-width:960px){
   .journey-guide{width:184px}
+  .foot-base{padding-bottom:76px}
   .journey-guide summary{padding:5px 11px 8px;line-height:1.45}
   .journey-guide summary small{position:absolute;width:1px;height:1px;margin:-1px;overflow:hidden;clip-path:inset(50%);white-space:nowrap}
   .mobile-rail{height:26px;margin-bottom:5px}
