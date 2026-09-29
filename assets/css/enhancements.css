@@ -222,8 +222,74 @@ html.train-dragging,html.train-dragging *{cursor:grabbing!important;user-select:
 .moving .fallback-steam,.travelling .mobile-steam{visibility:visible}
 
 @media(max-width:700px){
-  .signboard{margin-bottom:25px}.sign-plate{padding:12px 24px 11px;border-width:2px}
-  .sign-plate .en{font-size:26px}.sign-plate .alt{font-size:8px;letter-spacing:.23em}
+  .signboard{margin-bottom:25px}.sign-plate{max-width:100%;padding:12px 20px 11px;border-width:2px}
+  .sign-plate .en{font-size:clamp(23px,6.3vw,26px)}.sign-plate .alt{font-size:8px;letter-spacing:.23em}
   .sign-posts i{height:23px}
 }
 @media(max-width:960px){.journey-guide summary small::after{content:' · Tap for stops'}}
+
+/* Small details should remain as clear as the large station signs. */
+:root{--gold-ink:#85600d}
+.skip-link{position:fixed;z-index:250;left:16px;top:12px;padding:12px 20px;background:var(--navy-xd);color:var(--ivory);border:2px solid var(--gold);border-radius:6px;transform:translateY(-160%);text-decoration:none}
+.skip-link:focus{transform:none}
+#main-content:focus{outline:none}
+.nav-mono{text-decoration:none}
+nav:focus-within{transform:none}
+.no-motion-engine .reveal{opacity:1;transform:none}
+.kicker,.next-chapter small,.thought-meta,.swipe-controls b,.edu-card .yr{color:var(--gold-ink)}
+.reading-kicker,.collection-count{color:var(--gold-ink)}
+.reading-byline,.collection-author,.collection-intro>p,.collection-footer,.reading-end{color:#56636b}
+.sign-plate .alt,.coach-no,.stat .lbl{color:#fafaf5c7}
+.hero-rule span{color:#fafaf5d1}
+.foot-base{color:#fafaf5b8}
+.route-station text{fill:var(--gold-ink)}
+.con-grid{grid-template-columns:repeat(2,minmax(0,1fr));max-width:760px}
+.con-card:not(a):hover{transform:none;box-shadow:none}
+.station-picker{display:flex;flex-direction:column;gap:7px;margin:0 0 16px}
+.station-picker label{font:10px 'Space Mono',monospace;color:var(--gold-l);letter-spacing:.1em;text-transform:uppercase}
+.station-picker select{width:100%;min-height:44px;padding:10px 32px 10px 12px;font:13px 'DM Sans',sans-serif;border:1px solid #e8c97a77;border-radius:6px;background:#143c5c;color:#fafaf5;cursor:pointer}
+select:focus-visible{outline:2px solid var(--gold-l);outline-offset:4px}
+.map-head{flex-wrap:wrap;gap:12px}
+#autoplay-btn{min-height:40px}
+.st-city{font-weight:500}
+.city-dot:focus-visible{outline:none;stroke:#fff;stroke-width:6}
+.rail-btn:disabled{opacity:.3;cursor:default;box-shadow:none}
+@media(max-width:700px){
+  .exp-grid{grid-template-columns:repeat(2,minmax(0,1fr));gap:12px}
+  .exp-card{padding:18px 14px}
+  .exp-card .ic{width:34px;height:34px;margin-bottom:10px}
+  .exp-card .nm{font-size:14px;overflow-wrap:break-word}
+  .exp-card .no{color:var(--gold-ink)}
+  .coach-rail{padding-bottom:46px}
+  .coach-rail .rail-btn{display:flex;top:auto;bottom:0;transform:none;width:44px;height:44px}
+  #coach-prev{left:calc(50% - 52px)}
+  #coach-next{right:calc(50% - 52px)}
+}
+.achv-hint{display:flex;justify-content:center;align-items:center;gap:18px;padding:0 24px 28px}
+#coach-position{color:var(--gold-l);font:11px 'Space Mono',monospace;letter-spacing:.12em;white-space:nowrap}
+.coach-track:focus-visible{outline:2px solid var(--gold-l);outline-offset:-4px}
+.foot-cycle{gap:28px;max-width:670px;border:1px solid #e8c97a44;border-radius:14px;padding:26px;text-align:left;background:#fafaf506}
+.foot-cycle svg{width:76px;height:48px}
+.ride-copy{min-width:0}.ride-distance{display:block;color:var(--gold-l);font:48px/1 'Playfair Display',serif;margin-bottom:9px}.ride-distance small{font:16px 'Space Mono',monospace}
+.ride-date{display:block;color:var(--gold-l);font:10px/1.6 'Space Mono',monospace;letter-spacing:.06em;text-transform:uppercase}
+.ride-copy p{font:15px/1.8 'DM Sans',sans-serif;margin-top:12px;color:#fafaf5d1}
+@media(max-width:700px){
+  .hero-bg img{object-position:68% center}
+  .hero-veil{background:linear-gradient(90deg,#143c5cee 0%,#143c5caa 55%,#143c5c55),linear-gradient(0deg,#143c5ccc,transparent 65%)}
+  .con-grid{grid-template-columns:1fr;gap:14px}
+  .foot-cycle{gap:15px;padding:22px 18px;align-items:flex-start}.foot-cycle svg{width:42px;height:30px;margin-top:9px}.ride-distance{font-size:40px}
+}
+@media(max-width:960px){
+  .journey-guide{width:184px}
+  .journey-guide summary{padding:5px 11px 8px;line-height:1.45}
+  .journey-guide summary small{position:absolute;width:1px;height:1px;margin:-1px;overflow:hidden;clip-path:inset(50%);white-space:nowrap}
+  .mobile-rail{height:26px;margin-bottom:5px}
+  .mobile-loco{width:40px;height:27px;left:clamp(0px,calc(var(--read-progress,0%) - 20px),calc(100% - 40px))}
+  .journey-guide[open]{width:min(224px,calc(100vw - 24px))}
+  .journey-guide a{min-height:40px;align-items:center}
+}
+@media(max-width:380px){.map-head .t{font-size:10px}.map-head{gap:8px}.foot-cycle{display:block}.foot-cycle svg{margin:0 0 14px}}
+@media(prefers-reduced-motion:reduce){
+  .hero-badge .dot,.term-buffer i::before{animation:none}
+  .thought-card:hover,.collection-card:hover,.edu-card:hover,.con-card:hover{transform:none}
+}
