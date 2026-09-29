@@ -4,6 +4,7 @@
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <title>Ashok Kumar Misra | General Manager (Retd.), Western Railway</title>
+<script>try{if(sessionStorage.getItem('akm-visited'))document.documentElement.classList.add('returning-visitor');}catch{}</script>
 <meta name="description" content="The 37-year journey of Ashok Kumar Misra, IRSME (SCRA 1986), from the steam workshops of Dahod to General Manager, Western Railway.">
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
@@ -15,6 +16,7 @@
   --ivory:#FAFAF5; --ivory-w:#F5F3ED; --ink:#22303C; --mut:#5D6D7A;
   --ease:cubic-bezier(0.16,1,0.3,1);
   --pd: clamp(24px, 6vw, 96px);
+  --track-gutter: clamp(52px, 5vw, 72px);
 }
 *{margin:0;padding:0;box-sizing:border-box}
 html{scroll-behavior:smooth}
@@ -42,30 +44,6 @@ a{color:inherit}
 .pl-puff.p3{animation-delay:1.4s}
 @keyframes plpuff{0%{opacity:0;transform:translate(0,0) scale(.4)}15%{opacity:.85}100%{opacity:0;transform:translate(-14px,-22px) scale(1.5)}}
 .pl-cap{color:rgba(232,201,122,.9);font-size:12px;letter-spacing:.35em;text-transform:uppercase;font-family:'Space Mono',monospace}
-
-/* ---------- golden track layer ---------- */
-#track-layer,#loco-layer{position:absolute;top:0;left:0;width:100%;pointer-events:none}
-#track-layer{z-index:1}
-#loco-layer{z-index:1}
-#track-layer svg,#loco-layer svg{display:block;width:100%;height:100%;overflow:visible}
-.trk-bed{fill:none;stroke:rgba(184,134,11,.06);stroke-width:26;stroke-linecap:round}
-.trk-sleeper{fill:none;stroke:rgba(184,134,11,.20);stroke-width:18;stroke-dasharray:2.5 15}
-.trk-rail{fill:none;stroke:rgba(184,134,11,.28);stroke-width:5}
-.trk-rail-i{fill:none;stroke:rgba(250,250,245,.55);stroke-width:1.4}
-.trk-gold{fill:none;stroke:url(#trkGrad);stroke-width:4;stroke-linecap:round;filter:drop-shadow(0 0 9px rgba(212,168,67,.75))}
-#loco-glyph{filter:drop-shadow(0 0 7px rgba(212,168,67,.6)) drop-shadow(0 4px 10px rgba(13,43,66,.4))}
-.tk-beam{animation:beamflk 3.2s ease-in-out infinite}
-@keyframes beamflk{0%,100%{opacity:.4}50%{opacity:.62}}
-.tk-spark{fill:#E8C97A;opacity:0;animation:sparkle 1.9s ease-in-out infinite}
-.tk-spark.s2{animation-delay:.6s}
-.tk-spark.s3{animation-delay:1.2s}
-@keyframes sparkle{0%,100%{opacity:0;transform:scale(.4)}45%{opacity:.95;transform:scale(1.15)}}
-.tk-wheel{transform-box:fill-box;transform-origin:center;animation:plspin .9s linear infinite}
-.tk-puff{fill:rgba(93,109,122,.4);opacity:0;animation:tkpuff 2.4s ease-out infinite}
-.tk-puff.q2{animation-delay:.8s}
-.tk-puff.q3{animation-delay:1.6s}
-@keyframes tkpuff{0%{opacity:0;transform:translate(0,0) scale(.4)}14%{opacity:.8}100%{opacity:0;transform:translate(10px,-16px) scale(1.6)}}
-@media(max-width:960px){#track-layer,#loco-layer{display:none}}
 
 /* ---------- nav ---------- */
 nav{position:fixed;top:0;left:0;right:0;z-index:100;display:flex;align-items:center;justify-content:space-between;padding:18px var(--pd);transition:transform .5s var(--ease), background .4s, box-shadow .4s, padding .4s}
@@ -302,15 +280,24 @@ section{position:relative}
 #gallery{background:var(--ivory)}
 .gal-grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(260px,1fr));gap:20px}
 .gal-item{position:relative;border-radius:14px;overflow:hidden;cursor:pointer;aspect-ratio:4/3;background:var(--navy-d)}
+.gal-item[hidden]{display:none}
+.gal-open{position:absolute;inset:0;width:100%;height:100%;border:0;background:transparent;cursor:pointer;z-index:1;border-radius:inherit}
+.gal-open:focus-visible{outline:3px solid var(--gold);outline-offset:-5px}
 .gal-item img{width:100%;height:100%;object-fit:cover;transition:transform .8s var(--ease)}
-.gal-item:hover img{transform:scale(1.06)}
+.gal-item:hover img,.gal-item:focus-within img{transform:scale(1.06)}
 .gal-item .cap{position:absolute;left:0;right:0;bottom:0;padding:38px 20px 16px;background:linear-gradient(0deg,rgba(13,43,66,.85),transparent);color:var(--ivory);font-size:13px;letter-spacing:.05em;opacity:0;transform:translateY(8px);transition:.5s var(--ease)}
-.gal-item:hover .cap{opacity:1;transform:none}
+.gal-item:hover .cap,.gal-item:focus-within .cap{opacity:1;transform:none}
 @media(max-width:960px){.gal-item .cap{opacity:1;transform:none}}
 .gal-item .tag{position:absolute;top:14px;left:14px;font-family:'Space Mono',monospace;font-size:9.5px;letter-spacing:.18em;text-transform:uppercase;background:rgba(13,43,66,.7);border:1px solid rgba(212,168,67,.5);color:var(--gold-l);padding:4px 12px;border-radius:100px;backdrop-filter:blur(4px)}
 .gal-note{text-align:center;margin-top:26px;font-size:13px;color:var(--mut);font-style:italic}
-#lightbox{position:fixed;inset:0;z-index:150;background:rgba(9,30,46,.94);display:flex;align-items:center;justify-content:center;opacity:0;visibility:hidden;transition:.45s var(--ease);padding:5vh 5vw}
-#lightbox.open{opacity:1;visibility:visible}
+.gal-actions{display:flex;flex-direction:column;align-items:center;gap:12px;margin-top:30px}
+.gal-toggle{border:1px solid var(--gold-d);background:transparent;color:var(--navy);padding:13px 26px}
+.gal-toggle:hover{background:rgba(212,168,67,.12)}
+.gal-toggle:focus-visible{outline:2px solid var(--navy);outline-offset:4px}
+.gal-count{font-size:12px;color:var(--mut);letter-spacing:.04em}
+#lightbox{position:fixed;inset:0;z-index:150;width:100%;height:100%;max-width:none;max-height:none;border:0;margin:0;background:rgba(9,30,46,.94);display:flex;align-items:center;justify-content:center;opacity:0;visibility:hidden;transition:.45s var(--ease);padding:5vh 5vw}
+#lightbox:not([open]){display:none}
+#lightbox.open{opacity:1;visibility:visible;transition:opacity .45s var(--ease)}
 #lightbox img{max-width:100%;max-height:82vh;border-radius:10px;box-shadow:0 40px 90px -30px rgba(0,0,0,.8)}
 #lightbox .lb-cap{position:absolute;bottom:5vh;left:0;right:0;text-align:center;color:rgba(250,250,245,.75);font-size:14px;letter-spacing:.06em}
 #lightbox .lb-x{position:absolute;top:26px;right:34px;background:none;border:1px solid rgba(250,250,245,.35);color:var(--ivory);width:44px;height:44px;border-radius:50%;font-size:17px;cursor:pointer;transition:.3s}
@@ -330,8 +317,7 @@ section{position:relative}
 /* ---------- footer / terminus ---------- */
 footer{background:var(--navy-xd);color:rgba(250,250,245,.7);position:relative;overflow:hidden}
 .term-buffer{display:flex;justify-content:center;align-items:center;gap:120px;padding-top:56px}
-.term-loco{width:54px;height:28px;color:var(--gold);opacity:.85;flex:none;filter:drop-shadow(0 0 10px rgba(212,168,67,.4));display:none}
-@media(max-width:960px){.term-loco{display:block}}
+.term-loco{width:54px;height:28px;color:var(--gold);opacity:.85;flex:none;filter:drop-shadow(0 0 10px rgba(212,168,67,.4))}
 @media(max-width:560px){.term-buffer{gap:52px}.foot-base{justify-content:center;text-align:center;row-gap:6px}}
 .term-buffer i{width:26px;height:26px;border-left:4px solid rgba(212,168,67,.55);border-right:4px solid rgba(212,168,67,.55);position:relative;transform:skewX(0)}
 .term-buffer i::after{content:'';position:absolute;left:-11px;right:-11px;top:1px;height:8px;background:var(--gold);border-radius:4px;box-shadow:0 0 14px rgba(212,168,67,.45)}
@@ -347,6 +333,7 @@ footer{background:var(--navy-xd);color:rgba(250,250,245,.7);position:relative;ov
 .reveal{opacity:0;transform:translateY(36px)}
 @media(prefers-reduced-motion:reduce){.reveal{opacity:1;transform:none}}
 </style>
+<link rel="stylesheet" href="assets/css/enhancements.css">
 </head>
 <body>
 
@@ -372,71 +359,52 @@ footer{background:var(--navy-xd);color:rgba(250,250,245,.7);position:relative;ov
   <div class="pl-cap">Departing Shortly</div>
 </div>
 
-<div id="track-layer"><svg id="track-svg" aria-hidden="true">
-  <defs>
-    <linearGradient id="trkGrad" x1="0" y1="0" x2="0" y2="1">
-      <stop offset="0" stop-color="#E8C97A"/><stop offset=".5" stop-color="#D4A843"/><stop offset="1" stop-color="#B8860B"/>
-    </linearGradient>
-  </defs>
-  <path class="trk-bed" id="trk-bed"/>
-  <path class="trk-sleeper" id="trk-sleeper"/>
-  <path class="trk-rail" id="trk-rail"/>
-  <path class="trk-rail-i" id="trk-rail-i"/>
-  <path class="trk-gold" id="trk-gold"/>
+<div id="journey-track" hidden aria-hidden="true"><svg>
+  <path class="route-bed"/><path class="route-sleepers"/><path class="route-rail" id="journey-route"/><path class="route-inner"/><path id="journey-route-progress"/><g id="journey-stations"></g>
 </svg></div>
-<div id="loco-layer"><svg id="loco-svg" aria-hidden="true">
-  <defs>
-    <linearGradient id="beamGrad" x1="0" y1="0" x2="1" y2="0">
-      <stop offset="0" stop-color="rgba(232,201,122,.6)"/><stop offset="1" stop-color="rgba(232,201,122,0)"/>
-    </linearGradient>
-  </defs>
-  <g id="loco-glyph">
-    <g id="loco-inner" transform="translate(-32,-16)">
-      <!-- heritage steam locomotive, facing right, 64x30 -->
-      <path class="tk-beam" d="M55 12 L86 5 L86 25 L55 18 Z" fill="url(#beamGrad)"/>
-      <circle class="tk-spark s1" cx="-6" cy="10" r="1.6"/>
-      <circle class="tk-spark s2" cx="-12" cy="18" r="1.2"/>
-      <circle class="tk-spark s3" cx="-9" cy="25" r="1.4"/>
-      <circle class="tk-puff q1" cx="47" cy="4" r="4"/>
-      <circle class="tk-puff q2" cx="47" cy="4" r="3.2"/>
-      <circle class="tk-puff q3" cx="47" cy="4" r="4.6"/>
-      <!-- cab -->
-      <rect x="2" y="4" width="15" height="18" rx="2" fill="#123A57" stroke="#D4A843" stroke-width="1.3"/>
-      <rect x="5" y="7.5" width="9" height="6.5" rx="1.2" fill="#E8C97A"/>
-      <rect x="0.5" y="2.5" width="18" height="3.4" rx="1.6" fill="#D4A843"/>
-      <!-- boiler -->
-      <rect x="17" y="8" width="33" height="14" rx="6.5" fill="#1B4F72" stroke="#D4A843" stroke-width="1.3"/>
-      <line x1="24" y1="8.6" x2="24" y2="21.4" stroke="rgba(212,168,67,.55)" stroke-width="1"/>
-      <line x1="33" y1="8.6" x2="33" y2="21.4" stroke="rgba(212,168,67,.55)" stroke-width="1"/>
-      <!-- steam dome + chimney -->
-      <path d="M36 8 q3.5 -5 7 0 Z" fill="#B8860B"/>
-      <rect x="44" y="1.5" width="5.5" height="7.5" rx="1.4" fill="#0D2B42" stroke="#D4A843" stroke-width="1.1"/>
-      <rect x="43" y="0.5" width="7.5" height="2.6" rx="1.3" fill="#D4A843"/>
-      <!-- smokebox door + headlamp -->
-      <circle cx="50" cy="15" r="4.6" fill="#0D2B42" stroke="#D4A843" stroke-width="1.2"/>
-      <circle cx="50" cy="15" r="1.7" fill="#E8C97A"/>
-      <!-- running board -->
-      <rect x="1" y="22" width="53" height="2.6" rx="1.3" fill="#D4A843"/>
-      <!-- cowcatcher -->
-      <path d="M54 22 L63 29.5 L54 29.5 Z" fill="#D4A843"/>
-      <!-- wheels -->
-      <g class="tk-wheel"><circle cx="10" cy="26" r="4" fill="#0D2B42" stroke="#D4A843" stroke-width="1.3"/><line x1="10" y1="23" x2="10" y2="29" stroke="#D4A843" stroke-width="1"/><line x1="7" y1="26" x2="13" y2="26" stroke="#D4A843" stroke-width="1"/></g>
-      <g class="tk-wheel"><circle cx="26" cy="26" r="4" fill="#0D2B42" stroke="#D4A843" stroke-width="1.3"/><line x1="26" y1="23" x2="26" y2="29" stroke="#D4A843" stroke-width="1"/><line x1="23" y1="26" x2="29" y2="26" stroke="#D4A843" stroke-width="1"/></g>
-      <g class="tk-wheel"><circle cx="42" cy="26" r="4" fill="#0D2B42" stroke="#D4A843" stroke-width="1.3"/><line x1="42" y1="23" x2="42" y2="29" stroke="#D4A843" stroke-width="1"/><line x1="39" y1="26" x2="45" y2="26" stroke="#D4A843" stroke-width="1"/></g>
-      <!-- coupling rod -->
-      <rect x="8" y="25.2" width="36" height="1.6" rx=".8" fill="rgba(232,201,122,.75)"/>
-    </g>
-  </g>
-</svg></div>
+<div id="train-scroll" hidden>
+  <div id="train-thumb" role="slider" tabindex="0" aria-label="Page scroll" aria-orientation="vertical" aria-valuemin="0" aria-valuemax="100" aria-valuenow="0" aria-valuetext="Introduction, 0%" aria-describedby="train-help">
+    <canvas id="train-canvas" aria-hidden="true"></canvas><svg class="train-fallback" viewBox="0 0 44 124" aria-hidden="true">
+      <!-- Side-profile steam locomotive, wheels, couplings and two coaches. -->
+      <g transform="translate(0 124) rotate(-90)" stroke-linejoin="round">
+        <path d="M32 28H46M67 28H80" stroke="#B8860B" stroke-width="3"/>
+        <g fill="#143C5C" stroke="#E8C97A" stroke-width="1.3">
+          <rect x="5" y="13" width="30" height="18" rx="3"/>
+          <rect x="41" y="13" width="30" height="18" rx="3"/>
+          <path d="M4 13Q20 7 36 13M40 13Q56 7 72 13" fill="#25618F"/>
+          <path d="M78 30V11H94V19H115L119 30Z" fill="#1B4F72"/>
+          <path d="M76 11H96L93 7H79Z" fill="#D4A843"/>
+          <path d="M107 19V8H114V19M105 8H116V5H105Z" fill="#143C5C"/>
+          <path d="M98 18V13Q101 9 104 13V18" fill="#D4A843"/>
+          <path d="M116 29 122 36H114" fill="#B8860B"/>
+        </g>
+        <g fill="#E8C97A">
+          <rect x="9" y="17" width="5" height="6" rx="1"/><rect x="17" y="17" width="5" height="6" rx="1"/><rect x="25" y="17" width="5" height="6" rx="1"/>
+          <rect x="45" y="17" width="5" height="6" rx="1"/><rect x="53" y="17" width="5" height="6" rx="1"/><rect x="61" y="17" width="5" height="6" rx="1"/>
+          <rect x="82" y="14" width="8" height="8" rx="1"/>
+          <path d="M7 27H33M43 27H69M96 24H115" stroke="#D4A843" stroke-width="1.5"/>
+        </g>
+        <g fill="#143C5C" stroke="#E8C97A" stroke-width="1.4">
+          <circle cx="12" cy="33" r="4"/><circle cx="28" cy="33" r="4"/>
+          <circle cx="48" cy="33" r="4"/><circle cx="64" cy="33" r="4"/>
+          <circle cx="84" cy="33" r="5"/><circle cx="98" cy="33" r="5"/><circle cx="111" cy="33" r="4"/>
+          <path d="M82 33H112" stroke="#D4A843" stroke-width="2"/>
+        </g>
+      </g>
+    </svg>
+    <span class="fallback-steam" aria-hidden="true"><i></i><i></i><i></i></span><i class="train-nose" aria-hidden="true"></i><div class="train-tip"><strong id="train-section">Introduction</strong><span id="train-help">Drag to explore · ↑ ↓ keys</span></div>
+  </div>
+</div>
 
 <nav id="nav" class="on-hero">
   <div class="nav-mono">AKM</div>
-  <button id="burger" aria-label="Menu"><span></span><span></span><span></span></button>
+  <button id="burger" aria-label="Menu" aria-expanded="false" aria-controls="navlinks"><span></span><span></span><span></span></button>
   <ul class="nav-links" id="navlinks">
     <li><a href="#about">About</a></li>
     <li><a href="#journey">Journey</a></li>
     <li><a href="#achv">Achievements</a></li>
     <li><a href="#expertise">Expertise</a></li>
+    <li><a href="thoughts/">Thoughts</a></li>
     <li><a href="#gallery">Gallery</a></li>
     <li><a href="#contact">Contact</a></li>
   </ul>
@@ -452,6 +420,7 @@ footer{background:var(--navy-xd);color:rgba(250,250,245,.7);position:relative;ov
         <h1><span class="l1 reveal">Ashok Kumar</span><span class="l2 reveal">Misra</span></h1>
         <p class="hero-sub reveal">General Manager (Retd.), <strong>Western Railway</strong>. A 37-year journey across eleven cities in the service of Indian Railways, from the steam locomotive workshops of Dahod to the leadership of a workforce of <strong>95,000</strong>.</p>
         <div class="hero-rule reveal"><span class="bar"></span><span>1990 to 2025 · दहोद से मुंबई तक</span></div>
+        <p class="hero-chapter reveal">Every station. <em>A new chapter.</em></p>
         <div class="hero-cta reveal">
           <a class="btn btn-gold" href="#journey"><span>Explore the Journey</span><i>→</i></a>
           <a class="btn btn-ghost" href="#contact"><span>Get in Touch</span></a>
@@ -463,7 +432,7 @@ footer{background:var(--navy-xd);color:rgba(250,250,245,.7);position:relative;ov
     <div class="stat"><div class="num" data-to="37" data-suf="+">0</div><div class="lbl">Years of Service</div></div>
     <div class="stat"><div class="num" data-to="11" data-suf="">0</div><div class="lbl">Cities Served</div></div>
     <div class="stat"><div class="num" data-to="95000" data-suf="+" data-in="1">0</div><div class="lbl">Employees Led</div></div>
-    <div class="stat"><div class="num" data-to="6" data-suf="">0</div><div class="lbl">Divisions Managed</div></div>
+    <div class="stat"><div class="num" data-to="4" data-suf="">0</div><div class="lbl">Divisions Worked In</div></div>
     <div class="stat"><div class="num" data-to="565" data-suf=" km">0</div><div class="lbl">Fencing in 11 Months</div></div>
     <div class="stat"><div class="num" data-to="400" data-pre="₹" data-suf=" Cr">0</div><div class="lbl">Saved Annually via TPI</div></div>
   </div>
@@ -491,16 +460,28 @@ footer{background:var(--navy-xd);color:rgba(250,250,245,.7);position:relative;ov
         <p class="reveal">An engineer by training and an administrator by temperament, he retired on 30 June 2025, marking the occasion not with ceremony, but with a 20-kilometre farewell bicycle ride.</p>
       </div>
     </div>
+    <div class="experience-band reveal">
+      <h3>Experience across the railway</h3>
+      <p>Worked in 4 divisions, 1 Diesel Shed and 3 workshops, across 3 Railway Zones.</p>
+      <div class="experience-counts">
+        <div><strong>4</strong><span>Divisions</span></div><div><strong>1</strong><span>Diesel Shed</span></div>
+        <div><strong>3</strong><span>Workshops</span></div><div><strong>4</strong><span>Railway Headquarters</span></div>
+      </div>
+      <div class="experience-note"><span>Research, Design and Standards Organisation</span><span>Engineering · Research · Leadership</span></div>
+      <div class="experience-zones"><b>Railway zones across the career</b><br>Western · Northern · North Central · East Central · North Eastern</div>
+    </div>
     <div class="edu-block reveal">
       <h3>Education &amp; Qualifications</h3>
-      <div class="edu-list">
+      <div class="edu-list" id="education-cards" tabindex="0" role="region" aria-label="Qualifications, swipe or use the next and previous buttons">
         <div class="edu-card"><div class="yr">1986</div><div class="dg">Mechanical Engineering</div><div class="in">Engineering Council, United Kingdom</div></div>
         <div class="edu-card"><div class="yr">1988</div><div class="dg">Railway Mechanical Engineering</div><div class="in">IRIMEE, Jamalpur</div><span class="nt">Honours · Distinction</span></div>
         <div class="edu-card"><div class="yr">1988</div><div class="dg">AMIE · Mechanical</div><div class="in">Institution of Engineers, India</div></div>
         <div class="edu-card"><div class="yr">1988</div><div class="dg">AMIE · Metallurgy</div><div class="in">Institution of Engineers, Kolkata</div></div>
         <div class="edu-card"><div class="yr">1997</div><div class="dg">MBA · Operations</div><div class="in">IGNOU</div><span class="nt">First Division</span></div>
       </div>
+      <div class="swipe-controls" data-rail="education-cards"><span><b class="swipe-position">01 / 05</b><small>Swipe through the milestones</small></span><button type="button" data-step="-1" aria-label="Previous qualification" aria-controls="education-cards">←</button><button type="button" data-step="1" aria-label="Next qualification" aria-controls="education-cards">→</button></div>
     </div>
+<a class="next-chapter" href="#journey"><span><small>Next stop · Journey</small><strong>Eleven cities. One career in motion.</strong></span><span aria-hidden="true">→</span></a>
   </div>
 </section>
 
@@ -547,7 +528,7 @@ footer{background:var(--navy-xd);color:rgba(250,250,245,.7);position:relative;ov
           <div class="st-progress"><i id="st-bar"></i></div>
           <div class="st-body">
             <ul class="st-roles" id="st-roles"></ul>
-            <p class="st-story" id="st-story"></p>
+            <p class="st-story" id="st-story"></p><a id="st-photo-link" class="st-photo-link" href="#gallery" hidden>Explore the Jhansi photographs →</a>
             <div class="st-fill" aria-hidden="true"><svg viewBox="0 0 60 32" fill="none" stroke="currentColor" stroke-width="2"><rect x="8" y="8" width="34" height="14" rx="3"/><rect x="42" y="12" width="12" height="10" rx="2"/><circle cx="16" cy="26" r="3.5"/><circle cx="32" cy="26" r="3.5"/><circle cx="48" cy="26" r="3"/><path d="M8 15h34" stroke-width="1.2"/></svg></div>
           </div>
           <div class="st-nav">
@@ -558,6 +539,7 @@ footer{background:var(--navy-xd);color:rgba(250,250,245,.7);position:relative;ov
         </div>
       </div>
     </div>
+<a class="next-chapter" href="#achv"><span><small>Next stop · Achievements</small><strong>Discover the work that made a difference.</strong></span><span aria-hidden="true">→</span></a>
   </div>
 </section>
 
@@ -574,6 +556,7 @@ footer{background:var(--navy-xd);color:rgba(250,250,245,.7);position:relative;ov
     <button class="rail-btn" id="coach-next" aria-label="Next achievement">→</button>
   </div>
   <div class="achv-hint" id="achv-hint">Drag · Swipe<span class="hint-arrows"> · or use the arrows</span></div>
+  <a class="next-chapter" href="#expertise"><span><small>Next stop · Expertise</small><strong>The disciplines behind the decisions.</strong></span><span aria-hidden="true">→</span></a>
 </section>
 
 <section id="expertise">
@@ -584,8 +567,22 @@ footer{background:var(--navy-xd);color:rgba(250,250,245,.7);position:relative;ov
     </div>
     <div class="exp-grid" id="exp-grid"></div>
     <p class="mem-note reveal">Associate Member, <b>Institution of Engineers (India)</b> · Mechanical &amp; Metallurgy divisions</p>
+<a class="next-chapter" href="#thoughts"><span><small>Next stop · Thoughts</small><strong>A different perspective, in his own words.</strong></span><span aria-hidden="true">→</span></a>
   </div>
 </section>
+
+<section id="thoughts"><div class="wrap">
+  <div class="thoughts-heading"><div><div class="kicker">From the pen of Ashok Kumar Misra</div><h2>Thoughts<br><em>Along the Way</em></h2><p>Reflections by Ashok Kumar Misra</p></div>
+  <a class="pen-link" href="thoughts/" aria-label="Explore all thoughts by Ashok Kumar Misra"><svg class="pen-mark" viewBox="0 0 90 120" fill="none" stroke="currentColor" stroke-width="1.4" aria-hidden="true"><path d="M66 8 26 68 19 99 45 81 79 18 66 8ZM26 68 45 81M19 99 36 73M59 19 71 27M13 108C32 98 48 116 76 101"/><circle cx="36" cy="73" r="3"/></svg><span>Explore all thoughts <i aria-hidden="true">↗</i></span></a></div>
+  <div class="thought-cards"><a class="thought-card" href="thoughts/you-observe-a-lot-by-watching.html">
+  <div class="thought-meta"><span>Reflection · 2 min read</span><span class="thought-number">01</span></div>
+  <h3>You Observe a Lot by Watching</h3><p>Why do most of us pass through familiar places without remembering what we have just seen? Perhaps our minds are occupied elsewhere.</p><div class="thought-read"><span>Read the reflection</span><i aria-hidden="true">↗</i></div>
+</a><a class="thought-card" href="thoughts/why-we-study-what-we-study.html">
+  <div class="thought-meta"><span>Reflection · 2 min read</span><span class="thought-number">02</span></div>
+  <h3>Why We Study, What We Study</h3><p>Have we ever paused to ask why, from infancy to adulthood, we spend so many years studying? Often, students wonder why they must learn subjects they neither enjoy nor believe will ever be useful.</p><div class="thought-read"><span>Read the reflection</span><i aria-hidden="true">↗</i></div>
+</a></div>
+<a class="next-chapter" href="#gallery"><span><small>Next stop · Gallery</small><strong>See the moments along the way.</strong></span><span aria-hidden="true">→</span></a>
+</div></section>
 
 <section id="gallery">
   <div class="wrap">
@@ -593,8 +590,15 @@ footer{background:var(--navy-xd);color:rgba(250,250,245,.7);position:relative;ov
       <div class="sign-plate"><span class="hindi">दीर्घा</span><span class="en">Gallery</span><span class="alt">Scenes from the Line</span></div>
       <div class="sign-posts"><i></i><i></i></div>
     </div>
-    <div class="gal-grid" id="gal-grid"></div>
-    <p class="gal-note reveal">Photographs from years of service on the Indian Railways.</p>
+    <div class="gallery-filters" aria-label="Photograph collections"><button type="button" data-gallery-filter="all" aria-pressed="true">All moments</button><button type="button" data-gallery-filter="western" aria-pressed="false">Western Railway</button><button type="button" data-gallery-filter="jhansi" aria-pressed="false">Jhansi years</button></div>
+    <div class="gal-grid" id="gal-grid" tabindex="0" role="region" aria-label="Photographs, swipe or use the next and previous buttons"></div>
+    <div class="swipe-controls" data-rail="gal-grid"><span><b class="swipe-position">01 / 06</b><small>Swipe to explore · Tap to enlarge</small></span><button type="button" data-step="-1" aria-label="Previous gallery photo" aria-controls="gal-grid">←</button><button type="button" data-step="1" aria-label="Next gallery photo" aria-controls="gal-grid">→</button></div>
+    <div class="gal-actions">
+      <button class="btn gal-toggle" id="gal-toggle" type="button" aria-expanded="false" aria-controls="gal-grid"><span>View all 26 photos</span><span aria-hidden="true">＋</span></button>
+      <p class="gal-count" id="gal-count" aria-live="polite">Showing 6 of 26 photographs</p>
+    </div>
+    <p class="gal-note">Photographs from years of service on the Indian Railways.</p>
+<a class="next-chapter" href="#contact"><span><small>Next stop · Contact</small><strong>Keep the conversation going.</strong></span><span aria-hidden="true">→</span></a>
   </div>
 </section>
 
@@ -621,7 +625,7 @@ footer{background:var(--navy-xd);color:rgba(250,250,245,.7);position:relative;ov
   </div>
 </section>
 
-<footer>
+<footer id="terminus">
   <div class="term-buffer"><i></i><svg class="term-loco" viewBox="0 0 90 44" fill="none" stroke="currentColor" stroke-width="2.4" aria-hidden="true"><rect x="10" y="10" width="52" height="20" rx="4"/><path d="M62 14h14l6 8v8H62z"/><circle cx="22" cy="36" r="5"/><circle cx="44" cy="36" r="5"/><circle cx="70" cy="36" r="4.5"/><path d="M10 20h52" stroke-width="1.4"/><path d="M76 8v6" stroke-width="2"/></svg><i></i></div>
   <div class="foot-wrap">
     <div class="foot-mono">AKM</div>
@@ -640,13 +644,16 @@ footer{background:var(--navy-xd);color:rgba(250,250,245,.7);position:relative;ov
   </div>
 </footer>
 
-<div id="lightbox"><button class="lb-x" aria-label="Close">✕</button><img src="" alt=""><div class="lb-cap"></div></div>
+<dialog id="lightbox" aria-label="Photo viewer"><button class="lb-x" aria-label="Close" autofocus>✕</button><span id="lb-count"></span><button class="lb-prev" aria-label="Previous photograph">←</button><img src="" alt=""><button class="lb-next" aria-label="Next photograph">→</button><div class="lb-cap"></div></dialog>
+<details id="journey-guide" class="journey-guide" hidden><summary><span class="mobile-rail" aria-hidden="true"><svg class="mobile-loco" viewBox="0 0 54 36" fill="none"><g class="mobile-steam" fill="#6d8992"><circle cx="41" cy="10" r="2.4"/><circle cx="38" cy="5" r="3"/><circle cx="43" cy="1" r="3.5"/></g><path d="M5 20h13v10H5z" fill="#143c5c"/><path d="M21 15h11v15H21zM31 20h16v10H31z" fill="#25618f"/><path d="M19 14h15v3H19zM39 13h5v9h-5z" fill="#143c5c"/><path d="M38 12h7v3h-7zM22 23h25v2H22z" fill="#d4a843"/><path d="M23 18h6v5h-6z" fill="#aed7dc"/><path d="M3 30h47M18 27h3" stroke="#143c5c" stroke-width="2"/><circle cx="47" cy="23" r="2" fill="#e8c97a"/><g class="mobile-wheel"><circle cx="10" cy="31" r="3" fill="#d4a843" stroke="#143c5c"/><path d="m8 29 4 4m0-4-4 4" stroke="#143c5c"/></g><g class="mobile-wheel"><circle cx="26" cy="31" r="3.5" fill="#d4a843" stroke="#143c5c"/><path d="m24 29 4 4m0-4-4 4" stroke="#143c5c"/></g><g class="mobile-wheel"><circle cx="41" cy="31" r="3.5" fill="#d4a843" stroke="#143c5c"/><path d="m39 29 4 4m0-4-4 4" stroke="#143c5c"/></g></svg></span><small>Your journey</small><span id="guide-current">01 / 7 · About</span></summary><ol>
+<li><a href="#about"><span>01</span>About</a></li><li><a href="#journey"><span>02</span>Journey</a></li><li><a href="#achv"><span>03</span>Achievements</a></li><li><a href="#expertise"><span>04</span>Expertise</a></li><li><a href="#thoughts"><span>05</span>Thoughts</a></li><li><a href="#gallery"><span>06</span>Gallery</a></li><li><a href="#contact"><span>07</span>Contact</a></li></ol></details>
 
 <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.5/gsap.min.js"></script>
 <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.5/ScrollTrigger.min.js"></script>
 <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.5/MotionPathPlugin.min.js"></script>
 <script>
 gsap.registerPlugin(ScrollTrigger, MotionPathPlugin);
+const reducedMotion=matchMedia("(prefers-reduced-motion: reduce)");
 
 /* ================= DATA ================= */
 const JOURNEY=[
@@ -732,7 +739,10 @@ const GALLERY=[
  {img:GBASE+"20_2024-01-11_railway-minister-pavilion-visit.jpg",tag:"11 Jan 2024",cap:"Accompanying Hon'ble Railway Minister Shri Ashwini Vaishnaw at the Indian Railways Pavilion set up by Western Railway"},
  {img:GBASE+"21_2024-01-07_125th-anniversary-exhibition.jpg",tag:"7 Jan 2024",cap:"Inaugurating the 125th Anniversary Exhibition of Western Railway's heritage headquarters"},
  {img:GBASE+"22_2024-01-05_coffee-table-book-release.jpg",tag:"5 Jan 2024",cap:"Releasing the coffee table book '125 Years of a Timeless Legacy' with AGM Shri Prakash Butani"},
- {img:GBASE+"23_2023-12-27_sabarmati-station-inspection.jpg",tag:"27 Dec 2023",cap:"Inspecting Palanpur, Mahesana and Sabarmati stations of Ahmedabad Division and reviewing Sabarmati redevelopment work"}
+ {img:GBASE+"23_2023-12-27_sabarmati-station-inspection.jpg",tag:"27 Dec 2023",cap:"Inspecting Palanpur, Mahesana and Sabarmati stations of Ahmedabad Division and reviewing Sabarmati redevelopment work"},
+ {img:GBASE+"jhansi-republic-day-2018.jpg",tag:"26 Jan 2018",cap:"Republic Day celebrations as Divisional Railway Manager, Jhansi.",position:"center 65%"},
+ {img:GBASE+"jhansi-union-minister-visit-2018-2019.jpg",tag:"Approx. Dec 2018–Jan 2019",cap:"With the then Union Minister during his tenure as Divisional Railway Manager, Jhansi."},
+ {img:GBASE+"jhansi-best-division-shield-2018.jpg",tag:"Railway Week 2018",cap:"Jhansi Division, North Central Railway, receiving the Best Division shield at Railway Week 2018."}
 ];
 
 /* ================= HELPERS ================= */
@@ -758,10 +768,12 @@ function segPath(i){ // bezier segment between city i and i+1 (matches catmullPa
 
 /* ================= PRELOADER + HERO ================= */
 window.addEventListener("load",()=>{
+  try{sessionStorage.setItem("akm-visited","1");}catch{}
   $("#preloader").classList.add("done");
-  gsap.to("#hero .reveal",{opacity:1,y:0,duration:1.1,ease:"power3.out",stagger:.12,delay:.25});
+  if(reducedMotion.matches)gsap.set("#hero .reveal",{opacity:1,y:0});
+  else gsap.to("#hero .reveal",{opacity:1,y:0,duration:1.1,ease:"power3.out",stagger:.12,delay:.25});
   startCounters();
-  requestAnimationFrame(()=>{buildTrack();ScrollTrigger.refresh();});
+  requestLayoutRefresh();
 });
 
 /* ================= NAV ================= */
@@ -773,15 +785,26 @@ window.addEventListener("scroll",()=>{
   nav.classList.toggle("hidden",y>lastY&&y>420&&!$("#navlinks").classList.contains("open"));
   lastY=y;
 },{passive:true});
-$("#burger").addEventListener("click",()=>{$("#burger").classList.toggle("open");$("#navlinks").classList.toggle("open");});
-$$("#navlinks a").forEach(a=>a.addEventListener("click",()=>{$("#burger").classList.remove("open");$("#navlinks").classList.remove("open");}));
+const menuMedia=matchMedia("(max-width:820px)");
+function setMenu(open){
+  open=open&&menuMedia.matches;
+  $("#navlinks").classList.toggle("open",open);$("#burger").classList.toggle("open",open);
+  document.body.classList.toggle("nav-open",open);$("#burger").setAttribute("aria-expanded",String(open));
+  $("#navlinks").inert=menuMedia.matches&&!open;
+  $$("header,section,footer,#journey-guide,#train-scroll").forEach(el=>el.inert=open);
+  if(open)$("#navlinks a").focus();
+}
+$("#burger").addEventListener("click",()=>setMenu(!$("#navlinks").classList.contains("open")));
+$$("#navlinks a").forEach(a=>a.addEventListener("click",()=>setMenu(false)));
+menuMedia.addEventListener("change",()=>setMenu(false));setMenu(false);
+addEventListener("keydown",e=>{if(e.key==="Escape"&&document.body.classList.contains("nav-open")){setMenu(false);$("#burger").focus();}});
 
 /* ================= COUNTERS ================= */
 function startCounters(){
   $$(".stat .num").forEach(el=>{
     const to=+el.dataset.to,suf=el.dataset.suf||"",pre=el.dataset.pre||"",indian=el.dataset.in;
     const o={v:0};
-    gsap.to(o,{v:to,duration:2.2,ease:"power2.out",delay:.7,onUpdate(){
+    gsap.to(o,{v:to,duration:reducedMotion.matches?0:2.2,ease:"power2.out",delay:reducedMotion.matches?0:.7,onUpdate(){
       const n=Math.round(o.v);
       el.textContent=pre+(indian?n.toLocaleString("en-IN"):n)+suf;
     }});
@@ -795,80 +818,31 @@ $$(".reveal").forEach(el=>{
     scrollTrigger:{trigger:el,start:"top 86%"}});
 });
 
-/* ================= GOLDEN TRACK ================= */
-let trackTriggers=[];
-function buildTrack(){
-  if(innerWidth<960)return;
-  trackTriggers.forEach(t=>{t.animation&&t.animation.kill();t.kill();});trackTriggers=[];
-  const svg=$("#track-svg"),layer=$("#track-layer"),lsvg=$("#loco-svg"),llayer=$("#loco-layer");
-  const H=document.documentElement.scrollHeight,W=innerWidth;
-  layer.style.height=H+"px";llayer.style.height=H+"px";
-  [svg,lsvg].forEach(s=>{
-    s.setAttribute("viewBox",`0 0 ${W} ${H}`);
-    s.setAttribute("width",W);s.setAttribute("height",H);
-  });
-  /* Path geometry, hand-built beziers: the line starts BELOW the hero
-     departures board, hugs the page margins beside each section's content,
-     and crosses the page only inside the whitespace bands between sections.
-     Control points never leave the [m, W-m] corridor, so the locomotive can
-     never overshoot the margins and slip off-screen. */
-  const secs=["#about","#journey","#achv","#expertise","#gallery","#contact"].map(s=>$(s));
-  const m=Math.max(84,W*.055);
-  const cx=W*.5;
-  const startY=secs[0].offsetTop+16;
-  let d=`M ${cx},${startY}`;
-  let px=cx,py=startY;
-  secs.forEach((el,i)=>{
-    const x=i%2===0?W-m:m;
-    const yA=el.offsetTop+(i===0?86:30);
-    const yB=el.offsetTop+el.offsetHeight-44;
-    const dc=Math.max(36,(yA-py)*.55);
-    d+=` C ${px},${py+dc} ${x},${yA-dc} ${x},${yA}`; /* sweep across whitespace */
-    d+=` L ${x},${yB}`;                               /* straight run beside content */
-    px=x;py=yB;
-  });
-  const foot=$("footer");
-  const endY=foot.offsetTop+46;
-  const de=Math.max(36,(endY-py)*.55);
-  d+=` C ${px},${py+de} ${cx},${endY-de} ${cx},${endY}`;
-  ["#trk-bed","#trk-sleeper","#trk-rail","#trk-rail-i","#trk-gold"].forEach(id=>$(id).setAttribute("d",d));
-  const gold=$("#trk-gold"),len=gold.getTotalLength();
-  gold.style.strokeDasharray=len;gold.style.strokeDashoffset=len;
-  /* The locomotive is parameterized by VIEWPORT Y, not path length. Path y
-     is monotonic top-to-bottom, so for a target y (a fixed anchor line ~62%
-     down the viewport) we binary-search the matching path length. Horizontal
-     sweeps then cost zero scroll: the loco glides across them smoothly via
-     the ticker's lerp instead of teleporting, and it can never outrun the
-     viewport or vanish above/below it. The gold rail is revealed from the
-     same smoothed length, so the train always rides visible track. */
-  const NPTS=1400,pts=new Array(NPTS+1);
-  for(let i=0;i<=NPTS;i++){const l=len*i/NPTS;const p=gold.getPointAtLength(l);pts[i]={l,y:p.y};}
-  function lenAtY(y){
-    if(y<=pts[0].y)return 0;
-    if(y>=pts[NPTS].y)return len;
-    let lo=0,hi=NPTS;
-    while(hi-lo>1){const mid=(lo+hi)>>1;(pts[mid].y<y)?lo=mid:hi=mid;}
-    const a=pts[lo],b=pts[hi];
-    return a.l+(b.l-a.l)*((y-a.y)/Math.max(1e-6,b.y-a.y));
-  }
-  const glyph=$("#loco-glyph"),inner=$("#loco-inner");
-  let curL=lenAtY(scrollY+innerHeight*.62);
-  if(window._locoTick)gsap.ticker.remove(window._locoTick);
-  const tick=()=>{
-    const T=lenAtY(scrollY+innerHeight*.62);
-    curL+=(T-curL)*.14;
-    if(Math.abs(T-curL)<.05)curL=T;
-    const p=gold.getPointAtLength(curL);
-    const p0=gold.getPointAtLength(Math.max(0,curL-2)),p1=gold.getPointAtLength(Math.min(len,curL+2));
-    const a=Math.atan2(p1.y-p0.y,p1.x-p0.x)*180/Math.PI;
-    glyph.setAttribute("transform",`translate(${p.x},${p.y}) rotate(${a})`);
-    inner.setAttribute("transform",`translate(-32,-16)${(a>100||a<-100)?" scale(1,-1) translate(0,-30)":""}`);
-    gold.style.strokeDashoffset=Math.max(0,len-Math.min(len,curL+40));
-  };
-  window._locoTick=tick;gsap.ticker.add(tick);tick();
+/* ================= CONTENT LAYOUT ================= */
+let layoutFrame=0;
+function buildTrack(){window.dispatchEvent(new Event("akm:layout"));}
+
+function refreshLayout(){
+  // Finish card sizing before measuring the page scroll range.
+  lockCardHeight();
+  buildTrack();
+  ScrollTrigger.refresh();
 }
-let rsT;window.addEventListener("resize",()=>{clearTimeout(rsT);rsT=setTimeout(()=>{buildTrack();lockCardHeight();ScrollTrigger.refresh();},350);});
-if(document.fonts&&document.fonts.ready)document.fonts.ready.then(()=>{buildTrack();lockCardHeight();ScrollTrigger.refresh();});
+function requestLayoutRefresh(){
+  if(layoutFrame)return;
+  layoutFrame=requestAnimationFrame(()=>{layoutFrame=0;refreshLayout();});
+}
+window.addEventListener("resize",requestLayoutRefresh);
+document.addEventListener("visibilitychange",buildTrack);
+if(document.fonts){
+  document.fonts.ready.then(requestLayoutRefresh);
+  document.fonts.addEventListener("loadingdone",requestLayoutRefresh);
+}
+if("ResizeObserver"in window){
+  // Keep the scroll range accurate when content expands or fonts finish loading.
+  const trackObserver=new ResizeObserver(requestLayoutRefresh);
+  $$("header,section,footer").forEach(el=>trackObserver.observe(el));
+}
 
 /* ================= INDIA MAP JOURNEY ================= */
 const mapSvg=$("#indiamap"),cityG=$("#map-cities");
@@ -886,7 +860,9 @@ JOURNEY.forEach((j,i)=>{
   const dot=document.createElementNS(NS,"circle");
   dot.setAttribute("cx",x);dot.setAttribute("cy",y);dot.setAttribute("r",4.4);dot.setAttribute("class","city-dot");dot.id="dot-"+i;
   dot.style.pointerEvents="auto";
+  dot.setAttribute("role","button");dot.setAttribute("tabindex","0");dot.setAttribute("aria-label",`Explore ${j.city}`);
   dot.addEventListener("click",()=>goStation(i,true));
+  dot.addEventListener("keydown",e=>{if(e.key==="Enter"||e.key===" "){e.preventDefault();goStation(i,true);}});
   const t=document.createElementNS(NS,"text");
   t.setAttribute("x",x+dx);t.setAttribute("y",y+dy+(dy>0?6:0));t.setAttribute("text-anchor",anch);
   t.setAttribute("class","city-lbl");t.id="lbl-"+i;t.textContent=j.city;
@@ -895,6 +871,7 @@ JOURNEY.forEach((j,i)=>{
 let cur=0,animating=false,autoTimer=null;
 const train=$("#map-train");
 function renderCard(i){
+  $("#st-photo-link").hidden=i!==7;
   $("#st-no").textContent=`Station ${String(i+1).padStart(2,"0")} / ${JOURNEY.length}`;
   $("#st-city").textContent=JOURNEY[i].city;
   $("#st-meta").innerHTML=`<span class="chip solid">${JOURNEY[i].period}</span><span class="chip">${JOURNEY[i].zone}</span><span class="chip">${JOURNEY[i].st}</span>`;
@@ -903,8 +880,8 @@ function renderCard(i){
   $("#st-count").textContent=`${String(i+1).padStart(2,"0")} / ${JOURNEY.length}`;
   $("#st-bar").style.width=((i)/(JOURNEY.length-1)*100)+"%";
   $("#st-prev").disabled=i===0;$("#st-next").disabled=i===JOURNEY.length-1;
-  gsap.fromTo(".st-body",{opacity:0,y:14},{opacity:1,y:0,duration:.55,ease:"power2.out"});
-  gsap.fromTo(".st-top",{opacity:.5},{opacity:1,duration:.4});
+  gsap.fromTo(".st-body",{opacity:0,y:14},{opacity:1,y:0,duration:reducedMotion.matches?0:.55,ease:"power2.out"});
+  gsap.fromTo(".st-top",{opacity:.5},{opacity:1,duration:reducedMotion.matches?0:.4});
 }
 function paintMap(i){
   let done="";for(let s=0;s<i;s++)done+=(done?" ":"")+segPath(s);
@@ -915,7 +892,8 @@ function paintMap(i){
     $("#lbl-"+k).classList.toggle("active",k===i);
   });
   const h=$("#halo-"+i);
-  gsap.fromTo(h,{attr:{r:6},opacity:.9},{attr:{r:16},opacity:0,duration:1.1,ease:"power2.out"});
+  if(reducedMotion.matches)gsap.set(h,{opacity:0});
+  else gsap.fromTo(h,{attr:{r:6},opacity:.9},{attr:{r:16},opacity:0,duration:1.1,ease:"power2.out"});
 }
 function placeTrain(i){
   const [x,y]=JOURNEY[i].coord;
@@ -937,7 +915,7 @@ function goStation(i,user){
     const A=JOURNEY[s].coord,B=JOURNEY[s+1].coord;
     const dx=dir>0?B[0]-A[0]:A[0]-B[0];
     tl.add(()=>mtInner.setAttribute("transform",(dx<0?"scale(-1.5,1.5)":"scale(1.5)")+" translate(-13,-4.5)"));
-    tl.to(train,{duration:.7,ease:"power1.inOut",
+    tl.to(train,{duration:reducedMotion.matches?0:.7,ease:"power1.inOut",
       motionPath:{path:segEls[s],align:segEls[s],alignOrigin:[.5,.5],autoRotate:false,start:dir>0?0:1,end:dir>0?1:0}},">-0.05");
     step+=dir;
   }
@@ -995,7 +973,7 @@ const track=$("#coach-track");
 ACHV.forEach((a,i)=>{
   const c=document.createElement("article");c.className="coach";
   c.innerHTML=`<div class="coach-head"><span class="coach-no">COACH ${String(i+1).padStart(2,"0")} · AKM-${1986+i}</span></div>
-  <h3>${a.t}</h3><div class="metric">${a.m}</div><div class="sub">${a.s}</div><p>${a.p}</p>
+  <h3>${a.t}</h3><div class="metric">${a.m}</div><div class="sub">${a.s}</div><details><summary>The story behind the numbers</summary><p>${a.p}</p></details>
   <div class="coach-wheels"><i></i><i></i></div>`;
   track.appendChild(c);
   if(i<ACHV.length-1){const k=document.createElement("div");k.className="coupler";track.appendChild(k);}
@@ -1011,7 +989,7 @@ function setupCoachRail(){
   /* pointer drag (desktop) */
   let down=false,startX=0,startL=0,moved=false;
   track.addEventListener("pointerdown",e=>{
-    if(e.pointerType!=="mouse")return;
+    if(e.pointerType!=="mouse"||e.target.closest("summary,button,a"))return;
     down=true;moved=false;startX=e.clientX;startL=track.scrollLeft;pause();
   });
   window.addEventListener("pointermove",e=>{
@@ -1026,21 +1004,10 @@ function setupCoachRail(){
   });
   track.addEventListener("touchstart",pause,{passive:true});
   track.addEventListener("wheel",pause,{passive:true});
-  /* gentle auto-advance while section is on screen */
-  let autoI=null,pausedUntil=0;
-  function pause(){pausedUntil=Date.now()+12000;}
-  function tick(){
-    if(matchMedia("(prefers-reduced-motion: reduce)").matches)return;
-    if(Date.now()<pausedUntil)return;
-    if(track.scrollLeft>=maxScroll()-8)track.scrollTo({left:0,behavior:"smooth"});
-    else track.scrollBy({left:step(),behavior:"smooth"});
-  }
-  if("IntersectionObserver"in window){
-    new IntersectionObserver(en=>{
-      if(en[0].isIntersecting){if(!autoI)autoI=setInterval(tick,4600);}
-      else if(autoI){clearInterval(autoI);autoI=null;}
-    },{threshold:.3}).observe(rail);
-  }
+  // Reading a story never starts a carousel timer.
+  function pause(){}
+  track.querySelectorAll("details").forEach(el=>el.addEventListener("toggle",requestLayoutRefresh));
+
 }
 setupCoachRail();
 
@@ -1052,25 +1019,61 @@ $$("#exp-grid .reveal").forEach((el,i)=>{
 });
 
 /* ================= GALLERY ================= */
-$("#gal-grid").innerHTML=GALLERY.map((g,i)=>`<figure class="gal-item reveal" data-i="${i}"><img src="${g.img}" alt="${g.cap}" loading="lazy" onerror="this.closest('.gal-item').style.display='none'"><span class="tag">${g.tag}</span><figcaption class="cap">${g.cap}</figcaption></figure>`).join("");
-$$("#gal-grid .reveal").forEach(el=>gsap.to(el,{opacity:1,y:0,duration:1,ease:"power3.out",scrollTrigger:{trigger:el,start:"top 88%"}}));
-const lb=$("#lightbox");let lbI=0;
+const galleryPreviewCount=6;
+const galleryGrid=$("#gal-grid"),galleryToggle=$("#gal-toggle");
+const galleryOrder=[0,1,2,24,25,23,...GALLERY.map((_,i)=>i).filter(i=>![0,1,2,24,25,23].includes(i))];
+let galleryFilter="all",galleryExpanded=false;
+galleryGrid.innerHTML=galleryOrder.map(i=>{const g=GALLERY[i];return `<figure class="gal-item" data-i="${i}" style="--photo-position:${g.position||"center"}"><img src="${g.img}" alt="${g.cap}" loading="lazy"><span class="tag">${g.tag}</span><figcaption class="cap">${g.cap}</figcaption><button class="gal-open" type="button" aria-label="View photo: ${g.cap}"></button></figure>`;}).join("");
+function galleryIndices(){return galleryOrder.filter(i=>galleryFilter==="all"||(galleryFilter==="jhansi"?i>=23:i<23));}
+function setGalleryExpanded(expanded,keepControl=false){
+  galleryExpanded=expanded;
+  galleryGrid.scrollTo({left:0,behavior:"instant"});
+  const indices=galleryIndices(),visible=expanded?indices:indices.slice(0,galleryPreviewCount);
+  $$(".gal-item",galleryGrid).forEach(item=>{item.hidden=!visible.includes(+item.dataset.i);});
+  galleryToggle.hidden=indices.length<=galleryPreviewCount;
+  galleryToggle.setAttribute("aria-expanded",String(expanded));
+  galleryToggle.innerHTML=`<span>${expanded?"Show fewer photos":`View all ${indices.length} photos`}</span><span aria-hidden="true">${expanded?"−":"＋"}</span>`;
+  $("#gal-count").textContent=`Showing ${visible.length} of ${indices.length} photographs`;
+  requestLayoutRefresh();
+  if(keepControl&&!expanded){const bounds=galleryToggle.getBoundingClientRect();if(bounds.top<90||bounds.bottom>innerHeight)galleryToggle.scrollIntoView({block:"center",behavior:"instant"});}
+}
+function setGalleryFilter(filter){
+  galleryFilter=filter;
+  $$("[data-gallery-filter]").forEach(button=>button.setAttribute("aria-pressed",String(button.dataset.galleryFilter===filter)));
+  setGalleryExpanded(false);
+}
+galleryToggle.addEventListener("click",()=>setGalleryExpanded(!galleryExpanded,true));
+$$("[data-gallery-filter]").forEach(button=>button.addEventListener("click",()=>setGalleryFilter(button.dataset.galleryFilter)));
+$("#st-photo-link").addEventListener("click",()=>setGalleryFilter("jhansi"));
+setGalleryExpanded(false);
+const lb=$("#lightbox");let lbI=0,lbOpener=null;
 function showLb(i){
   lbI=(i+GALLERY.length)%GALLERY.length;
   const g=GALLERY[lbI];
-  lb.querySelector("img").src=g.img;lb.querySelector(".lb-cap").textContent=g.cap;
+  lb.querySelector("img").src=g.img;lb.querySelector("img").alt=g.cap;
+  lb.querySelector(".lb-cap").textContent=g.cap;$("#lb-count").textContent=`${galleryIndices().indexOf(lbI)+1} / ${galleryIndices().length}`;
 }
-$$(".gal-item").forEach(f=>f.addEventListener("click",()=>{
-  showLb(+f.dataset.i);
-  lb.classList.add("open");document.body.style.overflow="hidden";
+function stepLb(step){const sequence=galleryIndices(),position=sequence.indexOf(lbI);showLb(sequence[(position+step+sequence.length)%sequence.length]);}
+$$(".gal-open").forEach(button=>button.addEventListener("click",()=>{
+  lbOpener=button;
+  showLb(+button.closest(".gal-item").dataset.i);
+  lb.classList.add("open");lb.showModal();document.body.style.overflow="hidden";
 }));
-function closeLb(){lb.classList.remove("open");document.body.style.overflow="";}
-lb.addEventListener("click",e=>{if(e.target===lb||e.target.classList.contains("lb-x"))closeLb();});
-addEventListener("keydown",e=>{
-  if(e.key==="Escape")closeLb();
+function closeLb(){
   if(!lb.classList.contains("open"))return;
-  if(e.key==="ArrowRight")showLb(lbI+1);
-  if(e.key==="ArrowLeft")showLb(lbI-1);
+  lb.close();lb.classList.remove("open");document.body.style.overflow="";
+  lbOpener?.focus({preventScroll:true});
+}
+lb.addEventListener("click",e=>{if(e.target===lb||e.target.classList.contains("lb-x"))closeLb();});
+lb.querySelector(".lb-prev").addEventListener("click",()=>stepLb(-1));
+lb.querySelector(".lb-next").addEventListener("click",()=>stepLb(1));
+lb.addEventListener("cancel",e=>{e.preventDefault();closeLb();});
+addEventListener("keydown",e=>{
+  if(!lb.classList.contains("open"))return;
+  if(e.key==="Escape")closeLb();
+  if(e.key==="ArrowRight"){e.preventDefault();stepLb(1);}
+  if(e.key==="ArrowLeft"){e.preventDefault();stepLb(-1);}
+  if(e.key==="Tab"){e.preventDefault();const buttons=$$("button",lb),index=buttons.indexOf(document.activeElement);buttons[(index+(e.shiftKey?-1:1)+buttons.length)%buttons.length].focus();}
 });
 </script>
 <script>
@@ -1083,5 +1086,8 @@ setTimeout(function(){
   }
 },2500);
 </script>
+<script type="module" src="assets/js/train-journey.js"></script>
+<script src="assets/js/reading.js" defer></script>
+<script src="assets/js/mobile-journey.js" defer></script>
 </body>
 </html>
