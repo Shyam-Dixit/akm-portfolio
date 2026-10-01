@@ -91,15 +91,25 @@ body.nav-open nav{backdrop-filter:none;-webkit-backdrop-filter:none;background:t
 .route-rail{fill:none;stroke:#b8860b66;stroke-width:6}
 .route-inner{fill:none;stroke:#fffaf1bb;stroke-width:3}
 #journey-route-progress{fill:none;stroke:#cb9e38;stroke-width:2.5}
-.route-station circle{fill:#fafaf5;stroke:#b8860b;stroke-width:1.8}
+.route-station .route-stop{fill:#fafaf5;stroke:#b8860b;stroke-width:1.8}
 .route-station text{fill:#96701e;font:10px 'Space Mono',monospace;letter-spacing:.1em}
-.route-station.passed circle{fill:#d4a843;stroke:#e8c97a}
+.route-station.passed .route-stop{fill:#d4a843;stroke:#e8c97a}
+.chapter-signal-head{fill:#183444;stroke:#70858a;stroke-width:1}
+.chapter-signal-post{stroke:#54717b;stroke-width:4}
+.chapter-signal-base{stroke:#26485c;stroke-width:3;stroke-linecap:round}
+.chapter-signal-hood{fill:none;stroke:#809498;stroke-width:1.7;stroke-linecap:round}
+.chapter-lens{fill:#11232c;stroke:#081820;stroke-width:1;transition:fill .35s,filter .35s}
+.chapter-lens-glint{fill:#e1eff1;opacity:.22}
+.route-station[data-aspect=red] .chapter-red{fill:#d85543;filter:drop-shadow(0 0 3px #d8554399)}
+.route-station[data-aspect=amber] .chapter-amber{fill:#e4ad34;filter:drop-shadow(0 0 4px #e4ad3499)}
+.route-station[data-aspect=green] .chapter-green{fill:#54b28b;filter:drop-shadow(0 0 4px #54b28b99)}
+@media(prefers-reduced-motion:reduce){.chapter-lens{transition:none}}
 #train-scroll{position:fixed;width:44px;height:76px;transform:translate(-50%,-50%);z-index:80;touch-action:none;user-select:none}
 #train-thumb{position:relative;width:44px;height:76px;border-radius:12px;cursor:grab;outline-offset:2px}
 #train-thumb:focus-visible{outline:2px solid var(--gold-d);background:#fafaf5aa}
-#train-canvas{width:100px;height:170px;position:absolute;left:-28px;top:-82px;pointer-events:none;display:none;filter:drop-shadow(0 4px 2px #102a4433)}
+#train-canvas{width:100px;height:170px;position:absolute;left:-28px;top:-82px;pointer-events:none;display:none;filter:drop-shadow(0 4px 2px #102a4433);transition:opacity .3s ease}
 .train-fallback{width:44px;height:76px;display:block;pointer-events:none;filter:drop-shadow(0 3px 2px #102a4444)}
-#train-thumb[data-direction=down] .train-fallback{transform:rotate(180deg)}
+#train-thumb .train-fallback{transform:rotate(calc(var(--heading,1.57rad) + 1.5708rad))}
 .has-model #train-canvas{display:block}.has-model .train-fallback{display:none}
 .train-nose{position:absolute;width:0;height:0;border-left:5px solid #b8860b;border-top:3px solid transparent;border-bottom:3px solid transparent;left:21px;top:37px;transform:rotate(var(--heading,1.57rad)) translateX(36px);pointer-events:none;opacity:.8}
 .train-tip{position:absolute;left:49px;top:50%;transform:translateY(-50%);padding:9px 13px;border:1px solid #d4a84366;border-radius:8px;background:var(--navy-xd);color:var(--ivory);font-size:12px;white-space:nowrap;opacity:0;visibility:hidden;pointer-events:none;box-shadow:0 4px 14px #143c5c22}
@@ -291,6 +301,133 @@ select:focus-visible{outline:2px solid var(--gold-l);outline-offset:4px}
 }
 @media(max-width:380px){.map-head .t{font-size:10px}.map-head{gap:8px}.foot-cycle{display:block}.foot-cycle svg{margin:0 0 14px}}
 @media(prefers-reduced-motion:reduce){
-  .hero-badge .dot,.term-buffer i::before{animation:none}
+  .hero-badge .dot{animation:none}
   .thought-card:hover,.collection-card:hover,.edu-card:hover,.con-card:hover{transform:none}
+}
+
+/* The moving locomotive arrives at one central Churchgate siding. */
+.terminus-scene{height:228px;position:relative;isolation:isolate;pointer-events:none}
+.terminus-glow{position:absolute;inset:12px 0 0;background:radial-gradient(ellipse at 50% 68%,#e8c97a14,transparent 58%)}
+.terminus-station-name{position:absolute;top:25px;left:50%;transform:translateX(-50%);color:#eed69c;font:10px 'Space Mono',monospace;letter-spacing:.3em;white-space:nowrap;border:1px solid #e8c97a55;padding:7px 14px;border-radius:3px;background:#102f47}
+.terminus-station-name span{font-family:'Noto Sans Devanagari',sans-serif;margin-left:12px;letter-spacing:.08em;color:#d9e3e4}
+#terminus-dock{position:absolute;left:50%;top:147px;width:100px;height:76px;transform:translate(-50%,-50%)}
+.parked-train{position:absolute;width:144px;height:64px;left:50%;top:-9px;transform:translateX(-50%);filter:drop-shadow(0 5px 3px #07192780);transition:opacity .3s ease}
+.terminus-scene.has-route .parked-train{top:-22px;opacity:0}
+.terminus-scene.has-route.has-arrived .parked-train{opacity:1}
+.terminus-siding{position:absolute;top:160px;left:calc(50% - 110px);width:220px;height:10px;border-top:2px solid #e5ce92aa;border-bottom:2px solid #e5ce9266;background:repeating-linear-gradient(90deg,transparent 0 8px,#c19d5e77 8px 11px);box-shadow:0 7px 12px #07192766}
+.terminus-scene.has-route .terminus-siding{left:50%;width:110px;top:147px;transform:translateY(-50%)}
+.terminus-buffer-stop{position:absolute;left:calc(50% + 99px);top:131px;width:22px;height:25px;border-bottom:4px solid #081e2e}
+.terminus-buffer-stop::before{content:'';position:absolute;left:4px;top:3px;width:5px;height:20px;background:#adc0bf;transform:skewX(-15deg);box-shadow:9px 0 #728b94}
+.terminus-buffer-stop::after{content:'';position:absolute;top:0;width:23px;height:8px;border:1px solid #dfb86b;background:repeating-linear-gradient(135deg,#e8c97a 0 5px,#283a40 5px 10px);border-radius:2px;box-shadow:0 2px 4px #07192799}
+.railway-signal{position:absolute;top:65px;width:30px;filter:drop-shadow(2px 4px 3px #07192755)}
+.signal-west{left:calc(50% - 174px)}.signal-east{left:calc(50% + 145px)}
+.signal-head{position:relative;display:flex;align-items:center;flex-direction:column;gap:5px;padding:7px 4px;background:linear-gradient(100deg,#334752,#091e2b 48%,#1c303b);border:1px solid #83969888;border-radius:14px;box-shadow:inset 2px 0 2px #a7bab922,3px 1px 0 #061624}
+.signal-lens{position:relative;display:block;width:13px;height:13px;border-radius:50%;background:#0a151c;border:1px solid #0009;box-shadow:inset 0 2px 3px #000;isolation:isolate}
+.signal-lens::before{content:'';position:absolute;inset:0;border-radius:50%;opacity:.12;transition:opacity .65s,box-shadow .65s;background:radial-gradient(circle at 37% 32%,#fff9 0 6%,transparent 12%),repeating-radial-gradient(circle,transparent 0 1px,#0002 1px 2px),radial-gradient(circle,var(--lamp-core),var(--lamp-color) 58%,#180b0b);box-shadow:0 0 6px var(--lamp-color)}
+.signal-lens::after{content:'';position:absolute;left:-2px;right:-2px;top:-3px;height:7px;border-radius:9px 9px 2px 2px;border-top:2px solid #667a82;background:linear-gradient(#142733,transparent);transform:translateY(-1px)}
+.signal-red{--lamp-core:#ffc0a0;--lamp-color:#ef553b}.signal-amber{--lamp-core:#fff1b5;--lamp-color:#efb94d}.signal-green{--lamp-core:#dcffe1;--lamp-color:#63cb99}
+[data-aspect=red] .signal-red::before,[data-aspect=amber] .signal-amber::before,[data-aspect=green] .signal-green::before{opacity:1;box-shadow:0 0 8px var(--lamp-color),0 0 22px var(--lamp-color)}
+.signal-post{width:6px;height:43px;margin:auto;background:repeating-linear-gradient(0deg,#c8d1cb 0 10px,#273a43 10px 20px);border-right:2px solid #829795}
+.signal-base{width:23px;height:5px;margin:auto;border-radius:2px;background:linear-gradient(#8f9d97,#324b59);box-shadow:0 3px #071e2d}
+.terminus-arrival{position:absolute;bottom:8px;left:0;right:0;text-align:center;font:9px/1.6 'Space Mono',monospace;letter-spacing:.16em;text-transform:uppercase;color:#cbd8db}
+.terminus-arrival span{padding:0 8px;color:#e8c97a}
+.terminus-scene.has-route .terminus-arrival{opacity:.45;transition:opacity .8s}
+.terminus-scene.has-arrived .terminus-arrival{opacity:1}
+#train-scroll{--arrival:0}
+#train-thumb{transform:scale(calc(1 + var(--arrival)*.55))}
+#train-scroll.parked .train-nose{opacity:0}
+#train-scroll.parked :is(#train-canvas,.train-fallback,.fallback-steam){opacity:0}
+.foot-emblem{display:block;width:260px;height:auto;max-width:80%;margin:0 auto 20px}
+@media(max-width:560px){
+  .terminus-scene{height:213px}.signal-west{left:calc(50% - 152px)}.signal-east{left:calc(50% + 122px)}
+  .terminus-station-name{font-size:9px;letter-spacing:.2em}.terminus-arrival{font-size:8px;letter-spacing:.08em}
+  .foot-emblem{width:236px;margin-bottom:23px}.foot-quote-sub{font-size:9px;line-height:1.8;letter-spacing:.2em}
+}
+@media(prefers-reduced-motion:reduce){.signal-lens::before,.terminus-scene.has-route .terminus-arrival,.parked-train,#train-canvas{transition:none}}
+
+/* The engine's last wisp becomes the linework of a personal railway signature. */
+.emblem-forge{position:relative;width:240px;max-width:80%;margin:0 auto 20px}
+.emblem-replay{position:relative;display:block;width:100%;padding:0;border:0;background:none;color:inherit;cursor:pointer;border-radius:10px;-webkit-tap-highlight-color:transparent}
+.emblem-replay .foot-emblem{width:100%;max-width:none;margin:0;overflow:visible}
+.emblem-replay:focus-visible{outline:1px solid #e8c97a;outline-offset:7px}
+.emblem-trail{position:absolute;left:0;top:-108px;width:100%;height:auto;overflow:visible;pointer-events:none;z-index:2;opacity:0;filter:drop-shadow(0 0 4px #e8c97a77)}
+.emblem-replay-hint{position:absolute;bottom:-12px;left:50%;transform:translate(-50%,6px);width:260px;text-align:center;font:8px 'Space Mono',monospace;letter-spacing:.08em;text-transform:uppercase;color:#cbd8db;opacity:0;transition:opacity .2s,transform .2s;pointer-events:none}
+.emblem-replay-hint span{color:#e8c97a}
+.emblem-forge:hover .emblem-replay-hint,.emblem-forge:focus-within .emblem-replay-hint{opacity:1;transform:translate(-50%,0)}
+.emblem-forge[data-state=waiting] .foot-emblem{opacity:.12}
+.emblem-forge[data-state=forming] .emblem-trail{animation:signature-wisp 1.7s ease-out both}
+.emblem-forge[data-state=forming] .ink-wisp{stroke-dasharray:1;animation:signature-flow 1.45s cubic-bezier(.4,0,.2,1) both}
+.emblem-forge[data-state=forming] .ink-echo{stroke-dasharray:1;animation:signature-flow 1.3s .12s cubic-bezier(.4,0,.2,1) both;opacity:.35}
+.emblem-forge[data-state=forming] :is(.crest-rim,.crest-inner-rim,.crest-hub,.crest-wings,.crest-feathers,.crest-rails,.crest-rule){stroke-dasharray:1;animation:crest-draw 1.15s .65s cubic-bezier(.22,1,.36,1) both}
+.emblem-forge[data-state=forming] .crest-inner-rim{animation-delay:.85s}
+.emblem-forge[data-state=forming] .crest-hub{animation-delay:1.05s}
+.emblem-forge[data-state=forming] .crest-wings{animation-delay:1.15s;animation-duration:1.15s}
+.emblem-forge[data-state=forming] .crest-feathers{animation-delay:1.4s}
+.emblem-forge[data-state=forming] .crest-rails{animation-delay:1.7s}
+.emblem-forge[data-state=forming] .crest-rule{animation-delay:2.15s}
+.emblem-forge[data-state=forming] .crest-spokes{animation:crest-reveal .75s 1.05s both}
+.emblem-forge[data-state=forming] .crest-scribe{animation:crest-scribe 1.15s .65s ease-in-out both;transform:rotate(-90deg);transform-origin:150px 84px;filter:drop-shadow(0 0 3px #ffe09a)}
+.emblem-forge[data-state=forming] .crest-flash{animation:crest-flash 1s 1.6s ease-out both;transform-origin:150px 84px}
+.emblem-forge[data-state=forming] .crest-initials{animation:crest-lettering .8s 1.6s both}
+.emblem-forge[data-state=forming] .crest-name{animation:crest-reveal .7s 2.1s both}
+.emblem-forge[data-state=forming] .crest-credentials{animation:crest-reveal .7s 2.35s both}
+.emblem-forge[data-state=forming] .crest-service{animation:crest-service-reveal .65s 2.6s both}
+@keyframes signature-flow{from{stroke-dashoffset:1}to{stroke-dashoffset:0}}
+@keyframes signature-wisp{0%{opacity:0}15%,65%{opacity:.9}100%{opacity:0}}
+@keyframes crest-draw{from{stroke-dashoffset:1;opacity:0}12%{opacity:1}to{stroke-dashoffset:0;opacity:1}}
+@keyframes crest-reveal{from{opacity:0}to{opacity:1}}
+@keyframes crest-lettering{from{opacity:0;filter:blur(4px);transform:translateY(3px)}to{opacity:1;filter:blur(0);transform:translateY(0)}}
+@keyframes crest-service-reveal{from{opacity:0}to{opacity:1}}
+@keyframes crest-scribe{0%{opacity:0;stroke-dashoffset:0}12%,85%{opacity:1}100%{opacity:0;stroke-dashoffset:-1}}
+@keyframes crest-flash{0%{opacity:0;transform:scale(.97)}25%{opacity:.7}100%{opacity:0;transform:scale(1.14)}}
+@media(min-width:961px){
+  .terminus-scene{height:190px}
+  .emblem-forge{width:224px}
+  .foot-wrap{padding-bottom:24px}
+  .foot-quote{font-size:22px}
+  .foot-cycle{padding:18px;margin-top:22px}
+  .ride-distance{font-size:40px;margin-bottom:7px}
+  .ride-copy p{font-size:14px;line-height:1.7;margin-top:10px}
+  .foot-rule{margin:22px 0 16px}
+  .foot-base{font-size:11px;gap:10px}
+}
+@media(max-width:560px){.emblem-forge{width:224px;margin-bottom:23px}.emblem-trail{top:-100px}}
+@media(prefers-reduced-motion:reduce){
+  .emblem-forge .foot-emblem{opacity:1!important}
+  .emblem-forge[data-state=forming] *{animation:none!important}
+  .emblem-trail,.crest-flash,.crest-scribe{display:none}
+  .emblem-replay-hint{transition:none}
+}
+
+/* A living identity: handwritten initials within a still ring, a railway wheel at the terminus. */
+.nav-mono{width:60px;height:60px;border:0;background:none}
+.nav-emblem{display:block;width:100%;height:100%;overflow:visible;filter:drop-shadow(0 2px 3px #061b2855)}
+.nav-letter{stroke-dasharray:1;animation:nav-monogram-write 10.8s ease-in-out infinite both}
+nav.hidden .logo-loop{animation-play-state:paused}
+.emblem-forge{width:320px;max-width:min(88%,320px);margin-bottom:32px}
+.emblem-trail{width:240px;left:50%;transform:translateX(-50%);top:-116px}
+.emblem-controls{position:absolute;left:50%;bottom:-21px;transform:translateX(-50%);display:flex;justify-content:center;align-items:center;gap:11px;width:290px;white-space:nowrap;font:8px 'Space Mono',monospace;letter-spacing:.03em;color:#d0dbdbb3}
+.logo-motion-toggle{padding:5px 0;border:0;background:none;color:#e8c97a;font:inherit;cursor:pointer;text-decoration:underline;text-decoration-color:#e8c97a55;text-underline-offset:3px}
+.logo-motion-toggle:hover{color:#fff0c5;text-decoration-color:currentColor}
+.emblem-forge[data-state=forming] .crest-descriptor{animation:crest-reveal .7s 2s both}
+.emblem-forge[data-state=forming] :is(.crest-scribe,.crest-flash){transform-origin:180px 84px}
+.logo-wheel{transform-origin:180px 84px;animation:logo-orbit 36s linear infinite;animation-play-state:paused}
+.logo-shuttle{animation:logo-shuttle 14s linear infinite;animation-play-state:paused}
+.logo-steam{animation:logo-steam 2.7s ease-out infinite;animation-play-state:paused;transform-box:fill-box;transform-origin:center}
+.logo-rail-scene{opacity:0;transition:opacity .6s}
+.emblem-forge[data-state=complete] .logo-rail-scene{opacity:1}
+.emblem-forge.is-in-view[data-state=complete] .logo-loop{animation-play-state:running}
+.logo-motion-paused .logo-loop,.page-inactive .logo-loop{animation-play-state:paused!important}
+.logo-motion-paused .nav-letter{animation:none;stroke-dashoffset:0;opacity:1}
+@keyframes logo-orbit{to{transform:rotate(360deg)}}
+@keyframes nav-monogram-write{0%{stroke-dashoffset:1;opacity:0}3%{opacity:1}17%,82%{stroke-dashoffset:0;opacity:1}91%,100%{stroke-dashoffset:0;opacity:0}}
+@keyframes logo-shuttle{0%{transform:translateX(0);opacity:1}28%{transform:translateX(70px);opacity:1}36%{transform:translateX(96px);opacity:0}36.1%{transform:translateX(-96px);opacity:0}44%{transform:translateX(-70px);opacity:1}100%{transform:translateX(0);opacity:1}}
+@keyframes logo-steam{0%{opacity:0;transform:translate(0,0) scale(.4)}18%{opacity:.55}100%{opacity:0;transform:translate(-11px,-15px) scale(1.7)}}
+@media(max-width:560px){.nav-mono{width:50px;height:50px}.emblem-forge{width:284px}.emblem-controls{font-size:7px;gap:10px}}
+@media(prefers-reduced-motion:reduce){
+  .logo-loop{animation:none!important}
+  .logo-steam{display:none}
+  .nav-letter{stroke-dashoffset:0;opacity:1}
+  .logo-rail-scene{opacity:1;transition:none}
+  .emblem-controls{display:none}
 }
