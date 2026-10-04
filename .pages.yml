@@ -1,0 +1,153 @@
+media:
+  - name: photos
+    label: Photographs and article images
+    input: assets/photos
+    output: /assets/photos
+    extensions: [jpg, jpeg, png, webp, gif, avif]
+    rename: safe
+  - name: illustrations
+    label: Article illustrations
+    input: assets/illustrations
+    output: /assets/illustrations
+    extensions: [svg, jpg, jpeg, png, webp, avif]
+    rename: safe
+
+content:
+  - name: gallery
+    label: Gallery photographs
+    type: collection
+    path: content/gallery
+    format: json
+    filename: "{primary}.json"
+    subfolders: false
+    view:
+      primary: title
+      fields: [title, order, collection, published]
+      sort: [order, title]
+      default:
+        sort: order
+        order: asc
+    fields:
+      - name: title
+        label: Photo name
+        type: string
+        required: true
+        description: A short name to find this photograph in the editor.
+      - name: image
+        label: Photograph
+        type: image
+        required: true
+        options:
+          media: photos
+      - name: caption
+        label: Description
+        type: text
+        required: true
+      - name: date_label
+        label: Date or occasion
+        type: string
+        description: For example, 21 Jun 2025 or Railway Week 2018.
+      - name: collection
+        label: Collection
+        type: select
+        required: true
+        options:
+          values:
+            - name: western
+              label: Western Railway
+            - name: jhansi
+              label: Jhansi years
+            - name: other
+              label: Other moments
+      - name: order
+        label: Display order
+        type: number
+        required: true
+        description: Lower numbers appear first. The first six published photos form the preview. Use 10, 20, 30 to leave room for additions, or 15 to insert between 10 and 20.
+        options:
+          min: 0
+      - name: position
+        label: Image focus
+        type: select
+        options:
+          values: [center, top, bottom, left, right, "center 65%"]
+      - name: published
+        label: Show on website
+        type: boolean
+        description: Turn on and save to publish. Website updates automatically after the build completes.
+
+  - name: articles
+    label: Articles
+    type: collection
+    path: content/articles
+    format: yaml-frontmatter
+    filename: "{primary}.md"
+    subfolders: false
+    operations:
+      rename: false
+    view:
+      primary: title
+      fields: [title, order, published]
+      sort: [order, title]
+      default:
+        sort: order
+        order: asc
+    fields:
+      - name: title
+        label: Article title
+        type: string
+        required: true
+      - name: excerpt
+        label: Short introduction
+        type: text
+        required: true
+        description: Shown on the home page and article list.
+      - name: listing_excerpt
+        label: Shorter introduction for article list
+        type: text
+        description: Optional. Leave blank to use the introduction above.
+      - name: category
+        label: Topic
+        type: string
+        description: For example, Observation, Education or Railway life.
+      - name: cover
+        label: Cover graphic
+        type: image
+        options:
+          media: illustrations
+        description: Upload a graphic or choose an existing illustration. Artwork is uploaded here, not generated automatically.
+      - name: cover_alt
+        label: Image description for accessibility
+        type: string
+        description: Describe meaningful visual content. Leave blank for a purely decorative graphic.
+      - name: cover_motion
+        label: Gentle cover animation
+        type: boolean
+        description: Animates details in the two original illustrations, or adds a gentle camera movement to uploaded images. Readers can pause it; reduced-motion preferences are respected.
+      - name: cover_caption
+        label: Cover caption
+        type: string
+      - name: order
+        label: Display order
+        type: number
+        required: true
+        description: Lower numbers appear first. The first two published articles appear on the home page; every published article appears in Thoughts.
+        options:
+          min: 0
+      - name: reading_minutes
+        label: Reading time in minutes
+        type: number
+        description: Optional. Leave blank to calculate automatically from the article.
+        options:
+          min: 1
+      - name: body
+        label: Article
+        type: rich-text
+        required: true
+        options:
+          format: markdown
+          media: photos
+      - name: published
+        label: Show on website
+        type: boolean
+        description: Turn on and save to publish. Turning off removes it from the website. This GitHub repository is public, so unpublished text is not private.

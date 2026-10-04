@@ -594,13 +594,7 @@ footer{background:var(--navy-xd);color:rgba(250,250,245,.7);position:relative;ov
 <section id="thoughts"><div class="wrap">
   <div class="thoughts-heading"><div><div class="kicker">From the pen of Ashok Kumar Misra</div><h2>Thoughts<br><em>Along the Way</em></h2><p>Reflections by Ashok Kumar Misra</p></div>
   <a class="pen-link" href="thoughts/" aria-label="Explore all thoughts by Ashok Kumar Misra"><svg class="pen-mark" viewBox="0 0 90 120" fill="none" stroke="currentColor" stroke-width="1.4" aria-hidden="true"><path d="M66 8 26 68 19 99 45 81 79 18 66 8ZM26 68 45 81M19 99 36 73M59 19 71 27M13 108C32 98 48 116 76 101"/><circle cx="36" cy="73" r="3"/></svg><span>Explore all thoughts <i aria-hidden="true">↗</i></span></a></div>
-  <div class="thought-cards"><a class="thought-card" href="thoughts/you-observe-a-lot-by-watching.html">
-  <div class="thought-meta"><span>Reflection · 2 min read</span><span class="thought-number">01</span></div>
-  <h3>You Observe a Lot by Watching</h3><p>Why do most of us pass through familiar places without remembering what we have just seen? Perhaps our minds are occupied elsewhere.</p><div class="thought-read"><span>Read the reflection</span><i aria-hidden="true">↗</i></div>
-</a><a class="thought-card" href="thoughts/why-we-study-what-we-study.html">
-  <div class="thought-meta"><span>Reflection · 2 min read</span><span class="thought-number">02</span></div>
-  <h3>Why We Study, What We Study</h3><p>Have we ever paused to ask why, from infancy to adulthood, we spend so many years studying? Often, students wonder why they must learn subjects they neither enjoy nor believe will ever be useful.</p><div class="thought-read"><span>Read the reflection</span><i aria-hidden="true">↗</i></div>
-</a></div>
+  <div class="thought-cards"><!-- CMS:HOME_ARTICLES --></div>
 <a class="next-chapter" href="#gallery"><span><small>Next stop · Gallery</small><strong>See the moments along the way.</strong></span><span aria-hidden="true">→</span></a>
 </div></section>
 
@@ -614,8 +608,8 @@ footer{background:var(--navy-xd);color:rgba(250,250,245,.7);position:relative;ov
     <div class="gal-grid" id="gal-grid" tabindex="0" role="region" aria-label="Photographs, swipe or use the next and previous buttons"></div>
     <div class="swipe-controls" data-rail="gal-grid"><span><b class="swipe-position">01 / 06</b><small>Swipe to explore · Tap to enlarge</small></span><button type="button" data-step="-1" aria-label="Previous gallery photo" aria-controls="gal-grid">←</button><button type="button" data-step="1" aria-label="Next gallery photo" aria-controls="gal-grid">→</button></div>
     <div class="gal-actions">
-      <button class="btn gal-toggle" id="gal-toggle" type="button" aria-expanded="false" aria-controls="gal-grid"><span>View all 26 photos</span><span aria-hidden="true">＋</span></button>
-      <p class="gal-count" id="gal-count" aria-live="polite">Showing 6 of 26 photographs</p>
+      <button class="btn gal-toggle" id="gal-toggle" type="button" aria-expanded="false" aria-controls="gal-grid"><span>View all <!-- CMS:GALLERY_COUNT --> photos</span><span aria-hidden="true">＋</span></button>
+      <p class="gal-count" id="gal-count" aria-live="polite"><!-- CMS:GALLERY_SUMMARY --></p>
     </div>
     <p class="gal-note">Photographs from years of service on the Indian Railways.</p>
 <a class="next-chapter" href="#contact"><span><small>Next stop · Contact</small><strong>Keep the conversation going.</strong></span><span aria-hidden="true">→</span></a>
@@ -785,35 +779,7 @@ const EXPERTISE=[
  {n:"Financial & Budgetary Control",ic:'<path d="M7 4h10M7 8h10M7 4c5.5 0 7.5 1.5 7.5 4S12.5 12 9.5 12H7l7.5 8"/>'},
  {n:"Public Administration",ic:'<path d="M3 21h18M5 18V9.5M9.5 18V9.5M14.5 18V9.5M19 18V9.5M3 9.5 12 3l9 6.5H3Z"/>'}
 ];
-const GBASE="assets/photos/";
-const GALLERY=[
- {img:GBASE+"01_2025-06-21_yoga-day-event.jpg",tag:"21 Jun 2025",cap:"Presiding over International Day of Yoga celebrations at Utsav Hall, Badhwar Park, Mumbai, on the theme 'Yoga for One Earth, One Health'"},
- {img:GBASE+"02_2025-04-15_ambedkar-tribute.jpg",tag:"15 Apr 2025",cap:"Offering floral tribute on the birth anniversary of Bharat Ratna Dr. B.R. Ambedkar at WR Headquarters, Churchgate"},
- {img:GBASE+"03_2025-03-18_mumbai-suburban-inspection.jpg",tag:"18 Mar 2025",cap:"Inspection between Mumbai Central and Borivali stations of WR's Mumbai suburban section"},
- {img:GBASE+"04_2025-02-11_navsari-safety-inspection.jpg",tag:"11 Feb 2025",cap:"Safety inspection at Navsari station, Mumbai Division"},
- {img:GBASE+"05_2025-01-11_surat-vadodara-inspection.jpg",tag:"10 Jan 2025",cap:"Safety inspection of the Surat-Vadodara section with DRM Vadodara and senior officers"},
- {img:GBASE+"06_2024-12-24_bhuj-station-inspection.jpg",tag:"24 Dec 2024",cap:"Inspection at Bhuj station, reviewing the station building, circulating area, platforms and foot over bridges"},
- {img:GBASE+"07_2024-12-18_civil-defence-day.jpg",tag:"18 Dec 2024",cap:"Presiding over Annual Civil Defence Day celebrations at Western Railway Sports Ground, Mahalaxmi"},
- {img:GBASE+"08_2024-11-14_churchgate-andheri-cab-inspection.jpg",tag:"14 Nov 2024",cap:"Surprise motorman-cab inspection between Churchgate and Andheri stations of the Mumbai suburban section"},
- {img:GBASE+"09_2024-11-04_foundation-day-commemorative-coin.jpg",tag:"4 Nov 2024",cap:"Releasing a commemorative coin of the heritage WR Headquarters building on the eve of Western Railway's 74th Foundation Day"},
- {img:GBASE+"10_2024-08-26_ups-press-conference.jpg",tag:"26 Aug 2024",cap:"Addressing the media on the Unified Pension Scheme at a press conference, WR Headquarters, Churchgate"},
- {img:GBASE+"11_2024-07-30_amrit-bharat-station-review.jpg",tag:"30 Jul 2024",cap:"Reviewing redevelopment plans for Umbergaon Road and Sanjaan stations under the Amrit Bharat Station Scheme"},
- {img:GBASE+"12_2024-07-17_virar-carshed-inspection.jpg",tag:"17 Jul 2024",cap:"Inspecting Virar Carshed and reviewing monsoon preparedness of EMU rakes"},
- {img:GBASE+"13_2024-06-01_tihi-tunnel-inspection.jpg",tag:"1 Jun 2024",cap:"Inspecting Tihi Tunnel and ongoing works in the Dhar area, Ratlam Division"},
- {img:GBASE+"14_2024-04-17_book-launch-rail-week.jpg",tag:"16 Apr 2024",cap:"Unveiling 'The Lines of Prosperity' at the 69th Rail Week function"},
- {img:GBASE+"15_2024-04-05_nabh-certificate-jrh.jpg",tag:"5 Apr 2024",cap:"Unveiling the NABH certificate at Jagjivan Ram Hospital, the first Indian Railways hospital to achieve the accreditation"},
- {img:GBASE+"16_2024-03-01_blood-donation-camp.jpg",tag:"1 Mar 2024",cap:"Inaugurating a blood donation camp organised by Western Railway employees"},
- {img:GBASE+"17_2024-02-08_parul-chaudhary-felicitation.jpg",tag:"8 Feb 2024",cap:"Felicitating WR's star athlete and Arjuna Awardee Ms. Parul Chaudhary"},
- {img:GBASE+"18_2024-01-24_safety-awards-employees.jpg",tag:"24 Jan 2024",cap:"Presenting Safety Awards to 19 WR employees for alertness in averting accidents"},
- {img:GBASE+"19_2024-01-21_tata-mumbai-marathon.jpg",tag:"21 Jan 2024",cap:"Participating in the 10 km run at Tata Mumbai Marathon 2024"},
- {img:GBASE+"20_2024-01-11_railway-minister-pavilion-visit.jpg",tag:"11 Jan 2024",cap:"Accompanying Hon'ble Railway Minister Shri Ashwini Vaishnaw at the Indian Railways Pavilion set up by Western Railway"},
- {img:GBASE+"21_2024-01-07_125th-anniversary-exhibition.jpg",tag:"7 Jan 2024",cap:"Inaugurating the 125th Anniversary Exhibition of Western Railway's heritage headquarters"},
- {img:GBASE+"22_2024-01-05_coffee-table-book-release.jpg",tag:"5 Jan 2024",cap:"Releasing the coffee table book '125 Years of a Timeless Legacy' with AGM Shri Prakash Butani"},
- {img:GBASE+"23_2023-12-27_sabarmati-station-inspection.jpg",tag:"27 Dec 2023",cap:"Inspecting Palanpur, Mahesana and Sabarmati stations of Ahmedabad Division and reviewing Sabarmati redevelopment work"},
- {img:GBASE+"jhansi-republic-day-2018.jpg",tag:"26 Jan 2018",cap:"Republic Day celebrations as Divisional Railway Manager, Jhansi.",position:"center 65%"},
- {img:GBASE+"jhansi-union-minister-visit-2018-2019.jpg",tag:"Approx. Dec 2018–Jan 2019",cap:"With the then Union Minister during his tenure as Divisional Railway Manager, Jhansi."},
- {img:GBASE+"jhansi-best-division-shield-2018.jpg",tag:"Railway Week 2018",cap:"Jhansi Division, North Central Railway, receiving the Best Division shield at Railway Week 2018."}
-];
+const GALLERY=/* CMS:GALLERY */;
 
 /* ================= HELPERS ================= */
 const $=(s,c=document)=>c.querySelector(s), $$=(s,c=document)=>[...c.querySelectorAll(s)];
@@ -1137,10 +1103,18 @@ $$("#exp-grid .reveal").forEach((el,i)=>{
 /* ================= GALLERY ================= */
 const galleryPreviewCount=6;
 const galleryGrid=$("#gal-grid"),galleryToggle=$("#gal-toggle");
-const galleryOrder=[0,1,2,24,25,23,...GALLERY.map((_,i)=>i).filter(i=>![0,1,2,24,25,23].includes(i))];
+const galleryOrder=GALLERY.map((_,i)=>i);
 let galleryFilter="all",galleryExpanded=false;
-galleryGrid.innerHTML=galleryOrder.map(i=>{const g=GALLERY[i];return `<figure class="gal-item" data-i="${i}" style="--photo-position:${g.position||"center"}"><img src="${g.img}" alt="${g.cap}" loading="lazy"><span class="tag">${g.tag}</span><figcaption class="cap">${g.cap}</figcaption><button class="gal-open" type="button" aria-label="View photo: ${g.cap}"></button></figure>`;}).join("");
-function galleryIndices(){return galleryOrder.filter(i=>galleryFilter==="all"||(galleryFilter==="jhansi"?i>=23:i<23));}
+galleryOrder.forEach(i=>{
+  const g=GALLERY[i],figure=document.createElement("figure"),img=document.createElement("img"),tag=document.createElement("span"),caption=document.createElement("figcaption"),button=document.createElement("button");
+  figure.className="gal-item";figure.dataset.i=i;figure.style.setProperty("--photo-position",g.position||"center");
+  img.src=g.img;img.alt=g.cap;img.loading="lazy";
+  tag.className="tag";tag.textContent=g.tag;
+  caption.className="cap";caption.textContent=g.cap;
+  button.className="gal-open";button.type="button";button.setAttribute("aria-label","View photo: "+g.cap);
+  figure.append(img,tag,caption,button);galleryGrid.append(figure);
+});
+function galleryIndices(){return galleryOrder.filter(i=>galleryFilter==="all"||GALLERY[i].collection===galleryFilter);}
 function setGalleryExpanded(expanded,keepControl=false){
   galleryExpanded=expanded;
   galleryGrid.scrollTo({left:0,behavior:"instant"});
@@ -1149,7 +1123,7 @@ function setGalleryExpanded(expanded,keepControl=false){
   galleryToggle.hidden=indices.length<=galleryPreviewCount;
   galleryToggle.setAttribute("aria-expanded",String(expanded));
   galleryToggle.innerHTML=`<span>${expanded?"Show fewer photos":`View all ${indices.length} photos`}</span><span aria-hidden="true">${expanded?"−":"＋"}</span>`;
-  $("#gal-count").textContent=`Showing ${visible.length} of ${indices.length} photographs`;
+  $("#gal-count").textContent=indices.length?`Showing ${visible.length} of ${indices.length} photographs`:"No photographs in this collection yet.";
   requestLayoutRefresh();
   if(keepControl&&!expanded){const bounds=galleryToggle.getBoundingClientRect();if(bounds.top<90||bounds.bottom>innerHeight)galleryToggle.scrollIntoView({block:"center",behavior:"instant"});}
 }
@@ -1164,6 +1138,7 @@ $("#st-photo-link").addEventListener("click",()=>setGalleryFilter("jhansi"));
 setGalleryExpanded(false);
 const lb=$("#lightbox");let lbI=0,lbOpener=null;
 function showLb(i){
+  if(!GALLERY.length)return;
   lbI=(i+GALLERY.length)%GALLERY.length;
   const g=GALLERY[lbI];
   lb.querySelector("img").src=g.img;lb.querySelector("img").alt=g.cap;

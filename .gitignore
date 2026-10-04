@@ -1,2 +1,4 @@
 .DS_Store
 assets/photos/hero-raw.jpg
+node_modules/
+dist/
