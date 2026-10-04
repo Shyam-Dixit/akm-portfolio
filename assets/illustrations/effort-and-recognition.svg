@@ -1,0 +1,35 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 600 260" fill="none"><title>How is effort weighed?</title><desc>An appraisal balance holds many completed files in one pan and very few in the other. Both receive the same Good grade, showing how the system recognises unequal contributions alike.</desc><defs>
+<linearGradient id="gold" x1="0" y1="0" x2=".8" y2="1"><stop stop-color="#f0dca8"/><stop offset=".5" stop-color="#c8a66a"/><stop offset="1" stop-color="#947443"/></linearGradient>
+<linearGradient id="enamel" x2="1" y2="1"><stop stop-color="#587c88"/><stop offset="1" stop-color="#183e56"/></linearGradient>
+<linearGradient id="paper" x2="0" y2="1"><stop stop-color="#fffbef"/><stop offset="1" stop-color="#e9ddc0"/></linearGradient>
+<pattern id="grain" width="8" height="8" patternUnits="userSpaceOnUse"><circle cx="2" cy="3" r=".45" fill="#756e57" opacity=".12"/></pattern>
+</defs><style>.appraisal-hand{transform-origin:300px 91px;animation:appraisal-needle 12s ease-in-out infinite}.appraisal-ink-left{animation:appraisal-ink 12s ease-in-out infinite}.appraisal-ink-right{animation:appraisal-ink 12s .8s ease-in-out infinite}.appraisal-top{animation:appraisal-file 12s ease-in-out infinite}
+@keyframes appraisal-needle{0%,100%{transform:rotate(0)}20%{transform:rotate(-8deg)}35%{transform:rotate(5deg)}50%,85%{transform:rotate(0)}}@keyframes appraisal-ink{0%,18%,100%{opacity:.45}32%,86%{opacity:1}}@keyframes appraisal-file{0%,100%{transform:translateY(0)}30%,65%{transform:translateY(-3px)}}@media(prefers-reduced-motion:reduce){svg *{animation:none!important}}</style><rect width="600" height="260" fill="#e9e4d7"/><rect width="600" height="260" fill="url(#grain)"/>
+<ellipse cx="300" cy="125" rx="193" ry="111" fill="#faf5e8"/>
+<g stroke="#345567" stroke-width="1.4" stroke-linejoin="round" stroke-linecap="round">
+<!-- Quiet file-room geometry places the metaphor inside an office. -->
+<path d="M71 53h57v139H71Zm402 0h57v139h-57Z" stroke="#c4c6b4" fill="#dfe2d3" fill-opacity=".4"/>
+<path d="M76 64h47v33H76Zm0 42h47v33H76Zm0 42h47v33H76Zm402-84h47v33h-47Zm0 42h47v33h-47Zm0 42h47v33h-47Z" stroke="#c5c6b4" stroke-width=".8"/>
+<path d="M93 81h12m-12 42h12m-12 42h12m390-84h12m-12 42h12m-12 42h12" stroke="#b3b8a3" stroke-width="1"/>
+<ellipse cx="300" cy="234" rx="189" ry="7" fill="#506a72" opacity=".08" stroke="none"/>
+<!-- The central assessment stays level despite different workloads. -->
+<path d="M292 76h16v129h-16Z" fill="url(#gold)" stroke="#a78b50"/>
+<path d="M281 199h38l10 18h-58Z" fill="url(#enamel)"/>
+<path d="M266 216h68l9 9h-86Z" fill="#c8ae74" stroke="#a78b50"/>
+<path d="M159 83c31-18 68-19 110-9l31-14 31 14c41-10 79-9 110 9" stroke="#a78b50" stroke-width="6"/>
+<path d="M159 81c33-17 71-18 110-9l31-14 31 14c41-9 80-8 110 9" stroke="#eddbab" stroke-width="1.5"/>
+<circle cx="300" cy="58" r="11" fill="url(#enamel)" stroke="#a78b50"/><circle cx="300" cy="58" r="4" fill="#d5bd81" stroke="none"/>
+<circle cx="300" cy="106" r="23" fill="#f8f2e3" stroke="#b89b61"/>
+<path d="M282 113a19 19 0 0 1 36 0" stroke="#d2c095"/><path class="appraisal-hand" d="M300 116V91" stroke="#7d8c79" stroke-width="2"/><circle cx="300" cy="116" r="2.5" fill="#8d9d84" stroke="none"/>
+<!-- The pans and their completed files are intentionally different. -->
+<path d="m170 82-35 89m35-89 45 89m214-89-45 89m45-89 35 89" stroke="#a08d62" stroke-width="1.2"/>
+<path d="M124 170h103l-17 16h-70Zm249 0h103l-17 16h-70Z" fill="url(#enamel)" stroke="#345567"/>
+<path d="M138 162h75v8h-75Zm3-10h75v9h-75Zm-4-10h76v9h-76Zm4-10h76v9h-76Zm-3-10h74v9h-74Z" fill="url(#paper)" stroke="#bba881" stroke-width="1"/>
+<g class="appraisal-top"><path d="M139 112h76v10h-76Z" fill="#bac8ad" stroke="#8a9d7b"/><path d="M146 117h40" stroke="#eff0e4" stroke-width="1"/><path d="m197 116 3 3 6-6" stroke="#6e855f" stroke-width="1.2"/></g>
+<path d="M384 160h78v10h-78Z" fill="url(#paper)" stroke="#bba881" stroke-width="1"/>
+<path d="M386 150h74v10h-74Z" fill="#bac8ad" stroke="#8a9d7b"/><path d="M393 155h40" stroke="#eff0e4" stroke-width="1"/><path d="m444 154 3 3 6-6" stroke="#6e855f" stroke-width="1.2"/>
+<path d="M143 137h64m-65 20h64m183 8h66" stroke="#d3c39f" stroke-width=".7"/>
+<g class="appraisal-ink-left" transform="rotate(-4 176 210)"><rect x="139" y="196" width="74" height="27" rx="2" stroke="#b19658"/><text x="176" y="215" text-anchor="middle" font-family="Georgia,serif" font-size="16" letter-spacing="2" fill="#9b824b" stroke="none">GOOD</text></g>
+<g class="appraisal-ink-right" transform="rotate(-4 426 210)"><rect x="389" y="196" width="74" height="27" rx="2" stroke="#b19658"/><text x="426" y="215" text-anchor="middle" font-family="Georgia,serif" font-size="16" letter-spacing="2" fill="#9b824b" stroke="none">GOOD</text></g>
+<path d="M278 43h44" stroke="#bcc4b0" stroke-width="1"/>
+</g></svg>

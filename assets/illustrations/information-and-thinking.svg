@@ -1,0 +1,74 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 600 260" fill="none">
+  <title>Information is the starting point</title><desc>Books and a tablet connect to a Newton’s cradle. Information moves between formats; the experiment in the centre represents working out a problem for oneself.</desc>
+  <defs><linearGradient id="brass" x1="0" y1="0" x2="1" y2="1"><stop stop-color="#ead49c"/><stop offset="1" stop-color="#af8e4f"/></linearGradient></defs>
+  <style>
+    .cradle-left{transform-origin:256px 74px;animation:left 4.8s ease-in-out infinite}
+    .cradle-right{transform-origin:344px 74px;animation:right 4.8s ease-in-out infinite}
+    .thinking-orbit{transform-origin:137px 97px;animation:orbit 24s linear infinite}
+    .thinking-trail{animation:trail 14s linear infinite}
+    .thinking-note{animation:note 7s ease-in-out infinite}
+    .thinking-glow{animation:glow 4.8s ease-in-out infinite}
+    @keyframes left{0%,50%,100%{transform:rotate(0)}12.5%,37.5%{transform:rotate(22deg)}25%{transform:rotate(31deg)}50%,100%{transform:rotate(0)}}
+    @keyframes right{0%,50%,100%{transform:rotate(0)}62.5%,87.5%{transform:rotate(-22deg)}75%{transform:rotate(-31deg)}}
+    @keyframes orbit{to{transform:rotate(360deg)}}
+    @keyframes trail{to{stroke-dashoffset:-48}}
+    @keyframes note{0%,100%{transform:translateY(0)}50%{transform:translateY(-5px)}}
+    @keyframes glow{0%,100%{opacity:.35}50%{opacity:.75}}
+    @media(prefers-reduced-motion:reduce){.cradle-left,.cradle-right,.thinking-orbit,.thinking-trail,.thinking-note,.thinking-glow{animation:none}}
+  </style>
+  <rect width="600" height="260" fill="#e3e7e0"/>
+  <circle cx="300" cy="130" r="108" fill="#faf5e8"/>
+  <ellipse cx="300" cy="225" rx="206" ry="8" fill="#43586b" opacity=".07"/>
+  <g stroke="#43586b" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round">
+    <!-- Knowledge passed down through books. -->
+    <path d="M96 196h91v16H96c-7 0-7-16 0-16Z" fill="#b9c8b2"/>
+    <path d="M108 179h78v17h-78c-8 0-8-17 0-17Z" fill="#d3b779"/>
+    <path d="M88 163h92v16H88c-7 0-7-16 0-16Z" fill="#536e7b"/>
+    <path d="M105 201h71m-69 5h67m-55-21h56m-78-15h70" stroke="#fff7e9" stroke-width="1" opacity=".7"/>
+    <path d="m89 157 12-35c13-4 25-3 39 6 13-7 29-9 44-4l9 35c-20-3-35-1-53 5-18-7-35-9-51-7Z" fill="#fffaf0"/>
+    <path d="m140 128v35m-33-31 22 5m-24 2 20 5m29-7 19-4m-17 11 20-4" stroke="#a18141" opacity=".7"/>
+    <g class="thinking-orbit" stroke="#a18141" stroke-width="1.1">
+      <ellipse cx="137" cy="97" rx="24" ry="9" transform="rotate(-30 137 97)"/>
+      <ellipse cx="137" cy="97" rx="24" ry="9" transform="rotate(30 137 97)"/>
+      <circle cx="137" cy="97" r="3" fill="#d3b779"/>
+      <circle cx="158" cy="85" r="2.5" fill="#a18141"/>
+    </g>
+    <!-- The same principles, now on a screen. -->
+    <rect x="417" y="112" width="93" height="102" rx="10" fill="#536e7b"/>
+    <rect x="423" y="120" width="81" height="82" rx="4" fill="#f6f1e4" stroke="none"/>
+    <circle cx="464" cy="208" r="2.3" fill="#d3b779" stroke="none"/>
+    <path d="M435 181v-43m0 43h55" stroke="#9fac9f" stroke-width="1"/>
+    <path d="M439 174c10-1 12-20 21-20s15 13 26-12" stroke="#a18141" stroke-width="2"/>
+    <circle class="thinking-glow" cx="486" cy="142" r="6" fill="#d3b779" stroke="none"/>
+    <path d="M436 190h29m7 0h18" stroke="#a8b3a3"/>
+    <g class="thinking-note">
+      <rect x="445" y="58" width="40" height="41" rx="4" fill="#fffaf0" stroke="#bfa570"/>
+      <path d="M453 70h24m-24 7h19m-19 7h11" stroke="#9e8247" stroke-width="1"/>
+      <path d="m469 88 4 4 8-9" stroke="#788e72"/>
+    </g>
+    <path d="m457 85 10-13 10 13Z" stroke="#9e8247" stroke-width=".7"/>
+    <path d="M244 84v75a12 12 0 0 0 12 12h88a12 12 0 0 0 12-12V84" stroke="#b6a26e" stroke-width=".65" opacity=".25"/>
+    <path d="M267 179h67m-67-3v6m67-6v6" stroke="#9e8247" stroke-width=".8" opacity=".5"/>
+    <!-- A physical problem connects information with patient understanding. -->
+    <path d="M228 204V79c0-9 6-15 15-15h114c9 0 15 6 15 15v125" stroke="#ac8a48" stroke-width="4"/>
+    <path d="M236 202V83c0-6 4-9 9-9h110c5 0 9 3 9 9v119" stroke="#e1c894" stroke-width="2"/>
+    <path d="M217 201h166l7 14H210z" fill="#536e7b"/>
+    <ellipse cx="300" cy="198" rx="54" ry="4" fill="#243f52" opacity=".09" stroke="none"/>
+    <path d="M220 205h158" stroke="#bfc7c0" stroke-width="1"/>
+    <g class="cradle-left"><path d="M256 74v74" stroke="#71817f" stroke-width="1"/><circle cx="256" cy="159" r="11" fill="url(#brass)" stroke="#a18141"/><path d="M251 154c1-2 3-3 5-3" stroke="#fff5d8" stroke-width="2"/></g>
+    <path d="M278 74v74m22-74v74m22-74v74" stroke="#71817f" stroke-width="1"/>
+    <circle cx="278" cy="159" r="11" fill="url(#brass)" stroke="#a18141"/>
+    <circle cx="300" cy="159" r="11" fill="url(#brass)" stroke="#a18141"/>
+    <circle cx="322" cy="159" r="11" fill="url(#brass)" stroke="#a18141"/>
+    <path d="M273 154c1-2 3-3 5-3m17 3c1-2 3-3 5-3m17 3c1-2 3-3 5-3" stroke="#fff5d8" stroke-width="2"/>
+    <g class="cradle-right"><path d="M344 74v74" stroke="#71817f" stroke-width="1"/><circle cx="344" cy="159" r="11" fill="url(#brass)" stroke="#a18141"/><path d="M339 154c1-2 3-3 5-3" stroke="#fff5d8" stroke-width="2"/></g>
+    <path class="thinking-trail" d="M182 102c15-18 24-22 40-25m158 0c15 4 26 11 36 24" stroke="#a18141" stroke-dasharray="2 6" opacity=".55"/>
+    <path d="M293 34h14v16h-14z" fill="#fff8e8" stroke="#b7a579" stroke-width=".8"/>
+    <path d="m296 43 3 3 5-7" stroke="#829472" stroke-width="1"/>
+    <path d="m393 211 13-24 3 2-13 24-4 3Z" fill="#d6bb7f" stroke="#a48b51" stroke-width="1"/>
+    <path d="m117 118 5-7 3 2-5 8" fill="#b2c2a9" stroke="#829478" stroke-width=".8"/>
+    <circle cx="397" cy="53" r="3" stroke="#b69550"/>
+    <circle cx="103" cy="61" r="2" fill="#b69550" stroke="none"/>
+    <path d="M75 221h21m408 0h21" stroke="#a18141" opacity=".4"/>
+  </g>
+</svg>

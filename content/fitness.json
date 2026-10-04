@@ -1,0 +1,23 @@
+{
+  "cycling_event": "Jio Mumbai Sustainability Cyclothon",
+  "cycling_detail": "Season 2 · 2023",
+  "cycling_distance": 100,
+  "retirement_distance": 27,
+  "retirement_date": "30 June 2025",
+  "runs": [
+    { "event": "Indian Navy Heritage Run, Mumbai", "year": 2023 },
+    { "event": "Tata Mumbai Marathon", "year": 2024 },
+    { "event": "WDR Run Together", "year": 2024 },
+    { "event": "Maritime 10K", "year": 2024 },
+    { "event": "Tata Mumbai Marathon", "year": 2025 },
+    { "event": "Tata Mumbai Marathon", "year": 2026 }
+  ],
+  "cycling_photos": [
+    "/assets/photos/cycling-mumbai-march-2023-01.jpg",
+    "/assets/photos/cycling-mumbai-june-2023-01.jpg"
+  ],
+  "running_photos": [
+    "/assets/photos/19_2024-01-21_tata-mumbai-marathon.jpg",
+    "/assets/photos/beach-run-march-2023-01.jpg"
+  ]
+}

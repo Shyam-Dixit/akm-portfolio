@@ -330,6 +330,10 @@ footer{background:var(--navy-xd);color:rgba(250,250,245,.7);position:relative;ov
 @media(prefers-reduced-motion:reduce){.reveal{opacity:1;transform:none}}
 </style>
 <link rel="stylesheet" href="assets/css/enhancements.css">
+<link rel="stylesheet" href="assets/css/editorial-gallery.css">
+<link rel="stylesheet" href="assets/css/mobile.css">
+<link rel="stylesheet" href="assets/css/phone-rail.css">
+<link rel="stylesheet" href="assets/css/beyond-rails.css">
 </head>
 <body>
 <a class="skip-link" href="#main-content">Skip to content</a>
@@ -422,6 +426,7 @@ footer{background:var(--navy-xd);color:rgba(250,250,245,.7);position:relative;ov
     <li><a href="#journey">Journey</a></li>
     <li><a href="#achv">Achievements</a></li>
     <li><a href="#expertise">Expertise</a></li>
+    <li><a href="#beyond-rails">Beyond the Rails</a></li>
     <li><a href="thoughts/">Thoughts</a></li>
     <li><a href="#gallery">Gallery</a></li>
     <li><a href="#contact">Contact</a></li>
@@ -491,7 +496,7 @@ footer{background:var(--navy-xd);color:rgba(250,250,245,.7);position:relative;ov
     </div>
     <div class="edu-block reveal">
       <h3>Education &amp; Qualifications</h3>
-      <div class="edu-list" id="education-cards" tabindex="0" role="region" aria-label="Qualifications, swipe or use the next and previous buttons">
+      <div class="edu-list" id="education-cards" role="region" aria-label="Education and qualifications">
         <div class="edu-card"><div class="yr">1986</div><div class="dg">Mechanical Engineering</div><div class="in">Engineering Council, United Kingdom</div></div>
         <div class="edu-card"><div class="yr">1988</div><div class="dg">Railway Mechanical Engineering</div><div class="in">IRIMEE, Jamalpur</div><span class="nt">Honours · Distinction</span></div>
         <div class="edu-card"><div class="yr">1988</div><div class="dg">AMIE · Mechanical</div><div class="in">Institution of Engineers, India</div></div>
@@ -513,8 +518,8 @@ footer{background:var(--navy-xd);color:rgba(250,250,245,.7);position:relative;ov
     <div class="j-grid">
       <div class="map-box reveal">
         <div class="map-frame">
-          <div class="map-head"><span class="t">Route Map · भारत</span><button id="autoplay-btn" type="button" aria-pressed="false">▶ Play Journey</button></div>
-          <div class="station-picker"><label for="station-select">Jump to a station</label><select id="station-select" aria-controls="station-card"></select></div>
+          <div class="map-head"><span class="t">Route Map · भारत</span><button id="autoplay-btn" type="button" aria-pressed="false">▶ Play Journey</button><button id="journey-speed" type="button" aria-label="Journey speed 1 times. Change speed" title="Change journey speed"><svg viewBox="0 0 24 24" width="17" height="17" aria-hidden="true" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="m4 6 7 6-7 6m9-12 7 6-7 6"/></svg><span>1×</span></button><button class="route-map-toggle" type="button" aria-expanded="false" aria-controls="indiamap" hidden>Full map</button></div>
+          <div class="station-picker"><label for="station-select">Choose a posting</label><select id="station-select" aria-controls="station-card"></select></div>
           <svg id="indiamap" role="group" aria-label="Railway career map" viewBox="-44 -12 700 720" xmlns="http://www.w3.org/2000/svg">
             <path class="in-outline" d="M0.0 327.8l2.7 0.9l2.1 -3.5l5.0 -2.4l-4.7 5.1l-0.1 2.5l1.4 0.1l-1.8 1.6l2.9 0.4l-0.3 3.2l4.6 4.3l9.2 5.5l10.6 2.2l1.9 -2.5l9.2 -2.8l2.8 1.2l-4.5 8.4l-4.0 -0.6l-3.5 3.6l-3.6 -0.9l0.0 2.3l-2.7 -1.7l-0.3 2.2l-5.1 1.7l-1.6 -1.2l0.6 -2.5l-2.7 -1.3l-2.7 3.8l6.2 8.4l18.2 18.9l7.1 5.7l8.0 3.6l12.9 -4.0l14.1 -7.3l-0.5 -1.4l4.5 -8.3l-1.1 -6.3l1.4 -4.6l2.4 -3.2l1.1 1.2l3.8 -1.3l-2.5 2.4l-0.9 4.4l1.3 3.3l-1.2 2.5l3.2 1.0l-1.3 2.4l1.2 1.9l-1.4 4.0l0.8 4.8l2.0 0.3l3.7 10.7l-5.2 16.6l3.0 11.4l0.3 9.7l1.3 -2.3l1.6 0.5l-1.9 6.1l2.3 8.5l-0.7 2.1l6.3 19.5l-0.9 0.8l2.1 4.8l0.6 12.4l2.9 10.0l4.3 5.9l2.6 8.1l2.3 1.7l0.4 5.4l3.9 4.2l-0.0 2.0l3.6 1.9l7.1 18.4l4.5 21.8l8.0 18.2l1.3 0.0l5.7 6.8l4.1 7.1l17.0 52.2l9.0 11.0l7.1 5.6l4.9 0.9l10.8 -6.2l1.3 -2.7l-0.5 -3.3l2.6 -2.0l-1.4 -1.0l0.1 -1.9l5.0 -4.8l11.5 -3.5l4.9 -0.1l5.2 2.5l-2.7 -3.6l-5.1 0.6l-2.6 -2.2l-0.2 -4.3l7.0 -9.2l-0.8 -2.2l1.5 -2.6l1.9 -1.1l10.2 0.4l-0.9 -22.6l-1.7 -4.6l2.6 -10.5l5.7 -8.8l3.9 -17.3l-4.5 -18.3l1.4 -10.1l-3.1 -10.6l4.7 -13.0l3.3 -2.8l5.2 -1.6l2.3 0.8l0.7 2.8l3.0 -0.4l6.4 -12.0l5.6 -1.6l3.8 1.1l12.3 -5.6l0.9 -6.2l-2.1 -1.5l2.4 -4.4l17.7 -10.4l7.6 -9.4l11.5 -6.4l16.5 -21.0l15.7 -10.6l14.7 -4.8l3.9 -5.6l4.8 -3.1l-0.9 -1.7l1.0 -2.5l5.4 -3.9l-4.7 -10.8l6.0 -7.1l14.2 -4.2l7.0 -6.3l1.0 1.3l-2.8 6.0l3.0 -0.1l1.3 1.9l4.3 -1.3l0.9 -2.7l0.8 1.7l-1.0 2.6l1.0 0.3l2.9 -6.9l1.4 6.2l3.5 0.4l-1.2 -1.2l0.8 -1.1l2.5 1.2l2.0 -1.0l-1.8 -5.6l1.8 -5.9l-2.3 -4.1l-1.2 -9.5l0.9 -2.0l-2.1 -3.0l0.2 -2.7l2.5 -2.7l-5.7 -0.9l1.6 -5.5l-1.4 0.1l-3.5 -3.9l0.6 -4.4l3.7 -3.1l-1.4 -3.9l0.7 -2.8l-8.4 -2.6l-6.5 -6.3l3.3 -4.6l-0.3 -1.8l1.4 -0.3l2.0 2.0l1.6 -1.8l1.3 -5.9l9.6 0.8l1.8 -2.9l-3.4 -1.5l-0.8 -3.8l-2.7 1.1l-2.3 -0.9l-6.3 -6.9l-3.2 0.2l-0.5 -2.8l2.0 -2.4l-0.1 -2.8l7.2 -5.1l-0.8 -2.4l-2.8 -0.9l0.5 -2.2l9.8 8.3l1.1 -1.3l1.5 1.1l3.0 -0.7l1.0 3.2l4.0 3.0l4.8 1.0l1.5 -2.2l-0.7 -2.4l2.8 0.4l2.5 5.3l-1.3 2.5l1.5 4.4l-1.0 7.7l12.9 3.5l17.1 -1.4l7.9 1.9l8.8 -1.5l7.4 3.7l1.7 3.2l-2.1 1.0l-3.3 -1.1l1.1 3.8l-2.8 6.9l-5.0 2.3l-0.4 4.1l-3.3 -2.1l0.1 2.0l-1.7 -1.6l-1.0 3.0l-5.1 -0.2l0.1 2.6l-3.0 1.5l-1.5 7.5l4.4 12.3l0.9 0.1l-0.7 -2.8l1.3 -1.7l3.2 6.8l4.8 -3.2l-1.2 -4.2l4.1 -4.6l-0.5 -5.0l2.5 1.3l1.7 -1.8l1.5 1.5l1.3 -1.1l2.3 10.0l-0.4 7.6l3.3 6.3l1.6 15.5l2.4 -3.7l3.0 2.0l0.9 2.4l0.6 -1.4l1.5 0.6l1.0 -4.8l2.0 0.4l1.1 -1.9l-2.4 -10.1l1.5 -4.9l-0.7 -2.7l3.4 0.7l2.0 -3.0l-0.5 -4.7l1.6 -7.7l-2.2 -9.1l1.6 -0.0l2.1 3.0l4.8 -1.4l1.5 1.8l2.9 -0.5l4.4 2.2l3.5 -11.1l8.2 -14.0l0.6 -4.5l-3.3 -2.0l0.8 -3.7l5.7 -4.3l3.1 -4.5l-0.6 -3.5l3.4 -3.9l-1.4 -0.9l0.3 -6.3l-1.3 -1.8l1.7 -3.7l5.7 -1.9l2.1 -2.9l4.2 -1.5l1.6 -3.0l2.7 -0.9l2.2 -3.4l4.1 -2.1l6.0 -0.2l4.3 -1.9l3.2 2.7l-0.1 1.6l5.7 2.1l-4.8 -8.3l-0.3 -3.9l7.4 -6.8l2.8 0.3l0.5 -3.0l-1.8 -1.7l1.5 -2.5l-6.4 -4.0l-2.2 1.2l-6.8 -3.5l-5.3 2.5l-2.5 -0.9l1.6 -2.1l-0.6 -1.5l5.7 -5.5l-2.8 -5.1l0.9 -2.2l-7.7 3.6l-0.2 -3.6l4.1 -2.2l1.0 -2.1l-3.2 0.4l-3.4 -5.4l-10.1 4.9l-3.3 5.4l-9.3 -3.3l-4.0 -0.0l-3.8 -4.2l-1.5 2.8l-2.6 0.2l-4.5 3.4l-6.0 9.6l-12.4 1.0l-3.2 4.8l0.7 2.4l-4.0 0.8l-0.2 1.4l-6.8 2.8l0.9 3.5l-3.5 3.6l-5.0 1.1l-2.4 -1.8l-6.2 3.3l-1.8 -2.2l-5.9 -1.1l2.0 2.0l-1.7 3.3l1.9 3.5l7.9 0.6l1.4 3.9l-1.4 3.1l1.7 3.8l-0.5 3.3l-4.7 -1.3l-3.6 2.5l-5.9 -0.7l-1.6 1.2l-5.0 -0.8l-8.0 1.2l-6.4 -3.2l-4.1 1.1l-1.4 2.3l-6.6 1.1l-9.6 -3.7l-5.2 1.3l-7.5 -8.0l3.1 -4.1l-2.3 -1.9l-0.9 -3.6l2.4 -7.2l-1.1 -3.6l-4.6 -2.8l-4.6 3.5l-5.7 0.8l1.5 4.0l-3.1 6.8l-1.1 9.2l2.8 2.8l1.3 4.9l-2.0 7.9l-1.8 1.2l-2.5 -2.4l-2.8 1.8l-3.1 0.7l-2.9 -1.3l-2.9 1.7l-4.8 -1.9l-0.6 -3.3l-7.3 3.7l-8.3 -4.5l-6.2 -1.1l-3.3 1.9l-2.8 -1.5l-0.1 -3.4l-2.1 -1.8l-6.3 3.0l-2.4 -0.3l-0.5 -2.5l-2.4 0.1l-5.2 -3.7l-3.5 -0.5l0.6 -4.1l-1.5 -2.9l-6.7 -1.1l-3.1 -3.1l-2.6 1.9l-3.3 0.2l-0.4 1.6l-4.9 -2.6l-4.7 -0.2l0.2 1.9l-1.8 1.5l-2.6 -2.8l-9.1 -1.3l-1.0 -5.1l-5.5 0.9l-7.9 -5.7l-3.9 1.5l-8.2 -5.1l-1.0 -2.1l-2.3 -0.1l-2.5 -4.6l-8.7 -3.8l-4.7 -4.0l-1.6 1.9l-2.7 -0.7l-6.1 -4.8l1.6 -6.3l3.2 -2.4l0.4 -2.6l-1.5 -2.7l3.4 -4.1l-0.7 -3.8l7.8 -6.1l3.4 -5.2l2.3 -0.8l-4.3 -1.6l-4.8 -4.1l-1.4 0.6l-6.1 -2.9l-0.1 -4.5l-6.4 -3.1l-1.3 -2.1l-2.4 -0.7l-3.4 1.4l-1.7 -2.2l-1.8 -0.1l-6.0 -9.7l-1.7 -0.8l-3.7 4.4l-3.3 -5.4l2.4 -2.6l-2.8 -4.4l1.6 -5.1l-3.7 -3.2l-0.0 -2.2l-2.7 -1.2l1.2 -3.8l-2.2 -3.4l6.4 -3.2l1.3 5.1l4.1 3.3l2.7 -0.7l2.0 -3.4l2.3 0.6l4.9 -3.0l-0.3 -3.8l-3.8 -5.6l1.2 -4.9l-6.7 -1.1l-3.3 -4.6l0.3 -3.7l2.9 -3.1l-3.4 -7.1l4.9 -2.4l5.5 0.7l2.9 -6.0l-1.4 -4.9l4.8 -0.8l1.0 -3.4l5.0 -2.5l4.7 -15.9l-0.3 -6.4l-3.8 -2.4l-2.5 -4.1l-3.5 1.4l-6.8 -1.7l-4.0 -3.6l-2.9 1.8l-1.0 3.2l-4.9 -1.8l-3.5 0.3l-6.9 3.0l-4.4 5.2l-10.2 2.7l-3.3 -0.4l-4.3 -6.4l-9.7 -2.0l-1.8 -3.5l0.3 -3.4l-2.3 -2.5l-2.7 -0.4l-4.1 -4.1l-12.7 -7.5l-7.5 -10.7l-1.6 -0.8l-6.9 2.0l-4.0 -2.3l-3.9 -0.1l-9.9 5.7l-6.3 -1.8l-0.8 1.2l2.6 3.3l-12.5 -0.6l-2.0 1.3l-3.1 5.6l-7.1 6.3l-1.3 8.8l0.8 1.2l4.2 -1.4l3.0 0.7l2.6 1.3l3.5 6.1l9.9 1.2l1.0 2.1l-1.9 2.1l0.3 3.1l7.4 4.5l-1.7 6.9l-5.9 1.2l-1.5 4.2l-5.0 2.7l0.8 12.0l2.2 4.4l-1.0 2.8l1.5 1.7l-0.3 14.5l3.2 3.7l3.2 0.1l9.6 5.9l6.4 -0.9l1.2 6.8l7.9 0.1l5.1 3.6l0.9 2.6l-2.4 3.3l-7.8 1.2l-1.5 2.3l-4.2 1.8l-1.7 3.5l1.7 4.4l-0.7 1.6l1.5 1.0l-2.7 4.6l0.6 6.7l-12.6 13.1l-1.3 2.3l1.8 4.4l-3.6 2.9l-8.3 3.1l-2.5 9.2l-6.9 12.6l-11.7 6.4l-4.2 9.7l-5.3 5.5l-0.9 4.0l-4.9 2.1l-8.1 0.7l-8.3 3.4l-2.6 -0.6l-4.0 -7.0l-4.1 0.3l-4.4 4.2l-3.0 6.6l-9.1 9.2l-1.5 9.8l6.4 3.7l7.4 1.1l-1.5 14.1l3.8 5.7l8.1 0.3l0.2 6.9l4.6 5.7l4.2 10.3l-2.0 3.6l0.2 2.3l2.2 1.2l-6.3 3.8l-3.2 -0.0l-1.7 -0.8l-0.1 -3.7l-9.5 3.0l-2.6 2.9l-5.6 -0.2l-2.6 -2.3l-12.4 1.1l-1.2 -1.0l-1.6 1.7l-1.0 -2.5l-1.1 0.3l-0.6 7.4l-8.1 -0.1l-3.1 3.3l0.5 3.7l-1.0 1.1ZM509.3 587.5l2.0 4.7l-1.6 1.6l2.3 0.7l-0.8 3.7l1.9 -0.5l1.4 -6.3l0.7 -5.1l-1.0 -1.5l4.2 -6.6l-1.7 -2.2l1.5 0.5l0.5 -1.2l0.5 -6.3l-1.3 -4.2l1.3 -0.6l2.3 -8.6l-1.3 -5.1l-2.3 0.8l-1.6 2.9l-1.8 12.2l-0.7 -3.1l-1.1 0.4l1.6 14.9l-4.9 9.0ZM533.2 687.9l0.2 2.5l3.4 5.3l2.5 -4.3l-1.3 -5.2l-1.6 -0.6l-3.2 2.3ZM506.4 610.3l0.2 5.3l2.7 0.4l1.8 -3.6l-0.8 -3.9l-1.2 -0.6l-2.6 2.3Z"/>
             <path class="route-base" id="route-base"/>
@@ -566,7 +571,7 @@ footer{background:var(--navy-xd);color:rgba(250,250,245,.7);position:relative;ov
 <section id="achv">
   <div class="wrap" style="padding-bottom:20px">
     <div class="signboard reveal">
-      <div class="sign-plate"><span class="hindi">उपलब्धियाँ</span><h2 class="en">Achievements</h2><span class="alt">The Consist · 5 Coaches</span></div>
+      <div class="sign-plate"><span class="hindi">उपलब्धियाँ</span><h2 class="en">Achievements</h2><span class="alt">Key contributions</span></div>
       <div class="sign-posts"><i></i><i></i></div>
     </div>
   </div>
@@ -587,9 +592,11 @@ footer{background:var(--navy-xd);color:rgba(250,250,245,.7);position:relative;ov
     </div>
     <div class="exp-grid" id="exp-grid"></div>
     <p class="mem-note reveal">Associate Member, <b>Institution of Engineers (India)</b> · Mechanical &amp; Metallurgy divisions</p>
-<a class="next-chapter" href="#thoughts"><span><small>Next stop · Thoughts</small><strong>A different perspective, in his own words.</strong></span><span aria-hidden="true">→</span></a>
+<a class="next-chapter" href="#beyond-rails"><span><small>Next stop · Beyond the Rails</small><strong>The discipline carries on, kilometre by kilometre.</strong></span><span aria-hidden="true">→</span></a>
   </div>
 </section>
+
+<!-- CMS:FITNESS_SECTION -->
 
 <section id="thoughts"><div class="wrap">
   <div class="thoughts-heading"><div><div class="kicker">From the pen of Ashok Kumar Misra</div><h2>Thoughts<br><em>Along the Way</em></h2><p>Reflections by Ashok Kumar Misra</p></div>
@@ -604,14 +611,14 @@ footer{background:var(--navy-xd);color:rgba(250,250,245,.7);position:relative;ov
       <div class="sign-plate"><span class="hindi">दीर्घा</span><h2 class="en">Gallery</h2><span class="alt">Scenes from the Line</span></div>
       <div class="sign-posts"><i></i><i></i></div>
     </div>
-    <div class="gallery-filters" aria-label="Photograph collections"><button type="button" data-gallery-filter="all" aria-pressed="true">All moments</button><button type="button" data-gallery-filter="western" aria-pressed="false">Western Railway</button><button type="button" data-gallery-filter="jhansi" aria-pressed="false">Jhansi years</button></div>
-    <div class="gal-grid" id="gal-grid" tabindex="0" role="region" aria-label="Photographs, swipe or use the next and previous buttons"></div>
-    <div class="swipe-controls" data-rail="gal-grid"><span><b class="swipe-position">01 / 06</b><small>Swipe to explore · Tap to enlarge</small></span><button type="button" data-step="-1" aria-label="Previous gallery photo" aria-controls="gal-grid">←</button><button type="button" data-step="1" aria-label="Next gallery photo" aria-controls="gal-grid">→</button></div>
+    <div class="gallery-filters" aria-label="Photograph collections"><!-- CMS:GALLERY_FILTERS --></div>
+    <div class="gal-grid" id="gal-grid" role="region" aria-label="Gallery preview"></div>
     <div class="gal-actions">
-      <button class="btn gal-toggle" id="gal-toggle" type="button" aria-expanded="false" aria-controls="gal-grid"><span>View all <!-- CMS:GALLERY_COUNT --> photos</span><span aria-hidden="true">＋</span></button>
+      <button class="btn gal-toggle" id="gal-toggle" type="button" aria-haspopup="dialog" aria-expanded="false" aria-controls="gallery-browser"><span>Explore moments</span><span aria-hidden="true">↗</span></button>
+      <button class="gallery-motion-control" id="gallery-motion" type="button" aria-pressed="false" aria-label="Pause photo collage" title="Pause photo collage" hidden><svg viewBox="0 0 24 24" width="18" height="18" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" aria-hidden="true"><path class="collage-pause-icon" d="M9 5v14M15 5v14"/><path class="collage-play-icon" d="m9 5 10 7-10 7Z"/></svg></button>
       <p class="gal-count" id="gal-count" aria-live="polite"><!-- CMS:GALLERY_SUMMARY --></p>
     </div>
-    <p class="gal-note">Photographs from years of service on the Indian Railways.</p>
+    <p class="gal-note">Moments from a life on and beyond the railway.</p>
 <a class="next-chapter" href="#contact"><span><small>Next stop · Contact</small><strong>Keep the conversation going.</strong></span><span aria-hidden="true">→</span></a>
   </div>
 </section>
@@ -695,21 +702,31 @@ footer{background:var(--navy-xd);color:rgba(250,250,245,.7);position:relative;ov
     </div>
     <p class="foot-quote">“Every journey on Indian Railways ends at a terminus, but the line always continues.”</p>
     <div class="foot-quote-sub">Terminus · Mumbai Churchgate · 30 June 2025</div>
-    <div class="foot-cycle reveal">
-      <svg viewBox="0 0 44 26" fill="none" stroke="currentColor" stroke-width="1.6"><circle cx="9" cy="18" r="6.5"/><circle cx="33" cy="18" r="6.5"/><path d="M9 18 16 8h9l6 10M16 8l4 10h13M20 5h5"/></svg>
-      <div class="ride-copy"><span class="ride-distance">27 <small>km</small></span><span class="ride-date">30 June 2025 · A morning ride</span><p>To mark his commitment to fitness and discipline, he bicycled 27 km on the morning of his retirement day.</p></div>
-    </div>
     <div class="foot-rule"></div>
     <div class="foot-base">
       <span>© 2026 Ashok Kumar Misra</span>
-      <span class="mono" style="letter-spacing:.2em">DHD → BVC → ADI → KOTA → BRC → LKO → PRYJ → JHS → HJP → GKP → CCG</span>
     </div>
   </div>
 </footer>
 
-<dialog id="lightbox" aria-label="Photo viewer"><button class="lb-x" aria-label="Close" autofocus>✕</button><span id="lb-count" aria-live="polite" aria-atomic="true"></span><button class="lb-prev" aria-label="Previous photograph">←</button><img src="" alt=""><button class="lb-next" aria-label="Next photograph">→</button><div class="lb-cap"></div></dialog>
-<details id="journey-guide" class="journey-guide" hidden><summary><span class="mobile-rail" aria-hidden="true"><svg class="mobile-loco" viewBox="0 0 54 36" fill="none"><g class="mobile-steam" fill="#6d8992"><circle cx="41" cy="10" r="2.4"/><circle cx="38" cy="5" r="3"/><circle cx="43" cy="1" r="3.5"/></g><path d="M5 20h13v10H5z" fill="#143c5c"/><path d="M21 15h11v15H21zM31 20h16v10H31z" fill="#25618f"/><path d="M19 14h15v3H19zM39 13h5v9h-5z" fill="#143c5c"/><path d="M38 12h7v3h-7zM22 23h25v2H22z" fill="#d4a843"/><path d="M23 18h6v5h-6z" fill="#aed7dc"/><path d="M3 30h47M18 27h3" stroke="#143c5c" stroke-width="2"/><circle cx="47" cy="23" r="2" fill="#e8c97a"/><g class="mobile-wheel"><circle cx="10" cy="31" r="3" fill="#d4a843" stroke="#143c5c"/><path d="m8 29 4 4m0-4-4 4" stroke="#143c5c"/></g><g class="mobile-wheel"><circle cx="26" cy="31" r="3.5" fill="#d4a843" stroke="#143c5c"/><path d="m24 29 4 4m0-4-4 4" stroke="#143c5c"/></g><g class="mobile-wheel"><circle cx="41" cy="31" r="3.5" fill="#d4a843" stroke="#143c5c"/><path d="m39 29 4 4m0-4-4 4" stroke="#143c5c"/></g></svg></span><small>Your journey</small><span id="guide-current">01 / 7 · About</span></summary><ol>
-<li><a href="#about"><span>01</span>About</a></li><li><a href="#journey"><span>02</span>Journey</a></li><li><a href="#achv"><span>03</span>Achievements</a></li><li><a href="#expertise"><span>04</span>Expertise</a></li><li><a href="#thoughts"><span>05</span>Thoughts</a></li><li><a href="#gallery"><span>06</span>Gallery</a></li><li><a href="#contact"><span>07</span>Contact</a></li></ol></details>
+<dialog id="gallery-browser" aria-labelledby="gallery-browser-title">
+  <div class="gallery-browser-shell">
+    <header class="gallery-browser-header"><div><p>Moments from a life on the railway</p><h2 id="gallery-browser-title">The photo journal</h2></div><button type="button" class="gallery-browser-close" aria-label="Close gallery" autofocus>✕</button></header>
+    <div class="gallery-browser-tools"><div class="gallery-filters" aria-label="Browse photograph collections"><!-- CMS:GALLERY_FILTERS --></div><p id="gallery-browser-count" aria-live="polite"></p></div>
+    <div id="gallery-browser-grid" class="gallery-browser-grid" role="region" aria-label="All gallery photographs"></div>
+  </div>
+</dialog>
+<dialog id="lightbox" aria-labelledby="lb-title">
+  <div class="lb-shell">
+    <header class="lb-header"><div><p id="lb-date"></p><h2 id="lb-title"></h2></div><button class="lb-x" aria-label="Close photograph" autofocus>✕</button></header>
+    <div class="lb-stage"><img class="lb-photo" src="" alt=""><button class="lb-prev" aria-label="Previous photograph">←</button><button class="lb-next" aria-label="Next photograph">→</button></div>
+    <div class="lb-details"><p class="lb-cap"></p><span id="lb-count" aria-live="polite" aria-atomic="true"></span></div>
+    <div class="lb-thumbnails" aria-label="Photographs in this event"></div>
+    <p class="lb-swipe-note">Swipe the photo to explore this event</p>
+  </div>
+</dialog>
+<details id="journey-guide" class="journey-guide" hidden><summary><span class="mobile-rail" aria-hidden="true"><svg class="mobile-loco" viewBox="0 0 54 36" fill="none"><g class="mobile-steam" fill="#6d8992"><circle cx="41" cy="10" r="2.4"/><circle cx="38" cy="5" r="3"/><circle cx="43" cy="1" r="3.5"/></g><path d="M5 20h13v10H5z" fill="#143c5c"/><path d="M21 15h11v15H21zM31 20h16v10H31z" fill="#25618f"/><path d="M19 14h15v3H19zM39 13h5v9h-5z" fill="#143c5c"/><path d="M38 12h7v3h-7zM22 23h25v2H22z" fill="#d4a843"/><path d="M23 18h6v5h-6z" fill="#aed7dc"/><path d="M3 30h47M18 27h3" stroke="#143c5c" stroke-width="2"/><circle cx="47" cy="23" r="2" fill="#e8c97a"/><g class="mobile-wheel"><circle cx="10" cy="31" r="3" fill="#d4a843" stroke="#143c5c"/><path d="m8 29 4 4m0-4-4 4" stroke="#143c5c"/></g><g class="mobile-wheel"><circle cx="26" cy="31" r="3.5" fill="#d4a843" stroke="#143c5c"/><path d="m24 29 4 4m0-4-4 4" stroke="#143c5c"/></g><g class="mobile-wheel"><circle cx="41" cy="31" r="3.5" fill="#d4a843" stroke="#143c5c"/><path d="m39 29 4 4m0-4-4 4" stroke="#143c5c"/></g></svg></span><small>Your journey</small><span id="guide-current">01 / 8 · About</span></summary><ol>
+<li><a href="#about"><span>01</span>About</a></li><li><a href="#journey"><span>02</span>Journey</a></li><li><a href="#achv"><span>03</span>Achievements</a></li><li><a href="#expertise"><span>04</span>Expertise</a></li><li><a href="#beyond-rails"><span>05</span>Beyond the Rails</a></li><li><a href="#thoughts"><span>06</span>Thoughts</a></li><li><a href="#gallery"><span>07</span>Gallery</a></li><li><a href="#contact"><span>08</span>Contact</a></li></ol></details>
 
 <script src="assets/vendor/gsap.min.js"></script>
 <script src="assets/vendor/ScrollTrigger.min.js"></script>
@@ -835,7 +852,20 @@ function setMenu(open){
 }
 $(".nav-mono").addEventListener("click",()=>setMenu(false));
 $("#burger").addEventListener("click",()=>setMenu(!$("#navlinks").classList.contains("open")));
-$$("#navlinks a").forEach(a=>a.addEventListener("click",()=>setMenu(false)));
+$$("#navlinks a").forEach(a=>a.addEventListener("click",event=>{
+  if(!menuMedia.matches||event.button!==0||event.metaKey||event.ctrlKey||event.shiftKey||event.altKey)return;
+  // Closing the phone menu makes its links inert. Navigate explicitly so that
+  // this state change cannot cancel the link's native activation.
+  event.preventDefault();setMenu(false);
+  const href=a.getAttribute("href");
+  if(href.startsWith("#")){
+    const target=document.getElementById(href.slice(1));
+    if(!target)return;
+    if(location.hash!==href)history.pushState(null,"",href);
+    target.tabIndex=-1;target.focus({preventScroll:true});
+    target.scrollIntoView({block:"start",behavior:reducedMotion.matches?"instant":"smooth"});
+  }else location.assign(a.href);
+}));
 menuMedia.addEventListener("change",()=>setMenu(false));setMenu(false);
 addEventListener("keydown",e=>{if(e.key==="Escape"&&document.body.classList.contains("nav-open")){setMenu(false);$("#burger").focus();}});
 nav.addEventListener("keydown",e=>{
@@ -918,7 +948,7 @@ JOURNEY.forEach((j,i)=>{
 const stationSelect=$("#station-select");
 stationSelect.innerHTML=JOURNEY.map((j,i)=>`<option value="${i}">${String(i+1).padStart(2,"0")} · ${j.city} · ${j.period}</option>`).join("");
 stationSelect.addEventListener("change",()=>goStation(+stationSelect.value,true));
-let cur=0,mapPosition=0,animating=false,autoTimer=null,journeyTimeline=null;
+let cur=0,mapPosition=0,animating=false,autoTimer=null,journeyTimeline=null,journeySpeed=1;
 const train=$("#map-train");
 function renderCard(i){
   stationSelect.value=String(i);
@@ -963,6 +993,7 @@ function goStation(i,user){
   // travel along segments sequentially
   const dir=i>from?1:-1;
   const tl=journeyTimeline=gsap.timeline({onComplete(){animating=false;paintMap(i);}});
+  tl.timeScale(journeySpeed);
   let step=from;
   const mtInner=$("#mt-inner");
   while(Math.abs(step-i)>.00001){
@@ -985,17 +1016,40 @@ function goStation(i,user){
 }
 $("#st-prev").addEventListener("click",()=>goStation(cur-1,true));
 $("#st-next").addEventListener("click",()=>goStation(cur+1,true));
-function stopAuto(){if(autoTimer){clearInterval(autoTimer);autoTimer=null;$("#autoplay-btn").classList.remove("playing");$("#autoplay-btn").textContent="▶ Play Journey";$("#autoplay-btn").setAttribute("aria-pressed","false");}}
-$("#autoplay-btn").addEventListener("click",()=>{
-  if(autoTimer){stopAuto();return;}
-  $("#autoplay-btn").classList.add("playing");$("#autoplay-btn").textContent="◼ Pause journey";$("#autoplay-btn").setAttribute("aria-pressed","true");
-  if(cur===JOURNEY.length-1)goStation(0,false);
+function paintPlaybackButton(playing){
+  const button=$("#autoplay-btn");
+  button.classList.toggle("playing",playing);button.setAttribute("aria-pressed",String(playing));button.setAttribute("aria-label",playing?"Pause journey":"Play journey");
+  button.innerHTML=`<svg viewBox="0 0 24 24" width="16" height="16" aria-hidden="true" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round">${playing?'<path d="M8 5v14M16 5v14"/>':'<path d="m8 5 11 7-11 7Z"/>'}</svg><span>${playing?'Pause':'Play'}<span class="journey-play-context"> journey</span></span>`;
+}
+paintPlaybackButton(false);
+function stopAuto(pauseTravel=false){
+  if(autoTimer){clearInterval(autoTimer);autoTimer=null;}
+  if(pauseTravel&&animating)journeyTimeline?.pause();
+  paintPlaybackButton(false);
+}
+function scheduleJourney(){
+  if(autoTimer)clearInterval(autoTimer);
   autoTimer=setInterval(()=>{
+    if(animating)return;
     if(cur===JOURNEY.length-1){stopAuto();return;}
-    if(!animating)goStation(cur+1,false);
-  },2600);
+    goStation(cur+1,false);
+  },(matchMedia("(max-width:700px)").matches?9000:2600)/journeySpeed);
+}
+$("#autoplay-btn").addEventListener("click",()=>{
+  if(autoTimer){stopAuto(true);return;}
+  paintPlaybackButton(true);
+  if(animating&&journeyTimeline?.paused())journeyTimeline.resume();
+  else if(cur===JOURNEY.length-1)goStation(0,false);
+  scheduleJourney();
 });
-document.addEventListener("visibilitychange",()=>{if(document.hidden)stopAuto();});
+$("#journey-speed").addEventListener("click",()=>{
+  journeySpeed=journeySpeed===3?1:journeySpeed+1;
+  $("#journey-speed span").textContent=`${journeySpeed}×`;
+  $("#journey-speed").setAttribute("aria-label",`Journey speed ${journeySpeed} times. Change speed`);
+  journeyTimeline?.timeScale(journeySpeed);
+  if(autoTimer)scheduleJourney();
+});
+document.addEventListener("visibilitychange",()=>{if(document.hidden)stopAuto(true);});
 /* swipe on card (mobile) */
 (function(){
   let sx=null,sy=null;const el=$(".st-card");
@@ -1011,6 +1065,8 @@ document.addEventListener("visibilitychange",()=>{if(document.hidden)stopAuto();
 function lockCardHeight(){
   const body=$(".st-body"),top=$(".st-top");
   body.style.minHeight="";top.style.minHeight="";
+  // Phone cards follow their content so short stations do not leave a blank panel.
+  if(matchMedia("(max-width:700px)").matches)return;
   const keep=cur;let maxB=0,maxT=0;
   JOURNEY.forEach((j,i)=>{
     $("#st-city").textContent=j.city;
@@ -1034,7 +1090,7 @@ const track=$("#coach-track");
 ACHV.forEach((a,i)=>{
   const c=document.createElement("article");c.className="coach";
   c.innerHTML=`<div class="coach-head"><span class="coach-no">COACH ${String(i+1).padStart(2,"0")} · A LEGACY OF SERVICE</span></div>
-  <h3>${a.t}</h3><div class="metric">${a.m}</div><div class="sub">${a.s}</div><details><summary>The story behind the numbers</summary><p>${a.p}</p></details>
+  <h3>${a.t}</h3><div class="metric">${a.m}</div><div class="sub">${a.s}</div><details><summary>Read details</summary><p>${a.p}</p></details>
   <div class="coach-wheels"><i></i><i></i></div>`;
   track.appendChild(c);
   if(i<ACHV.length-1){const k=document.createElement("div");k.className="coupler";track.appendChild(k);}
@@ -1067,13 +1123,13 @@ function setupCoachRail(){
   previous.addEventListener("click",()=>step(-1));next.addEventListener("click",()=>step(1));
   track.addEventListener("scroll",schedule,{passive:true});addEventListener("resize",schedule);update();
   track.addEventListener("keydown",e=>{
-    if(!["ArrowLeft","ArrowRight"].includes(e.key)||e.target.closest("summary"))return;
+    if(matchMedia("(max-width:700px)").matches||!["ArrowLeft","ArrowRight"].includes(e.key)||e.target.closest("summary"))return;
     e.preventDefault();step(e.key==="ArrowRight"?1:-1);
   });
   /* pointer drag (desktop) */
   let down=false,startX=0,startL=0,moved=false;
   track.addEventListener("pointerdown",e=>{
-    if(e.pointerType!=="mouse"||e.target.closest("summary,button,a"))return;
+    if(matchMedia("(max-width:700px)").matches||e.pointerType!=="mouse"||e.target.closest("summary,button,a"))return;
     down=true;moved=false;startX=e.clientX;startL=track.scrollLeft;
   });
   window.addEventListener("pointermove",e=>{
@@ -1103,57 +1159,145 @@ $$("#exp-grid .reveal").forEach((el,i)=>{
 /* ================= GALLERY ================= */
 const galleryPreviewCount=6;
 const galleryGrid=$("#gal-grid"),galleryToggle=$("#gal-toggle");
+const galleryBrowser=$("#gallery-browser"),galleryBrowserGrid=$("#gallery-browser-grid");
 const galleryOrder=GALLERY.map((_,i)=>i);
-let galleryFilter="all",galleryExpanded=false;
-galleryOrder.forEach(i=>{
-  const g=GALLERY[i],figure=document.createElement("figure"),img=document.createElement("img"),tag=document.createElement("span"),caption=document.createElement("figcaption"),button=document.createElement("button");
+let galleryFilter="all",galleryOpener=null;
+function makeGalleryItem(i){
+  const g=GALLERY[i],figure=document.createElement("figure"),visual=document.createElement("div"),tag=document.createElement("span"),caption=document.createElement("figcaption"),button=document.createElement("button");
   figure.className="gal-item";figure.dataset.i=i;figure.style.setProperty("--photo-position",g.position||"center");
-  img.src=g.img;img.alt=g.cap;img.loading="lazy";
+  visual.className="gal-visual";
+  const preview=g.images.slice(0,3);visual.dataset.tiles=preview.length;
+  preview.forEach((src,n)=>{const img=document.createElement("img");img.src=src;img.alt=n===0?g.cap:"";img.loading="lazy";img.decoding="async";visual.append(img);});
+  if(g.images.length>1){const count=document.createElement("span");count.className="gal-album-count";count.textContent=`${g.images.length} photos`;visual.append(count);figure.classList.add("gal-album");}
   tag.className="tag";tag.textContent=g.tag;
-  caption.className="cap";caption.textContent=g.cap;
-  button.className="gal-open";button.type="button";button.setAttribute("aria-label","View photo: "+g.cap);
-  figure.append(img,tag,caption,button);galleryGrid.append(figure);
-});
-function galleryIndices(){return galleryOrder.filter(i=>galleryFilter==="all"||GALLERY[i].collection===galleryFilter);}
-function setGalleryExpanded(expanded,keepControl=false){
-  galleryExpanded=expanded;
-  galleryGrid.scrollTo({left:0,behavior:"instant"});
-  const indices=galleryIndices(),visible=expanded?indices:indices.slice(0,galleryPreviewCount);
-  $$(".gal-item",galleryGrid).forEach(item=>{item.hidden=!visible.includes(+item.dataset.i);});
-  galleryToggle.hidden=indices.length<=galleryPreviewCount;
-  galleryToggle.setAttribute("aria-expanded",String(expanded));
-  galleryToggle.innerHTML=`<span>${expanded?"Show fewer photos":`View all ${indices.length} photos`}</span><span aria-hidden="true">${expanded?"−":"＋"}</span>`;
-  $("#gal-count").textContent=indices.length?`Showing ${visible.length} of ${indices.length} photographs`:"No photographs in this collection yet.";
+  caption.className="cap";caption.textContent=g.title;
+  button.className="gal-open";button.type="button";button.setAttribute("aria-label",`${g.images.length>1?`Open ${g.images.length}-photo album`:'View photo'}: ${g.title}`);
+  figure.append(visual,tag,caption,button);return figure;
+}
+galleryOrder.forEach(i=>galleryBrowserGrid.append(makeGalleryItem(i)));
+const galleryMotion=$("#gallery-motion"),galleryCalm=matchMedia("(prefers-reduced-motion:reduce)");
+let collagePaused=false;
+try{collagePaused=sessionStorage.getItem("akm-gallery-motion")==="paused";}catch{}
+function updateCollageMotion(){
+  const paused=collagePaused||galleryCalm.matches||document.hidden||galleryBrowser.open||$("#lightbox").open;
+  galleryGrid.classList.toggle("motion-paused",paused);
+  const motionLabel=collagePaused?"Play photo collage":"Pause photo collage";
+  galleryMotion.setAttribute("aria-label",motionLabel);galleryMotion.title=motionLabel;
+  galleryMotion.setAttribute("aria-pressed",String(collagePaused));
+  galleryMotion.hidden=galleryCalm.matches||!galleryGrid.classList.contains("gallery-collage");
+}
+function buildGalleryPreview(indices){
+  galleryGrid.replaceChildren();
+  const moving=indices.length>1&&!galleryCalm.matches;
+  galleryGrid.classList.toggle("gallery-collage",moving);
+  galleryGrid.classList.toggle("gallery-single",indices.length===1);
+  if(moving){
+    const split=Math.ceil(indices.length/2);
+    const rows=indices.length<4?[indices]:[indices.slice(0,split),indices.slice(split)];
+    rows.forEach(photos=>{
+      const lane=document.createElement("div"),reel=document.createElement("div"),group=document.createElement("div");
+      lane.className="gallery-lane";reel.className="gallery-reel";group.className="gallery-reel-group";
+      group.setAttribute("data-gallery-original","");
+      photos.forEach(i=>group.append(makeGalleryItem(i)));
+      reel.append(group);lane.append(reel);galleryGrid.append(lane);
+    });
+  }else indices.slice(0,galleryPreviewCount).forEach(i=>galleryGrid.append(makeGalleryItem(i)));
+  updateCollageMotion();
+}
+const collageObserver=new IntersectionObserver(entries=>galleryGrid.classList.toggle("collage-in-view",entries[0].isIntersecting),{threshold:.05});
+collageObserver.observe(galleryGrid);
+galleryMotion.addEventListener("click",()=>{collagePaused=!collagePaused;try{sessionStorage.setItem("akm-gallery-motion",collagePaused?"paused":"playing");}catch{}updateCollageMotion();});
+galleryCalm.addEventListener("change",()=>refreshGallery());
+document.addEventListener("visibilitychange",updateCollageMotion);
+function galleryIndices(){return galleryOrder.filter(i=>galleryFilter==="all"||GALLERY[i].tags.includes(galleryFilter));}
+function refreshGallery(){
+  const indices=galleryIndices(),visible=indices.slice(0,galleryPreviewCount);
+  const photoCount=indices.reduce((total,i)=>total+GALLERY[i].images.length,0);
+  buildGalleryPreview(indices);
+  $$(".gal-item",galleryBrowserGrid).forEach(item=>{item.hidden=!indices.includes(+item.dataset.i);});
+  galleryToggle.hidden=!indices.length;
+  galleryToggle.innerHTML=`<span>Explore moments</span><span aria-hidden="true">↗</span>`;
+  $("#gal-count").textContent=indices.length?(galleryGrid.classList.contains("gallery-collage")?`${indices.length<4?"Swipe the row":"Swipe either row"} · Tap a moment to explore`:`A glimpse of ${visible.length} ${visible.length===1?"moment":"moments"} · Open the journal for more`):"No photographs in this collection yet.";
+  $("#gallery-browser-count").textContent=indices.length?`${photoCount} ${photoCount===1?'photograph':'photographs'} · ${indices.length} ${indices.length===1?'moment':'moments'}`:"No photographs in this collection yet.";
   requestLayoutRefresh();
-  if(keepControl&&!expanded){const bounds=galleryToggle.getBoundingClientRect();if(bounds.top<90||bounds.bottom>innerHeight)galleryToggle.scrollIntoView({block:"center",behavior:"instant"});}
+}
+function alignGalleryFilters(){
+  $$("[data-gallery-filter][aria-pressed=true]").forEach(button=>{
+    const strip=button.parentElement;
+    if(!strip.clientWidth||strip.scrollWidth<=strip.clientWidth)return;
+    const bounds=strip.getBoundingClientRect(),selected=button.getBoundingClientRect();
+    if(selected.left<bounds.left+8)strip.scrollLeft+=selected.left-bounds.left-8;
+    else if(selected.right>bounds.right-8)strip.scrollLeft+=selected.right-bounds.right+8;
+  });
 }
 function setGalleryFilter(filter){
   galleryFilter=filter;
   $$("[data-gallery-filter]").forEach(button=>button.setAttribute("aria-pressed",String(button.dataset.galleryFilter===filter)));
-  setGalleryExpanded(false);
+  alignGalleryFilters();
+  refreshGallery();
 }
-galleryToggle.addEventListener("click",()=>setGalleryExpanded(!galleryExpanded,true));
+function openGalleryBrowser(opener=galleryToggle){
+  galleryOpener=opener;
+  galleryBrowser.showModal();galleryBrowser.scrollTop=0;alignGalleryFilters();
+  document.body.style.overflow="hidden";galleryToggle.setAttribute("aria-expanded","true");updateCollageMotion();
+}
+galleryToggle.addEventListener("click",()=>openGalleryBrowser(galleryToggle));
+function closeGalleryBrowser(){
+  if(!galleryBrowser.open)return;
+  galleryBrowser.close();document.body.style.overflow="";galleryToggle.setAttribute("aria-expanded","false");updateCollageMotion();
+  const returnTo=galleryOpener?.isConnected&&!galleryOpener.hidden?galleryOpener:(galleryToggle.hidden?$("#gallery [data-gallery-filter]"):galleryToggle);
+  returnTo.focus({preventScroll:true});galleryOpener=null;
+}
+$(".gallery-browser-close").addEventListener("click",closeGalleryBrowser);
+galleryBrowser.addEventListener("cancel",e=>{e.preventDefault();closeGalleryBrowser();});
+galleryBrowser.addEventListener("click",e=>{if(e.target===galleryBrowser)closeGalleryBrowser();});
 $$("[data-gallery-filter]").forEach(button=>button.addEventListener("click",()=>setGalleryFilter(button.dataset.galleryFilter)));
 $("#st-photo-link").addEventListener("click",()=>setGalleryFilter("jhansi"));
-setGalleryExpanded(false);
-const lb=$("#lightbox");let lbI=0,lbOpener=null;
-function showLb(i){
-  if(!GALLERY.length)return;
-  lbI=(i+GALLERY.length)%GALLERY.length;
-  const g=GALLERY[lbI];
-  lb.querySelector("img").src=g.img;lb.querySelector("img").alt=g.cap;
-  lb.querySelector(".lb-cap").textContent=`${g.tag} — ${g.cap}`;$("#lb-count").textContent=`${galleryIndices().indexOf(lbI)+1} / ${galleryIndices().length}`;
+refreshGallery();
+const lb=$("#lightbox");let lbI=0,lbPhotoI=0,lbOpener=null;
+function showLbPhoto(index){
+  const g=GALLERY[lbI];lbPhotoI=(index+g.images.length)%g.images.length;
+  const photo=$(".lb-photo",lb);photo.src=g.images[lbPhotoI];photo.alt=`${g.cap}${g.images.length>1?` — photograph ${lbPhotoI+1} of ${g.images.length}`:''}`;
+  $("#lb-count").textContent=`${lbPhotoI+1} / ${g.images.length}`;
+  $$(".lb-thumbnail",lb).forEach((button,n)=>button.setAttribute("aria-current",String(n===lbPhotoI)));
+  const active=$(".lb-thumbnail[aria-current=true]",lb);
+  if(active){const strip=active.parentElement;strip.scrollLeft=Math.max(0,active.offsetLeft-strip.offsetLeft-(strip.clientWidth-active.offsetWidth)/2);}
 }
-function stepLb(step){const sequence=galleryIndices(),position=sequence.indexOf(lbI);showLb(sequence[(position+step+sequence.length)%sequence.length]);}
-$$(".gal-open").forEach(button=>button.addEventListener("click",()=>{
+function showLb(i){
+  lbI=i;const g=GALLERY[i],album=g.images.length>1;
+  $("#lb-title").textContent=g.title;$("#lb-date").textContent=g.tag;
+  $(".lb-cap",lb).textContent=g.cap;
+  const strip=$(".lb-thumbnails",lb);strip.replaceChildren();strip.hidden=!album;
+  $$(".lb-prev,.lb-next,.lb-swipe-note",lb).forEach(el=>el.hidden=!album);
+  if(album)g.images.forEach((src,n)=>{
+    const button=document.createElement("button"),img=document.createElement("img");
+    button.type="button";button.className="lb-thumbnail";button.setAttribute("aria-label",`Show photograph ${n+1} of ${g.images.length}`);
+    img.src=src;img.alt="";img.loading="lazy";button.append(img);button.addEventListener("click",()=>showLbPhoto(n));strip.append(button);
+  });
+  showLbPhoto(0);
+}
+function stepLb(step){showLbPhoto(lbPhotoI+step);}
+[galleryGrid,galleryBrowserGrid].forEach(grid=>grid.addEventListener("click",event=>{
+  const button=event.target.closest(".gal-open");if(!button)return;
   lbOpener=button;
   showLb(+button.closest(".gal-item").dataset.i);
-  lb.classList.add("open");lb.showModal();document.body.style.overflow="hidden";
+  lb.querySelector(".lb-x").setAttribute("aria-label",galleryBrowser.open?"Back to gallery":"Close photograph");
+  lb.classList.add("open");lb.showModal();document.body.style.overflow="hidden";updateCollageMotion();
+}));
+$$('[data-fitness-photo]').forEach(link=>link.addEventListener('click',event=>{
+  const index=GALLERY.findIndex(photo=>photo.img===link.dataset.fitnessPhoto);
+  if(index<0)return;
+  event.preventDefault();lbOpener=link;showLb(index);
+  lb.querySelector('.lb-x').setAttribute('aria-label','Close photograph');
+  lb.classList.add('open');lb.showModal();document.body.style.overflow='hidden';updateCollageMotion();
+}));
+$$('[data-fitness-gallery]').forEach(link=>link.addEventListener('click',event=>{
+  event.preventDefault();setGalleryFilter('life');openGalleryBrowser(link);
 }));
 function closeLb(){
   if(!lb.classList.contains("open"))return;
-  lb.close();lb.classList.remove("open");document.body.style.overflow="";
-  lbOpener?.focus({preventScroll:true});
+  lb.close();lb.classList.remove("open");document.body.style.overflow=galleryBrowser.open?"hidden":"";
+  updateCollageMotion();lbOpener?.focus({preventScroll:true});
 }
 lb.addEventListener("click",e=>{if(e.target===lb||e.target.classList.contains("lb-x"))closeLb();});
 lb.querySelector(".lb-prev").addEventListener("click",()=>stepLb(-1));
@@ -1161,11 +1305,17 @@ lb.querySelector(".lb-next").addEventListener("click",()=>stepLb(1));
 lb.addEventListener("cancel",e=>{e.preventDefault();closeLb();});
 addEventListener("keydown",e=>{
   if(!lb.classList.contains("open"))return;
-  if(e.key==="Escape")closeLb();
   if(e.key==="ArrowRight"){e.preventDefault();stepLb(1);}
   if(e.key==="ArrowLeft"){e.preventDefault();stepLb(-1);}
-  if(e.key==="Tab"){e.preventDefault();const buttons=$$("button",lb),index=buttons.indexOf(document.activeElement);buttons[(index+(e.shiftKey?-1:1)+buttons.length)%buttons.length].focus();}
 });
+let lbTouch=null;
+$(".lb-stage",lb).addEventListener("touchstart",e=>{lbTouch=e.touches.length===1?{x:e.touches[0].clientX,y:e.touches[0].clientY}:null;},{passive:true});
+$(".lb-stage",lb).addEventListener("touchend",e=>{
+  if(!lbTouch||!e.changedTouches.length)return;
+  const dx=e.changedTouches[0].clientX-lbTouch.x,dy=e.changedTouches[0].clientY-lbTouch.y;lbTouch=null;
+  if(Math.abs(dx)>45&&Math.abs(dx)>Math.abs(dy)*1.5)stepLb(dx<0?1:-1);
+},{passive:true});
+$(".lb-stage",lb).addEventListener("touchcancel",()=>{lbTouch=null;},{passive:true});
 </script>
 <script>
 /* Safety net if the local animation scripts fail to load. */
@@ -1180,5 +1330,7 @@ setTimeout(function(){
 <script type="module" src="assets/js/train-journey.js"></script>
 <script src="assets/js/reading.js" defer></script>
 <script src="assets/js/mobile-journey.js" defer></script>
+<script src="assets/js/mobile-sections.js" defer></script>
+<script src="assets/js/gallery-collage.js" defer></script>
 </body>
 </html>

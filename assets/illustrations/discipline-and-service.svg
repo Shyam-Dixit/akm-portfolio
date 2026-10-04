@@ -1,0 +1,40 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 600 260" fill="none"><title>From preparation to public service</title><desc>An engineering notebook becomes a bridge supported by sincerity and discipline. A worked drawing turns into a complete span, linking examination preparation with a career of responsibility.</desc><defs>
+<linearGradient id="gold" x1="0" y1="0" x2=".8" y2="1"><stop stop-color="#f0dca8"/><stop offset=".5" stop-color="#c8a66a"/><stop offset="1" stop-color="#947443"/></linearGradient>
+<linearGradient id="enamel" x2="1" y2="1"><stop stop-color="#587c88"/><stop offset="1" stop-color="#183e56"/></linearGradient>
+<linearGradient id="paper" x2="0" y2="1"><stop stop-color="#fffbef"/><stop offset="1" stop-color="#e9ddc0"/></linearGradient>
+<pattern id="grain" width="8" height="8" patternUnits="userSpaceOnUse"><circle cx="2" cy="3" r=".45" fill="#756e57" opacity=".12"/></pattern>
+</defs><style>.service-span{stroke-dasharray:290;animation:service-build 14s ease-in-out infinite}.service-water{stroke-dasharray:26 12;animation:service-water 15s linear infinite}.service-check{stroke-dasharray:18;animation:service-check 14s ease-in-out infinite}.service-clock{transform-origin:168px 63px;animation:service-clock 90s linear infinite}.service-page{transform-origin:211px 182px;animation:service-page 10s ease-in-out infinite}
+@keyframes service-build{0%,8%{stroke-dashoffset:290;opacity:.3}48%,90%{stroke-dashoffset:0;opacity:1}100%{stroke-dashoffset:0;opacity:.3}}@keyframes service-water{to{stroke-dashoffset:-76}}@keyframes service-check{0%,38%{stroke-dashoffset:18}60%,100%{stroke-dashoffset:0}}@keyframes service-clock{to{transform:rotate(360deg)}}@keyframes service-page{0%,100%{transform:skewY(0)}50%{transform:skewY(-2deg)}}@media(prefers-reduced-motion:reduce){svg *{animation:none!important}}</style><rect width="600" height="260" fill="#173e55"/><rect width="600" height="260" fill="url(#grain)"/>
+<defs><pattern id="blueprint" width="18" height="18" patternUnits="userSpaceOnUse"><path d="M18 0H0v18" stroke="#9bb5ba" stroke-width=".4" opacity=".16"/></pattern></defs>
+<rect x="28" y="21" width="544" height="218" rx="12" fill="url(#blueprint)" stroke="#76919c" stroke-opacity=".3"/>
+<g stroke="#c5cfbe" stroke-width="1.3" stroke-linejoin="round" stroke-linecap="round">
+<!-- The pages carry a worked engineering problem, not a certificate. -->
+<ellipse cx="192" cy="218" rx="122" ry="5" fill="#0a2b40" opacity=".6" stroke="none"/>
+<path d="m72 181 28-47c38-8 75 2 111 24 28-21 55-31 78-30l19 64c-37-4-68 4-97 18-48-24-91-31-139-29Z" fill="#b89a62" stroke="#d0b77f"/>
+<path d="m80 175 24-49c37-7 74 7 107 31v47c-46-24-87-30-131-29Z" fill="url(#paper)" stroke="#bd9e65"/>
+<path class="service-page" d="M211 157c27-22 54-32 82-30l14 60c-40 0-69 8-96 17Z" fill="url(#paper)" stroke="#bd9e65"/>
+<path d="m107 155 25-20 23 37Zm-6 12 71 10m-67-4 61 10m61-24 46-17m-46 25 49-16m-50 24 39-12" stroke="#8b9e92" stroke-width="1"/>
+<path d="m133 145 4 9m-4-9-6 2" stroke="#8b9e92" stroke-width="1"/>
+<path d="M211 162v40" stroke="#d8c69e"/>
+<!-- A measured blueprint resolves into a working bridge. -->
+<path d="M279 149h235v13H279Z" fill="#cad6ce" stroke="#d4ddce"/>
+<path d="M279 162h235v5H279Z" fill="#638897" stroke="#9fbbbf"/>
+<path d="M306 168v31h23v-31m127 0v31h23v-31" fill="#c6b480" stroke="#e0cca0"/>
+<path d="M295 199h46m105 0h42" stroke="#d8c799" stroke-width="3"/>
+<path d="M291 149V98h208v51" stroke="#668b99" stroke-dasharray="3 4"/>
+<path d="M290 149V99h210v50m-210 0 35-50 35 50 35-50 35 50 35-50 35 50m-175-50v50m35-50v50m35-50v50m35-50v50m35-50v50" stroke="#c5d2bd" stroke-width="1.2" opacity=".24"/>
+<path class="service-span" d="M290 149V99h210v50m-210 0 35-50 35 50 35-50 35 50 35-50 35 50m-175-50v50m35-50v50m35-50v50m35-50v50m35-50v50" stroke="#e0c381" stroke-width="2.2"/>
+<path d="M288 87h214m-214-4v8m214-8v8" stroke="#9cb7b9" stroke-width=".8"/>
+<path d="M343 176c16 13 33 13 49 0 18 13 36 13 53 0" stroke="#789eab" stroke-width="1"/>
+<path class="service-water" d="M343 188h98m-88 10h68" stroke="#85a7b0" stroke-width="1"/>
+<text x="318" y="217" text-anchor="middle" font-family="sans-serif" font-size="9" letter-spacing="1.2" fill="#d5c59c" stroke="none">SINCERITY</text>
+<text x="468" y="217" text-anchor="middle" font-family="sans-serif" font-size="9" letter-spacing="1.2" fill="#d5c59c" stroke="none">DISCIPLINE</text>
+<!-- The steady clock and an earned check complete the connection. -->
+<circle cx="168" cy="63" r="23" fill="#234e66" stroke="#c4a76b" stroke-width="2"/>
+<circle cx="168" cy="63" r="18" stroke="#8fa8aa" stroke-width=".8"/>
+<path d="M168 48v2m15 13h-2m-13 15v-2m-15-13h2m13 0-7-4" stroke="#d2c194"/><path class="service-clock" d="M168 63V50" stroke="#e4cd91"/>
+<path d="M231 51h53v37h-53Z" fill="#375e71" stroke="#8ca5a8"/>
+<path d="M239 61h37m-37 8h23m-23 8h19" stroke="#95aaa7" stroke-width=".8"/><path class="service-check" d="m266 76 4 4 8-10" stroke="#e4cd91" stroke-width="2"/>
+<path d="m194 64 25 5m76 3 29 8" stroke="#b4b892" stroke-dasharray="2 5"/>
+<path d="m486 57 35-16 3 7-35 16-8 1Z" fill="#d1b77e" stroke="#a18b62"/><path d="m481 65 5-4" stroke="#f0e2bd" stroke-width="2"/>
+</g></svg>

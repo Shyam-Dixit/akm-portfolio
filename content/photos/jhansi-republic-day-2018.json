@@ -1,9 +1,13 @@
 {
-  "title": "jhansi republic day 2018",
+  "title": "Republic Day in Jhansi",
   "image": "/assets/photos/jhansi-republic-day-2018.jpg",
   "caption": "Republic Day celebrations as Divisional Railway Manager, Jhansi.",
   "date_label": "26 Jan 2018",
   "collection": "jhansi",
+  "tags": [],
   "position": "center 65%",
-  "published": true
+  "published": true,
+  "additional_images": [
+    "/assets/photos/jhansi-republic-day-2018-01.jpg"
+  ]
 }

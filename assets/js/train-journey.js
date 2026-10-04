@@ -10,9 +10,22 @@ parkedTrain.classList.replace('train-fallback','parked-train');
 parkedTrain.setAttribute('viewBox','0 0 144 64');
 parkedTrain.querySelector('g').removeAttribute('transform');
 dock.append(parkedTrain);
+// The phone navigator carries the same blue-and-brass locomotive along a small
+// horizontal track. This keeps the railway visible without using a page gutter.
+const phoneRail=$('.mobile-rail'),phoneTrain=parkedTrain.cloneNode(true);
+phoneTrain.classList.replace('parked-train','mobile-loco');
+phoneTrain.setAttribute('viewBox','0 -16 144 80');
+const phoneSteam=document.createElementNS('http://www.w3.org/2000/svg','g');
+phoneSteam.setAttribute('class','mobile-steam');
+[[117,1,3],[112,-5,4],[117,-12,5]].forEach(([cx,cy,r])=>{
+  const puff=document.createElementNS('http://www.w3.org/2000/svg','circle');
+  puff.setAttribute('cx',cx);puff.setAttribute('cy',cy);puff.setAttribute('r',r);puff.setAttribute('fill','#728b97');phoneSteam.append(puff);
+});
+phoneTrain.append(phoneSteam);phoneRail.replaceChildren(phoneTrain);
 const desktop=matchMedia('(min-width:961px) and (min-height:421px)');
 const reduced=matchMedia('(prefers-reduced-motion:reduce)');
-const chapters=[['about','About'],['journey','Journey'],['achv','Achievements'],['expertise','Expertise'],['thoughts','Thoughts'],['gallery','Gallery'],['contact','Contact']];
+const chapters=[['about','About'],['journey','Journey'],['achv','Achievements'],['expertise','Expertise'],['beyond-rails','Beyond the Rails'],['thoughts','Thoughts'],['gallery','Gallery'],['contact','Contact']];
+chapters.forEach((_,i)=>{const stop=document.createElement('i');stop.className='phone-rail-stop';stop.style.left=`${i/(chapters.length-1)*100}%`;phoneRail.append(stop);});
 let state=null,frame=0,layoutFrame=0,lastY=scrollY,lastMove=0,direction=1,angle=Math.PI/2,travelled=0,drag=null,anchor=null,model=null,modelPromise=null;
 let emblemMade=false,emblemFrame=0;
 const clamp=(v,a,b)=>Math.max(a,Math.min(b,v));
@@ -224,6 +237,7 @@ function updateGuide(){
   $('#guide-current').textContent=`${String(active+1).padStart(2,'0')} / ${chapters.length} · ${chapters[active][1]}`;
   guide.style.setProperty('--read-progress',clamp(scrollY/(document.documentElement.scrollHeight-innerHeight),0,1)*100+'%');
   guide.querySelectorAll('a').forEach((a,i)=>{if(i===active)a.setAttribute('aria-current','location');else a.removeAttribute('aria-current');});
+  guide.querySelectorAll('.phone-rail-stop').forEach((stop,i)=>{stop.classList.toggle('is-passed',i<active);stop.classList.toggle('is-current',i===active);});
 }
 $('#journey-guide').querySelectorAll('a').forEach(a=>a.addEventListener('click',()=>{$('#journey-guide').open=false;}));
 window.addEventListener('scroll',onScroll,{passive:true});

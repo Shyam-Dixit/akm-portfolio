@@ -1,7 +1,7 @@
 ---
 title: "Why We Study, What We Study"
 published: true
-order: 20
+order: 80
 category: "Education"
 excerpt: "Have we ever paused to ask why, from infancy to adulthood, we spend so many years studying? Often, students wonder why they must learn subjects they neither enjoy nor believe will ever be useful."
 listing_excerpt: "Have we ever paused to ask why, from infancy to adulthood, we spend so many years studying?"

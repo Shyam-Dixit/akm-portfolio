@@ -1,0 +1,78 @@
+/* A compact photo journal: real runs and rides, with content-sized cards. */
+#beyond-rails{background:#f4f2e8;padding:54px 0 0;color:#143c5c}
+#beyond-rails>.wrap{padding-top:0;padding-bottom:0}
+.fitness-heading{display:flex;align-items:flex-end;justify-content:space-between;gap:28px;margin:0 0 22px}
+.fitness-heading .kicker{color:#8d773e;font:10px/1.5 'Space Mono',monospace;letter-spacing:.14em;text-transform:uppercase}
+.fitness-heading h2{font:400 clamp(29px,3vw,40px)/1.2 'Playfair Display',Georgia,serif;margin:7px 0 0;letter-spacing:-.025em}
+.fitness-heading>p{max-width:230px;font:14px/1.6 'DM Sans',sans-serif;color:#566a72;margin:0}
+.fitness-grid{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:20px;align-items:start}
+.fitness-card{border:1px solid #b7a37166;background:#fffcf4;border-radius:14px;overflow:hidden;min-width:0}
+.fitness-card-heading{display:flex;align-items:baseline;justify-content:space-between;gap:12px;padding:15px 20px}
+.fitness-card-heading h3{margin:0;font:400 25px/1.2 'Playfair Display',Georgia,serif}
+.fitness-card-heading>span{font:11px/1.5 'DM Sans',sans-serif;color:#708078}
+.fitness-photos{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:4px}
+.fitness-photo{position:relative;display:block;min-width:0;text-decoration:none;color:#fff;overflow:hidden;background:#dce3de;isolation:isolate}
+.fitness-photo:only-child{grid-column:1/-1}
+.fitness-photo img{display:block;width:100%;height:220px;object-fit:cover;transition:transform .4s ease}
+.fitness-photo span{position:absolute;inset:auto 0 0;padding:36px 12px 10px;background:linear-gradient(transparent,#071b2ce0);font:500 12px/1.4 'DM Sans',sans-serif;text-shadow:0 1px 3px #071b2c}
+.fitness-photo small{display:block;font-size:10px;font-weight:400;opacity:.8;margin-top:3px}
+@media(hover:hover){.fitness-photo:hover img{transform:scale(1.035)}}
+.fitness-photo:focus-visible{outline:3px solid #d4a843;outline-offset:-4px}
+.fitness-copy{padding:20px}
+.fitness-label{display:block;font:500 10px/1.5 'DM Sans',sans-serif;letter-spacing:.13em;text-transform:uppercase;color:#8b763f}
+.fitness-cycle-summary{display:grid;grid-template-columns:auto minmax(0,1fr);gap:19px;align-items:center;margin-top:7px}
+.fitness-distance{display:flex;align-items:baseline;gap:7px;font:400 60px/1 'Playfair Display',Georgia,serif;letter-spacing:-.05em;color:#96762c;white-space:nowrap}
+.fitness-distance small{font:500 14px/1 'DM Sans',sans-serif;letter-spacing:0;color:#58696e}
+.fitness-copy h4{font:500 17px/1.4 'DM Sans',sans-serif;letter-spacing:-.015em;margin:0}
+.fitness-event-detail{font:12px/1.5 'DM Sans',sans-serif;color:#73806e;margin:5px 0 0}
+.fitness-retirement{display:flex;gap:15px;border-top:1px solid #b7a37155;margin-top:19px;padding-top:16px;align-items:center}
+.fitness-retirement>strong{font:400 33px/1 'Playfair Display',Georgia,serif;white-space:nowrap;color:#96762c}
+.fitness-retirement>strong small{font:12px/1 'DM Sans',sans-serif}
+.fitness-retirement b{display:block;font:500 12px/1.5 'DM Sans',sans-serif;margin-bottom:3px}
+.fitness-retirement p{font:12px/1.6 'DM Sans',sans-serif;margin:0;color:#58696e}
+.fitness-run-heading{display:flex;align-items:flex-end;justify-content:space-between;gap:10px}
+.fitness-run-heading h4{font:400 24px/1.25 'Playfair Display',Georgia,serif;margin-top:3px}
+.fitness-run-heading>span{font:11px/1.5 'Space Mono',monospace;color:#8b763f;padding-bottom:2px;white-space:nowrap}
+.fitness-results{list-style:none;padding:0;margin:13px 0 0;border-top:1px solid #b7a37155}
+.fitness-results li{display:flex;align-items:baseline;gap:14px;padding:8px 0;border-bottom:1px solid #b7a37133;font:12px/1.5 'DM Sans',sans-serif}
+.fitness-results li:last-child{border:0;padding-bottom:0}
+.fitness-results time{font:10px/1.5 'Space Mono',monospace;color:#8b763f;flex:none}
+.fitness-results span{flex:1}
+.fitness-journal{display:flex;justify-content:flex-end;margin-top:12px}
+.fitness-journal a{display:inline-flex;align-items:center;gap:15px;min-height:44px;font:500 12px/1.5 'DM Sans',sans-serif;color:#143c5c;text-decoration:underline;text-underline-offset:4px}
+.fitness-journal a:focus-visible{outline:2px solid #967726;outline-offset:3px}
+@media(min-width:1100px){.fitness-results{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));column-gap:18px}.fitness-results li{gap:10px}.fitness-results li:nth-last-child(-n+2){border:0;padding-bottom:0}}
+@media(min-width:901px) and (max-width:1250px){.nav-links{gap:20px}.nav-links a{font-size:11px;letter-spacing:.09em}}
+@media(max-width:900px) and (min-width:701px){.fitness-photo img{height:190px}.fitness-copy{padding:16px}.fitness-cycle-summary{gap:12px}.fitness-distance{font-size:50px}.fitness-copy h4{font-size:15px}.fitness-run-heading h4{font-size:23px}}
+@media(max-width:700px){
+  #beyond-rails{padding:30px 0 0}
+  .fitness-heading{display:block;margin-bottom:18px}
+  .fitness-heading h2{font-size:29px;line-height:1.2;max-width:330px}
+  .fitness-heading>p{font-size:12px;line-height:1.6;margin-top:8px;max-width:none}
+  .fitness-grid{grid-template-columns:minmax(0,1fr);gap:14px}
+  .fitness-card{border-radius:11px}
+  .fitness-card-heading{padding:12px 16px}
+  .fitness-card-heading h3{font-size:23px}
+  .fitness-card-heading>span{font-size:10px}
+  .fitness-photo img{height:190px}
+  .fitness-photo span{padding:29px 9px 8px;font-size:11px;line-height:1.4}
+  .fitness-photo small{font-size:9px;margin-top:2px}
+  .fitness-copy{padding:16px}
+  .fitness-cycle-summary{gap:14px}
+  .fitness-distance{font-size:54px;gap:5px}
+  .fitness-distance small{font-size:12px}
+  .fitness-copy h4{font-size:15px;line-height:1.4}
+  .fitness-event-detail{font-size:11px;margin-top:4px}
+  .fitness-retirement{margin-top:16px;padding-top:13px;gap:13px}
+  .fitness-retirement>strong{font-size:30px}
+  .fitness-retirement b,.fitness-retirement p{font-size:11px}
+  .fitness-run-heading h4{font-size:23px;line-height:1.3}
+  .fitness-run-heading>span{font-size:10px}
+  .fitness-results{margin-top:10px}
+  .fitness-results li{font-size:12px;gap:13px;padding:7px 0}
+  .fitness-journal{margin-top:6px}
+  .fitness-journal a{font-size:11px}
+  .nav-links{gap:8px}
+}
+@media(max-width:360px){.fitness-photo img{height:170px}.fitness-copy{padding:14px}.fitness-distance{font-size:48px}.fitness-cycle-summary{gap:11px}.fitness-copy h4{font-size:14px}.fitness-run-heading h4{font-size:23px}.fitness-retirement{gap:11px}}
+@media(prefers-reduced-motion:reduce){.fitness-photo img{transition:none}}

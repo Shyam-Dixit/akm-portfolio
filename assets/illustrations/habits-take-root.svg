@@ -1,0 +1,53 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 600 260" fill="none"><title>The lessons children copy</title><desc>Three linked scenes show the examples set at home: road rules observed from the back seat, words echoed by a child, and the contents of a school lunchbox.</desc><defs>
+<linearGradient id="gold" x1="0" y1="0" x2=".8" y2="1"><stop stop-color="#f0dca8"/><stop offset=".5" stop-color="#c8a66a"/><stop offset="1" stop-color="#947443"/></linearGradient>
+<linearGradient id="enamel" x2="1" y2="1"><stop stop-color="#587c88"/><stop offset="1" stop-color="#183e56"/></linearGradient>
+<linearGradient id="paper" x2="0" y2="1"><stop stop-color="#fffbef"/><stop offset="1" stop-color="#e9ddc0"/></linearGradient>
+<pattern id="grain" width="8" height="8" patternUnits="userSpaceOnUse"><circle cx="2" cy="3" r=".45" fill="#756e57" opacity=".12"/></pattern>
+</defs><style>.lesson-car{animation:lesson-drive 12s ease-in-out infinite}.lesson-parent{animation:lesson-speak 12s ease-in-out infinite}.lesson-child{animation:lesson-echo 12s ease-in-out infinite}.lesson-lid{transform-origin:456px 166px;animation:lesson-pack 12s ease-in-out infinite}.lesson-link{stroke-dasharray:3 7;animation:lesson-link 18s linear infinite}
+@keyframes lesson-drive{0%,10%,100%{transform:translateX(-7px)}30%,75%{transform:translateX(7px)}}@keyframes lesson-speak{0%,20%,100%{opacity:.3}32%,66%{opacity:1}}@keyframes lesson-echo{0%,35%,100%{opacity:.25}48%,80%{opacity:1}}@keyframes lesson-pack{0%,50%,100%{transform:rotate(0)}67%,82%{transform:rotate(-7deg)}}@keyframes lesson-link{to{stroke-dashoffset:-100}}@media(prefers-reduced-motion:reduce){svg *{animation:none!important}}</style><rect width="600" height="260" fill="#e4e8dc"/><rect width="600" height="260" fill="url(#grain)"/>
+<g stroke="#34586b" stroke-width="1.4" stroke-linecap="round" stroke-linejoin="round">
+<!-- Each vignette comes from a specific example in the essay. -->
+<rect x="42" y="38" width="162" height="184" rx="16" fill="#f7f2e7" stroke="#b9ad8d"/>
+<rect x="219" y="38" width="162" height="184" rx="16" fill="#f7f2e7" stroke="#b9ad8d"/>
+<rect x="396" y="38" width="162" height="184" rx="16" fill="#f7f2e7" stroke="#b9ad8d"/>
+<path class="lesson-link" d="M196 129h31m146 0h31" stroke="#bba165" stroke-width="2"/>
+<text x="61" y="61" fill="#a28a54" stroke="none" font-family="sans-serif" font-size="9" letter-spacing="1.6">01 / RULES</text>
+<text x="238" y="61" fill="#a28a54" stroke="none" font-family="sans-serif" font-size="9" letter-spacing="1.6">02 / WORDS</text>
+<text x="415" y="61" fill="#a28a54" stroke="none" font-family="sans-serif" font-size="9" letter-spacing="1.6">03 / HABITS</text>
+<!-- The child in the back seat watches the road. -->
+<path d="M57 181h130m-125 8h29m13 0h29m13 0h29" stroke="#b6bba6"/>
+<path d="M175 165V97" stroke="#7b8c82" stroke-width="3"/>
+<rect x="163" y="83" width="24" height="53" rx="9" fill="#3c5865"/>
+<circle cx="175" cy="95" r="6" fill="#bd755c" stroke="#e0a088"/><circle cx="175" cy="110" r="5" fill="#738481" stroke="none"/><circle cx="175" cy="124" r="5" fill="#738481" stroke="none"/>
+<path d="M158 176v-8" stroke="#b49864" stroke-width="3"/>
+<g class="lesson-car">
+<path d="M62 148 73 123h49l14 24 13 5v17H58v-15Z" fill="url(#enamel)"/>
+<path d="m78 128-7 18h26v-18Zm25 0v18h26l-10-18Z" fill="#dce7de"/>
+<path d="M74 145v-7c0-9 13-9 13 0v7" fill="#b8c6b0" stroke="#7f947a"/>
+<circle cx="81" cy="132" r="5" fill="#deba96" stroke="#b29472" stroke-width=".7"/>
+<path d="M107 145v-10c0-11 15-11 15 0v10" fill="#c7b185" stroke="#a99164"/>
+<circle cx="114" cy="128" r="6" fill="#deba96" stroke="#b29472" stroke-width=".7"/>
+<path d="M110 139h10m-10 0 5 5" stroke="#425d65"/>
+<circle cx="76" cy="169" r="10" fill="#334e5b"/><circle cx="131" cy="169" r="10" fill="#334e5b"/><circle cx="76" cy="169" r="4" fill="#c3c9ba"/><circle cx="131" cy="169" r="4" fill="#c3c9ba"/><path d="M64 158h72" stroke="#c5b783" stroke-width="1"/>
+</g>
+<text x="123" y="207" text-anchor="middle" fill="#647566" stroke="none" font-family="Georgia,serif" font-size="12">The example on the road</text>
+<!-- The child's smaller bubble repeats the same pattern. -->
+<path d="M239 96c0-14 16-23 34-23h30c18 0 31 10 31 25s-14 24-31 24h-33l-17 12 4-16c-11-4-18-11-18-22Z" fill="#d5ddc9" stroke="#95a582"/>
+<path d="M275 143c0-13 15-22 31-22h22c16 0 28 9 28 22s-13 22-29 22h-23l-14 11 2-15c-10-4-17-10-17-18Z" fill="url(#paper)" stroke="#b9a47c"/>
+<g class="lesson-parent" stroke="#9e8355" stroke-width="2"><path d="m257 92 9 7-4-10 12 10m11-9 8 8-2-11 9 10m10-8 7 7m-61 12h49"/></g>
+<g class="lesson-child" stroke="#9e8355" stroke-width="1.7"><path d="m290 137 7 6-3-8 10 8m8-7 7 7-2-9 8 9m8-8 5 5m-48 12h40"/></g>
+<path d="M246 186c0-12 22-12 22 0m68 0c0-9 16-9 16 0" stroke="#9cae92" stroke-width="2"/>
+<circle cx="257" cy="170" r="6" fill="#c5af8d" stroke="none"/><circle cx="344" cy="172" r="4.5" fill="#c5af8d" stroke="none"/>
+<text x="300" y="207" text-anchor="middle" fill="#647566" stroke="none" font-family="Georgia,serif" font-size="12">The words they repeat</text>
+<!-- Packing lunch makes the health example concrete. -->
+<rect x="416" y="132" width="121" height="48" rx="10" fill="#8ea597" stroke="#6b867b"/>
+<rect x="421" y="136" width="111" height="36" rx="7" fill="#fff7e6" stroke="#c4bc99"/>
+<path d="M461 137v34m34-34v34" stroke="#bac3a8"/>
+<path d="m427 165 9-21 15 2 6 19Z" fill="#dcc69b" stroke="#b59a6c"/>
+<path d="m432 157 19 3m-14-9 8 1" stroke="#b59a6c" stroke-width="1"/>
+<circle cx="472" cy="146" r="6" fill="#a9bc89" stroke="#809762"/><circle cx="482" cy="151" r="6" fill="#c0ca92" stroke="#879e6c"/><circle cx="473" cy="160" r="6" fill="#a9bc89" stroke="#809762"/>
+<path d="M510 144c-11-6-14 7-8 16 3 4 6 4 8 2 3 2 7 1 9-3 6-9 1-20-9-15Z" fill="#d1a376" stroke="#a5825d"/><path d="m510 144 2-6" stroke="#839168"/>
+<g class="lesson-lid"><path d="M416 120v-21c0-7 6-12 13-12h94c7 0 13 5 13 12v21Z" fill="#ccd6be" stroke="#91a382"/><path d="M425 113V99h102v14m-64-16h26" stroke="#a5b295" stroke-width="1"/></g>
+<path d="M465 178h22v5h-22Z" fill="#dccea9" stroke="#b29a69"/>
+<text x="477" y="207" text-anchor="middle" fill="#647566" stroke="none" font-family="Georgia,serif" font-size="12">The choices made at home</text>
+</g></svg>

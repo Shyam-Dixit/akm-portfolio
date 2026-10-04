@@ -1,0 +1,58 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 600 260" fill="none">
+<title>A life beyond the ranking</title><desc>A path winds past a school, examination results and a briefcase. At its destination, one person helps another up a step: character matters beyond repeated selection.</desc>
+<defs>
+<linearGradient id="brass" x2=".6" y2="1"><stop stop-color="#ead7a7"/><stop offset=".5" stop-color="#ccb075"/><stop offset="1" stop-color="#a4864d"/></linearGradient>
+<linearGradient id="navy" x2="1" y2="1"><stop stop-color="#69838c"/><stop offset="1" stop-color="#365369"/></linearGradient>
+<linearGradient id="sheet" x2="0" y2="1"><stop stop-color="#fffaf0"/><stop offset="1" stop-color="#f2e9d5"/></linearGradient>
+<pattern id="grain" width="9" height="9" patternUnits="userSpaceOnUse"><circle cx="2" cy="3" r=".45" fill="#6a705d" opacity=".12"/></pattern>
+</defs><style>.rank-path{stroke-dasharray:3 11;animation:rank-travel 20s linear infinite}.rank-cards{animation:rank-fade 10s ease-in-out infinite}.rank-help{transform-origin:423px 126px;animation:rank-help 7s ease-in-out infinite}.rank-leaves{transform-origin:499px 195px;animation:rank-leaves 8s ease-in-out infinite}.rank-light{animation:rank-light 7s ease-in-out infinite}
+@keyframes rank-travel{to{stroke-dashoffset:-112}}@keyframes rank-fade{0%,100%{opacity:.65}50%{opacity:1}}@keyframes rank-help{0%,100%{transform:rotate(0)}50%{transform:rotate(3deg)}}@keyframes rank-leaves{0%,100%{transform:rotate(-2deg)}50%{transform:rotate(2deg)}}@keyframes rank-light{0%,100%{opacity:.18}50%{opacity:.35}}
+@media(prefers-reduced-motion:reduce){svg *{animation:none!important}}
+</style>
+<rect width="600" height="260" fill="#e5e7dd"/><rect width="600" height="260" fill="url(#grain)"/>
+<ellipse cx="300" cy="130" rx="203" ry="107" fill="#faf5e8"/>
+<ellipse cx="300" cy="231" rx="214" ry="7" fill="#43586b" opacity=".07"/>
+<g stroke="#43586b" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round">
+<!-- The path crosses institutions, but has no final podium. -->
+<path d="M92 207c43 24 60-68 104-61s8 77 78 72 53-56 99-53 66 24 116 1" stroke="#d8c497" stroke-width="15"/>
+<path class="rank-path" d="M92 207c43 24 60-68 104-61s8 77 78 72 53-56 99-53 66 24 116 1" stroke="#a38b54" stroke-width="1"/>
+<path d="M82 132h74v60H82Z" fill="#d8d3be" stroke="#969a83"/>
+<path d="m74 133 45-29 45 29Z" fill="url(#navy)"/>
+<path d="M112 192v-22a8 8 0 0 1 16 0v22" fill="#fff7e5"/>
+<path d="M91 145h13v15H91Zm43 0h13v15h-13Z" fill="#b8c7b0" stroke="#7e947b"/><path d="M97 145v15m-6-8h13m37-7v15m-7-8h13" stroke="#f8f1df" stroke-width="1"/>
+<circle cx="119" cy="133" r="7" fill="#f6edda" stroke="#a78d5b"/><path d="M119 129v4l3 2" stroke="#a78d5b" stroke-width="1"/>
+<!-- Each new cohort produces another ranking. -->
+<g class="rank-cards">
+<path d="m172 61 39-9 17 73-39 9Z" fill="#c4ceb8" stroke="#859677"/>
+<path d="m190 58 41-3 6 76-41 3Z" fill="url(#sheet)" stroke="#b7a16b"/>
+<path d="m208 65 42 4-7 77-42-4Z" fill="url(#sheet)" stroke="#b7a16b"/>
+<path d="m215 79 25 2m-26 6 20 2m-21 6 24 2m-25 7 15 1" stroke="#a3af98" stroke-width="1"/>
+<circle cx="224" cy="121" r="10" fill="url(#brass)" stroke="#a58950"/><path d="m219 120 4 4 7-8" stroke="#fff8e8" stroke-width="1.6"/>
+</g>
+<path d="m268 110 31-12 30 12-30 13Z" fill="url(#navy)"/><path d="M280 116v13c11 5 25 5 37 0v-13m9-5v20" stroke="#697f87"/>
+<path d="M273 160h52v35h-52Z" fill="url(#brass)" stroke="#a58950"/><path d="M287 160v-9h24v9m-37 12c14 6 34 6 49 0" stroke="#a58950"/>
+<rect x="295" y="171" width="8" height="8" rx="1" fill="#f7e6be" stroke="#a58950"/>
+<!-- The meaningful destination is one person helping another. -->
+<circle class="rank-light" cx="420" cy="122" r="67" fill="#d3bd81" stroke="none" opacity=".25"/>
+<path d="M342 213v-22h35v-20h36v-20h60v62Z" fill="#d4d6c3" stroke="#93a089"/><path d="M342 191h35m0-20h36m0-20h60" stroke="#f6f3e5" stroke-width="2"/>
+<path d="m427 116-8 27-4 11m22-38 9 23 10 12" stroke="#43586b" stroke-width="7"/>
+<path d="M413 85c1-17 23-21 29-3l7 38h-39Z" fill="url(#navy)"/>
+<path d="M424 68v10m8-10v10" stroke="#d7b48d" stroke-width="5"/>
+<ellipse cx="428" cy="59" rx="11" ry="14" fill="#e6c5a1"/>
+<path d="M417 59c-6-14 6-23 16-18 8 4 9 11 6 16-8-1-12-3-15-7-1 5-3 7-7 9Z" fill="#43586b"/>
+<path d="m423 59-2 4h4m0 5 5 1" stroke-width=".8"/>
+<g class="rank-help"><path d="m414 87-13 21-19 9" stroke="#e6c5a1" stroke-width="7"/><path d="m416 85-8 14" stroke="#526f7e" stroke-width="11"/></g>
+<path d="m369 159-4 19-10 14m22-33 9 14 9-1" stroke="#43586b" stroke-width="6"/>
+<path d="M361 134c0-15 20-19 25-4l5 30h-35Z" fill="#b2c3a3" stroke="#798e70"/>
+<path d="M367 119v9m8-10v9" stroke="#d7b48d" stroke-width="5"/>
+<ellipse cx="370" cy="108" rx="10" ry="13" fill="#e6c5a1"/>
+<path d="M360 107c-4-11 4-21 14-17 8 3 10 10 7 15-8-1-12-2-16-6-1 4-2 6-5 8Z" fill="#43586b"/>
+<path d="m377 109 1 5h-3m-8 7c3 1 6 0 8-2" stroke-width=".8"/>
+<path d="m382 134 10-14-9-2" stroke="#e6c5a1" stroke-width="6"/><path d="m382 134 5-7" stroke="#b2c3a3" stroke-width="10"/>
+<path d="m357 139-8 12" stroke="#e6c5a1" stroke-width="6"/>
+<path d="M350 194h9m33-20h9m11-18h8m31-3h9" stroke="#43586b" stroke-width="3"/>
+<!-- Growth without another test. -->
+<path d="M499 214v-67" stroke="#809473" stroke-width="2"/>
+<g class="rank-leaves" fill="#acbd9d" stroke="#809473"><path d="M499 171c-18 0-28-13-23-27 15 0 27 11 23 27Zm0 17c1-20 13-31 30-28 0 17-12 28-30 28Zm0-33c-10-13-10-27 1-36 12 9 11 25-1 36Z"/><path d="m484 153 15 18m21-3-21 20" stroke-width=".8"/></g>
+<path d="M483 215h32m-159-5h9" stroke="#a99b73" opacity=".5"/>
+</g></svg>

@@ -1,0 +1,84 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 600 260" fill="none">
+  <title>Ten minutes make room for a better example</title><desc>A parent and child walk calmly to school. A brass clock marks a ten-minute margin, and the school crossing and open gate make the destination clear.</desc>
+  <defs><linearGradient id="time-gold" x2=".5" y2="1"><stop stop-color="#ead5a2"/><stop offset="1" stop-color="#a88b4e"/></linearGradient></defs>
+  <style>
+    .time-parent-step{transform-origin:259px 174px;animation:stride 3.2s ease-in-out infinite}
+    .time-child-step{transform-origin:308px 190px;animation:stride 3.2s -.25s ease-in-out infinite}
+    @keyframes stride{0%,100%{transform:skewX(-3deg)}50%{transform:skewX(3deg)}}
+    .time-minute{transform-origin:176px 103px;animation:minute 60s linear infinite}
+    .time-cloud{animation:cloud 16s ease-in-out infinite}
+    .time-birds{animation:birds 10s ease-in-out infinite}
+    .time-leaves{transform-origin:110px 190px;animation:leaves 8s ease-in-out infinite}
+    .time-bag{transform-origin:312px 158px;animation:bag 6s ease-in-out infinite}
+    .time-path{animation:path 24s linear infinite}
+    @keyframes minute{to{transform:rotate(360deg)}}
+    @keyframes cloud{0%,100%{transform:translateX(-6px)}50%{transform:translateX(7px)}}
+    @keyframes birds{0%,100%{transform:translate(0,0)}50%{transform:translate(9px,-3px)}}
+    @keyframes leaves{0%,100%{transform:rotate(-2deg)}50%{transform:rotate(3deg)}}
+    @keyframes bag{0%,100%{transform:rotate(-2deg)}50%{transform:rotate(4deg)}}
+    @keyframes path{to{stroke-dashoffset:-52}}
+    @media(prefers-reduced-motion:reduce){.time-parent-step,.time-child-step,.time-minute,.time-cloud,.time-birds,.time-leaves,.time-bag,.time-path{animation:none}}
+  </style>
+  <rect width="600" height="260" fill="#eee4cf"/>
+  <ellipse cx="303" cy="129" rx="186" ry="108" fill="#faf5e8"/>
+  <g stroke="#43586b" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round">
+    <!-- A calm morning rather than a race against the clock. -->
+    <circle cx="438" cy="59" r="23" fill="#e3c57f" stroke="none"/>
+    <path class="time-cloud" d="M246 66c-11 0-12-13-2-16-1-14 18-19 24-6 11-5 23 3 20 13 9 1 9 10 1 10z" fill="#fffaf0" stroke="#c6cbbd"/>
+    <g class="time-birds" stroke="#9e8247"><path d="M330 60c5-5 10-5 14 0 4-5 9-5 14 0m12 20c4-4 7-4 10 0 3-4 6-4 10 0"/></g>
+    <path d="M87 221c58-8 101-8 153 1s92 14 140-8 81-34 132-32" stroke="#a8b49b"/>
+    <path d="M190 235c54-20 93 0 129-8 53-11 60-27 99-37" stroke="#d9c28f" stroke-width="15"/>
+    <path class="time-path" d="M191 235c52-18 94 1 128-8 50-13 64-30 99-37" stroke="#a18141" stroke-width="1" stroke-dasharray="2 11" opacity=".65"/>
+    <!-- A ten-minute margin is visible on the clock face. -->
+    <circle cx="176" cy="103" r="48" fill="url(#time-gold)" stroke="#a18141" stroke-width="2"/>
+    <circle cx="176" cy="103" r="41" fill="#fffaf0" stroke="#a18141" stroke-width="1"/>
+    <path d="M176 69a34 34 0 0 1 29.4 17l-29.4 17Z" fill="#dfc888" fill-opacity=".35" stroke="none"/>
+    <path d="M176 67v5m36 31h-5m-31 36v-5m-36-31h5m13-31 2 4m35-4-2 4m-51 9 4 2m62-2-4 2m-62 34 4-2m62 2-4-2m-46 15 2-4m35 4-2-4" stroke="#a18141"/>
+    <path d="M176 103l-18-9" stroke="#43586b" stroke-width="3"/>
+    <path class="time-minute" d="M176 103V76" stroke="#a18141" stroke-width="2.5"/>
+    <circle cx="176" cy="103" r="3.5" fill="#43586b" stroke="none"/>
+    <path d="M163 154h26" stroke="#a18141" stroke-width="2"/>
+    <path d="M143 174h66" stroke="#b29b63" stroke-width=".8"/>
+    <text x="176" y="169" text-anchor="middle" font-family="Georgia,serif" font-size="9" letter-spacing="1" fill="#967e4c" stroke="none">10 MINUTES EARLIER</text>
+    <!-- A welcoming school, already ready for the day. -->
+    <path d="M366 114h116v80H366z" fill="#e0d7c3"/>
+    <path d="m354 115 71-41 68 41Z" fill="#536e7b"/>
+    <path d="M415 194v-32c0-15 21-15 21 0v32" fill="#faf5e8"/>
+    <path d="M378 132h21v24h-21zm74 0h18v24h-18z" fill="#b9c8b2"/>
+    <path d="M388 133v22m-10-11h21m62-11v22m-9-11h18" stroke="#fff7e9" stroke-width="1.5"/>
+    <circle cx="425" cy="111" r="9" fill="#fff7e9" stroke="#a18141"/>
+    <path d="M425 106v5l4 2" stroke="#a18141" stroke-width="1"/>
+    <rect x="401" y="123" width="48" height="10" rx="2" fill="#efe3c6" stroke="#b6a278" stroke-width=".8"/>
+    <text x="425" y="130.5" text-anchor="middle" font-family="sans-serif" font-size="6" letter-spacing="1.2" fill="#6c796f" stroke="none">SCHOOL</text>
+    <path d="M356 178v23m43-23v23m44-23v23m46-23v23m-130-17h38m47 0h42" stroke="#9e8247"/>
+    <path d="M362 181v18m8-18v18m8-18v18m8-18v18m66-18v18m8-18v18m8-18v18m8-18v18" stroke="#9e8247" stroke-width="1"/>
+    <!-- The example is an unhurried walk together. -->
+    <path class="time-parent-step" d="m255 172-8 32-10 12m31-43 7 31 12 10" stroke="#43586b" stroke-width="8"/>
+    <path d="M246 137c2-17 25-19 29-1l5 43h-40Z" fill="#536e7b"/>
+    <path d="M253 118v12m13-13v13" stroke="#d9b791" stroke-width="7"/>
+    <ellipse cx="258" cy="111" rx="13" ry="17" fill="#e5c7a4"/>
+    <path d="M245 112c-4-16 3-25 15-23 10 1 13 9 12 17-9 1-17-3-20-7-1 6-3 10-7 13Z" fill="#43586b"/>
+    <path d="m266 112 2 4-3 1m-7 5c3 2 6 2 9-1" stroke-width=".8"/><circle cx="265" cy="109" r="1" fill="#43586b" stroke="none"/>
+    <path d="m272 142 15 25 15 3" stroke="#e5c7a4" stroke-width="7"/>
+    <path d="m245 144-12 21" stroke="#e5c7a4" stroke-width="7"/>
+    <path class="time-child-step" d="m302 190 2 18-6 9m12-27 9 16 7 7" stroke="#43586b" stroke-width="6"/>
+    <path d="M299 162c1-13 18-15 21-1l4 33h-29Z" fill="#b9c8b2"/>
+    <path d="m319 167 12 13m-34-14-9-2" stroke="#e5c7a4" stroke-width="6"/>
+    <ellipse cx="307" cy="146" rx="10" ry="13" fill="#e5c7a4"/>
+    <path d="M297 149c-5-12 0-20 10-20 9-1 13 6 12 12-7 1-12-1-16-4 0 6-2 9-6 12Z" fill="#43586b"/>
+    <path d="m313 147 1 4h-3m-6 5c3 1 5 1 7-1" stroke-width=".8"/><circle cx="312" cy="145" r=".9" fill="#43586b" stroke="none"/>
+    <g class="time-bag"><rect x="313" y="160" width="14" height="22" rx="5" fill="#d3b779" stroke="#a18141"/><path d="M316 168h8m-10-5-3-4" stroke="#a18141" stroke-width="1"/></g>
+    <path d="M232 218h9m43-2h9m3 4h8m21-4h8" stroke="#43586b" stroke-width="3"/>
+    <path d="m350 208 12 4m-6-8 12 4m-6-8 12 4m-6-8 12 4" stroke="#faf6e9" stroke-width="4"/>
+    <path d="M335 195v-38" stroke="#8e9176" stroke-width="2"/>
+    <path d="m335 136 13 20h-26Z" fill="#ead7a0" stroke="#ac8f4c"/>
+    <circle cx="335" cy="142" r="1.5" fill="#647566" stroke="none"/>
+    <path d="m334 146-2 4m2-4 3 4m-3-5 3 1" stroke="#647566" stroke-width="1.2"/>
+    <path d="M323 198h21" stroke="#c2b17d" stroke-width="1"/>
+    <!-- Leaves move lightly; the path has room to breathe. -->
+    <path d="M110 219v-52" stroke="#788e72" stroke-width="2"/>
+    <g class="time-leaves" fill="#b9c8b2" stroke="#788e72"><path d="M109 187c-15-1-24-13-19-26 15 0 24 13 19 26Z"/><path d="M111 199c-1-16 10-26 25-24 1 14-11 26-25 24Z"/></g>
+    <path d="M493 211c5-12 10-17 17-16m-16 16c11-5 19-4 23-1" stroke="#9cab91"/>
+    <path d="M96 80v8m-4-4h8m403 29h8m-4-4v8" stroke="#b69550" opacity=".6"/>
+  </g>
+</svg>

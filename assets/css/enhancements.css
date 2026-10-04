@@ -159,8 +159,6 @@ html.train-dragging,html.train-dragging *{cursor:grabbing!important;user-select:
 .collection-art-frame,.reading-art-frame{overflow:hidden;border-radius:3px}
 .cover-drift{animation:coverDrift 18s ease-in-out infinite;animation-play-state:paused;transform-origin:50% 50%}
 .cover-drift.cover-in-view{animation-play-state:running}
-.cover-motion-control{display:block;margin:0 0 24px auto;padding:8px 12px;border:1px solid #b69a6766;border-radius:5px;background:transparent;color:#68747b;font:11px 'DM Sans',sans-serif;cursor:pointer}
-.cover-motion-control:focus-visible{outline:2px solid #a18141;outline-offset:3px}
 @keyframes coverDrift{0%,100%{transform:scale(1.015) translateX(-.3%)}50%{transform:scale(1.04) translateX(.3%)}}
 @media(prefers-reduced-motion:reduce){.cover-drift{animation:none!important}}
 .reading-body p:first-child::first-letter{float:left;font-size:4.3em;line-height:.85;padding:9px 10px 0 0;color:#b8860b}

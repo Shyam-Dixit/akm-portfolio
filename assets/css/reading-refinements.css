@@ -1,0 +1,61 @@
+/* Clear article typography, with the portfolio's serif reserved for headlines. */
+.reading-body{font:400 19px/1.75 'DM Sans',-apple-system,BlinkMacSystemFont,'Segoe UI',sans-serif;letter-spacing:0;color:#283742}
+.reading-body p:first-child::first-letter{float:none;font:inherit;color:inherit;padding:0}
+.reading-body h2,.reading-body h3{font-family:'DM Sans',sans-serif;font-weight:600}
+.reading-body p:first-child{color:#143c5c}
+.reading-art{display:block}
+.reading-art figcaption{margin-top:10px}
+.collection-toolbar{display:flex;align-items:center;gap:16px;margin:12px 0 18px}
+.collection-toolbar .collection-count{flex:1;margin:0;line-height:1.6}
+.article-filters{display:flex;align-items:center;flex-wrap:wrap;gap:8px;margin:0 0 24px}
+.article-filters[hidden],.thoughts-page .collection-card[hidden]{display:none}
+.article-filters button{min-height:44px;padding:8px 16px;border:1px solid #b69a6770;border-radius:100px;background:transparent;color:#143c5c;font:500 12px/1.4 'DM Sans',sans-serif;cursor:pointer}
+.article-filters button[aria-pressed=true]{background:#143c5c;border-color:#143c5c;color:#fafaf5}
+.article-filters button:focus-visible{outline:2px solid #9c792c;outline-offset:3px}
+@media screen and (max-width:700px){
+  .reading-page{background:#fbfaf6;color:#283742}
+  .reading-nav{padding:14px 20px;min-height:70px}
+  .reading-monogram{width:42px;height:42px;font-size:20px}
+  .reading-nav .reading-series{display:none}
+  .reading-article{padding:30px 22px 38px}
+  .reading-kicker{font-size:9px;letter-spacing:.1em;line-height:1.6}
+  .reading-article h1{font-size:clamp(32px,9vw,42px);line-height:1.13;margin:14px 0 18px;text-wrap:balance}
+  .reading-byline{gap:8px 18px;font-size:12px;padding-bottom:18px;margin-bottom:22px}
+  .reading-art{margin-bottom:22px;column-gap:8px}
+  .reading-art-frame{border-radius:9px}
+  .reading-art figcaption{font:11px/1.5 'DM Sans',sans-serif;text-transform:none;letter-spacing:.02em;margin-top:8px}
+  .reading-body{font:400 17px/1.72 'DM Sans',-apple-system,BlinkMacSystemFont,'Segoe UI',sans-serif;letter-spacing:0;overflow-wrap:break-word}
+  .reading-body p{margin:0 0 1.15em}
+  .reading-body p:first-child{font-size:18px;line-height:1.65;font-weight:500;color:#143c5c}
+  .reading-body p:first-child::first-letter{float:none;font:inherit;color:inherit;padding:0}
+  .reading-body h2{font-size:23px;margin:1.4em 0 .6em}
+  .reading-body h3{font-size:20px;margin:1.3em 0 .6em}
+  .reading-body blockquote{margin:1.3em 0;padding-left:16px;color:#435565}
+  .reading-body ul,.reading-body ol{padding-left:24px}
+  .reading-body li+li{margin-top:8px}
+  .reading-end{margin-top:28px;padding-top:18px;gap:12px}
+  .reading-share{min-height:44px}
+  .reading-next{padding:30px 22px}
+  .reading-next a{font-size:25px}
+  .thoughts-collection{padding:24px 20px 32px}
+  .collection-intro{padding-bottom:8px}
+  .article-filters{flex-wrap:nowrap;overflow-x:auto;scrollbar-width:none;overscroll-behavior-x:contain;padding:3px 20px 3px 0;margin-right:-20px}
+  .article-filters button{white-space:nowrap;flex:none;padding:8px 14px}
+  .collection-intro h1{font-size:34px;line-height:1.12;margin:14px 0}
+  .collection-intro>p{font-size:13px;line-height:1.6}
+  .collection-toolbar{margin:8px 0 14px}
+  .article-filters{margin-bottom:18px}
+  .thoughts-page .thought-cards{display:grid;grid-template-columns:minmax(0,1fr);gap:12px}
+  .thoughts-page .collection-card{display:grid;grid-template-columns:100px minmax(0,1fr);align-items:center;gap:14px;padding:12px;border-radius:10px;min-height:124px}
+  .thoughts-page .collection-card:hover{transform:none}
+  .thoughts-page .collection-art-frame{width:100px;height:100px;overflow:hidden;border-radius:7px}
+  .thoughts-page .collection-art{width:100%;height:100%;aspect-ratio:1;object-fit:cover;border:0}
+  .thoughts-page .collection-copy{padding:0;min-width:0}
+  .thoughts-page .collection-copy:only-child{grid-column:1 / -1}
+  .thoughts-page .collection-copy .thought-meta{display:flex;flex-wrap:wrap;gap:3px 8px;font-size:9px;letter-spacing:0;line-height:1.5}
+  .thoughts-page .collection-copy h2{font-size:19px;line-height:1.3;margin:7px 0 0;letter-spacing:-.015em;text-wrap:pretty}
+  .thoughts-page .collection-author,.thoughts-page .collection-copy>p,.thoughts-page .collection-copy .thought-read{display:none}
+}
+@media screen and (max-width:360px){.reading-article{padding-right:18px;padding-left:18px}.reading-body{font-size:17px}.reading-body p:first-child{font-size:18px}.thoughts-page .collection-card{grid-template-columns:84px minmax(0,1fr);gap:12px}.thoughts-page .collection-art-frame{width:84px;height:92px}.thoughts-page .collection-copy h2{font-size:18px}}
+
+@media print{.reading-body{font-family:Georgia,serif;font-size:12pt;line-height:1.6}}

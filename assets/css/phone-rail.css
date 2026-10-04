@@ -1,0 +1,19 @@
+/* One small railway navigator replaces the desktop train's wide side gutter. */
+@media(max-width:960px){
+  .journey-guide,.journey-guide[open]{left:12px;right:12px;bottom:max(10px,env(safe-area-inset-bottom));width:auto;max-width:420px;margin-left:auto;margin-right:auto;border-radius:12px;background:#fffcf7f7;box-shadow:0 5px 24px #143c5c25;backdrop-filter:blur(12px)}
+  .journey-guide summary{display:block;min-height:68px;padding:44px 36px 9px 16px;font-size:11px;line-height:1.3}
+  .journey-guide summary small{position:absolute;width:1px;height:1px;margin:-1px;overflow:hidden;clip-path:inset(50%);white-space:nowrap}
+  .journey-guide summary::before{display:none}
+  .journey-guide summary::after{top:auto;bottom:8px;right:16px;font-size:18px}
+  .journey-guide .mobile-rail{position:absolute;display:block;left:16px;right:16px;top:4px;bottom:auto;width:auto;height:32px;margin:0;border-bottom:2px solid #aa8b4e99;background:repeating-linear-gradient(90deg,#b99b6055 0 2px,transparent 2px 9px) bottom/100% 5px no-repeat}
+  .journey-guide .mobile-loco{position:absolute;z-index:2;width:72px;height:40px;bottom:-3px;left:clamp(0px,calc(var(--read-progress,0%) - 36px),calc(100% - 72px));filter:drop-shadow(0 2px 1px #143c5c22)}
+  .journey-guide .mobile-steam{transform-origin:117px 3px}
+  .phone-rail-stop{position:absolute;bottom:0;width:3px;height:11px;background:#b69a67;transform:translateX(-50%)}
+  .phone-rail-stop::before{content:'';position:absolute;width:5px;height:5px;border-radius:50%;left:-1px;top:-3px;background:#c9bea6;border:1px solid #fffcf7}
+  .phone-rail-stop.is-passed::before{background:#ac705c}
+  .phone-rail-stop.is-current::before{background:#498276;box-shadow:0 0 0 3px #49827620}
+  .journey-guide ol{padding:6px 10px 10px;max-height:55dvh;overflow:auto}
+  .journey-guide a{align-items:center;min-height:44px;padding:8px 12px}
+  .foot-base{padding-bottom:92px}
+}
+@media(prefers-reduced-motion:reduce){.journey-guide .mobile-steam{display:none}}

@@ -31,12 +31,11 @@ content:
     format: json
     fields:
       - name: images
-        label: Drag photos to reorder, then Save
+        label: Drag event covers to reorder, then Save
         type: image
-        description: Order runs left to right, then top to bottom. Add and edit
-          photographs in Photo details; use Select here to position new ones.
-          Unlisted published photos follow at the end. To hide a photo, turn off
-          Show on website in Photo details.
+        description: Order runs left to right, then top to bottom. Select the cover
+          image of each event or individual photo. Edit captions and event photos
+          in Photo details. Unlisted published entries follow at the end.
         options:
           media: photos
           multiple: true
@@ -64,16 +63,26 @@ content:
         order: asc
     fields:
       - name: title
-        label: Photo name
+        label: Photo or event name
         type: string
         required: true
-        description: A short name to find this photograph in the editor.
+        description: A short title for this photograph or group of event photos.
       - name: image
-        label: Photograph
+        label: Cover photograph
         type: image
         required: true
         options:
           media: photos
+      - name: additional_images
+        label: More photos from this event
+        type: image
+        description: Optional. Add the separate originals here. The cover appears
+          first; drag these thumbnails to set the remaining order. They open
+          together as one event album and share the description below.
+        options:
+          media: photos
+          multiple: true
+          unique: true
       - name: caption
         label: Description
         type: text
@@ -92,6 +101,33 @@ content:
               label: Western Railway
             - name: jhansi
               label: Jhansi years
+            - name: northeastern
+              label: North Eastern Railway
+            - name: eastcentral
+              label: East Central Railway
+            - name: life
+              label: Beyond the rails
+            - name: other
+              label: Other moments
+      - name: tags
+        label: Also show in
+        type: select
+        description: Choose extra collections without duplicating the photos.
+        options:
+          multiple: true
+          values:
+            - name: people
+              label: Key People
+            - name: western
+              label: Western Railway
+            - name: jhansi
+              label: Jhansi years
+            - name: northeastern
+              label: North Eastern Railway
+            - name: eastcentral
+              label: East Central Railway
+            - name: life
+              label: Beyond the rails
             - name: other
               label: Other moments
       - name: position
@@ -108,9 +144,8 @@ content:
       - name: published
         label: Show on website
         type: boolean
-        description: Published photos appear automatically at the end until positioned
-          in Gallery order. Turn off to hide this photo. The first six published
-          photos form the homepage preview.
+        description: Published entries appear automatically at the end until
+          positioned in Gallery order. Turn off to hide this whole photo or event.
   - name: articles
     label: Articles
     type: collection
@@ -149,7 +184,8 @@ content:
       - name: category
         label: Topic
         type: string
-        description: For example, Observation, Education or Railway life.
+        description: For example, Observation, Education or Parenting. Matching
+          topics are grouped together in the Thoughts filters.
       - name: cover
         label: Cover graphic
         type: image
@@ -165,9 +201,9 @@ content:
       - name: cover_motion
         label: Gentle cover animation
         type: boolean
-        description: Animates details in the two original illustrations, or adds a
-          gentle camera movement to uploaded images. Readers can pause it;
-          reduced-motion preferences are respected.
+        description: Animates details in the custom article illustrations, or adds a
+          gentle camera movement to uploaded images. Artwork plays automatically
+          when visible and respects reduced-motion preferences.
       - name: cover_caption
         label: Cover caption
         type: string
@@ -175,8 +211,8 @@ content:
         label: Display order
         type: number
         required: true
-        description: Lower numbers appear first. The first two published articles appear
-          on the home page; every published article appears in Thoughts.
+        description: Lower numbers appear first. Every published article appears
+          in the homepage article row and in Thoughts.
         options:
           min: 0
       - name: reading_minutes
@@ -198,3 +234,67 @@ content:
         description: Turn on and save to publish. Turning off removes it from the
           website. This GitHub repository is public, so unpublished text is not
           private.
+  - name: fitness
+    label: Beyond the Rails
+    type: file
+    path: content/fitness.json
+    format: json
+    fields:
+      - name: cycling_event
+        label: Cycling event
+        type: string
+        required: true
+      - name: cycling_detail
+        label: Cycling year and edition
+        type: string
+        required: true
+      - name: cycling_distance
+        label: Cycling finish distance, in km
+        type: number
+        required: true
+        options:
+          min: 1
+      - name: retirement_distance
+        label: Retirement ride distance, in km
+        type: number
+        required: true
+        options:
+          min: 1
+      - name: retirement_date
+        label: Retirement ride date
+        type: string
+        required: true
+      - name: runs
+        label: Ten-kilometre finishes
+        type: object
+        list: true
+        fields:
+          - name: event
+            label: Run name
+            type: string
+            required: true
+          - name: year
+            label: Year
+            type: number
+            required: true
+            options:
+              min: 1900
+              max: 2100
+      - name: cycling_photos
+        label: Cycling photographs
+        type: image
+        description: Choose up to two existing published gallery covers. Captions,
+          dates and visibility stay connected to Photo details.
+        options:
+          media: photos
+          multiple: true
+          unique: true
+      - name: running_photos
+        label: Running photographs
+        type: image
+        description: Choose up to two existing published gallery covers. Captions,
+          dates and visibility stay connected to Photo details.
+        options:
+          media: photos
+          multiple: true
+          unique: true
