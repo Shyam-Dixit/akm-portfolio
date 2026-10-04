@@ -30,4 +30,4 @@ Notice the people who keep our neighbourhoods clean. Observe how their uniforms,
 
 The eyes must see, but the mind must also register. Observation is not merely looking; it is paying attention.
 
-Only then do we truly begin to observe a great deal simply by watching. test
+Only then do we truly begin to observe a great deal simply by watching.
