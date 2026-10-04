@@ -35,6 +35,11 @@ async function entries(source, folder, extension) {
     const id = path.basename(file, extension);
     if (!/^[a-z0-9][a-z0-9_-]*$/.test(id)) throw new Error(`Use lowercase words and hyphens in filename: ${file}`);
     const text = await fs.readFile(path.join(source, folder, file), 'utf8');
+    if (extension === '.json') {
+      const record = JSON.parse(text);
+      if (!record || typeof record !== 'object' || Array.isArray(record)) throw new Error(`${file}: photo details must be an object.`);
+      return { ...record, id };
+    }
     const match = text.match(/^---\r?\n([\s\S]*?)\r?\n---(?:\r?\n|$)([\s\S]*)$/);
     if (!match) throw new Error(`${file}: missing article frontmatter.`);
     return { ...parse(match[1]), body: match[2].trim(), id };
@@ -42,14 +47,13 @@ async function entries(source, folder, extension) {
 }
 
 export async function loadContent(source = root) {
-  const gallery = JSON.parse(await fs.readFile(path.join(source, 'content/gallery.json'), 'utf8'));
-  if (!Array.isArray(gallery.photos)) throw new Error('Gallery photographs must be a list.');
-  // Array position is the order saved by the CMS drag handles. Keep it intact,
-  // including when unpublished photographs are omitted from the public site.
-  const photos = gallery.photos.map((photo, index) => {
-    if (!photo || typeof photo !== 'object' || Array.isArray(photo)) throw new Error(`Gallery photo ${index + 1} is invalid.`);
-    return { ...photo, id: `Gallery photo ${index + 1}` };
-  }).filter(p => p.published === true);
+  const gallery = JSON.parse(await fs.readFile(path.join(source, 'content/gallery-order.json'), 'utf8'));
+  // Pages CMS serializes an empty multiple-image field as null.
+  const imageOrder = gallery.images ?? [];
+  if (!Array.isArray(imageOrder) || imageOrder.some(image => typeof image !== 'string' || !image.trim())) throw new Error('Gallery order must be a list of image paths.');
+  if (new Set(imageOrder).size !== imageOrder.length) throw new Error('Gallery order contains the same photo more than once.');
+  const rank = new Map(imageOrder.map((image, index) => [image, index]));
+  const photos = (await entries(source, 'content/photos', '.json')).filter(p => p.published === true);
   const articles = (await entries(source, 'content/articles', '.md')).filter(a => a.published === true);
   for (const p of photos) {
     required(p.title, 'title', p.id); required(p.caption, 'caption', p.id);
@@ -57,6 +61,10 @@ export async function loadContent(source = root) {
     if (!['western', 'jhansi', 'other'].includes(p.collection)) throw new Error(`${p.id}: choose a photo collection.`);
     if (p.position && !/^(center|top|bottom|left|right|center \d{1,3}%)$/.test(p.position)) throw new Error(`${p.id}: invalid image focus.`);
   }
+  if (new Set(photos.map(p => p.image)).size !== photos.length) throw new Error('Two published photo records use the same image. Keep one photo record per image.');
+  // Ignore old grid references after deletion or unpublishing. New photographs
+  // remain visible at the end until the editor positions them in the grid.
+  photos.sort((a, b) => (rank.get(a.image) ?? Infinity) - (rank.get(b.image) ?? Infinity) || a.id.localeCompare(b.id));
   for (const a of articles) {
     required(a.title, 'title', a.id); required(a.excerpt, 'summary', a.id); required(a.body, 'article text', a.id); checkOrder(a.order, a.id);
     a.cover = await imagePath(a.cover, source, a.id);

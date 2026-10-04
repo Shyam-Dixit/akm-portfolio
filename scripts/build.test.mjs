@@ -14,9 +14,9 @@ test('published content satisfies the editor schema', async () => {
   const { photos, articles } = await loadContent();
   for (const article of articles) assert.equal(article.url, `/thoughts/${article.id}.html`);
   const config = parse(await fs.readFile(path.join(root, '.pages.yml'), 'utf8'));
-  for (const collection of config.content) {
-    const fields = collection.name === 'gallery' ? collection.fields.find(field => field.name === 'photos').fields : collection.fields;
-    const entries = collection.name === 'gallery' ? photos : articles;
+  for (const collection of config.content.filter(c => c.type === 'collection')) {
+    const fields = collection.fields;
+    const entries = collection.name === 'photos' ? photos : articles;
     for (const entry of entries) for (const field of fields.filter(f => f.required)) {
       assert.notEqual(entry[field.name], undefined, `${entry.id}: missing ${field.name}`);
     }
@@ -27,14 +27,20 @@ test('CMS additions, ordering, safe text, publishing and removal produce a compl
   const source = await fs.mkdtemp(path.join(os.tmpdir(), 'akm-cms-'));
   t.after(() => fs.rm(source, { recursive: true, force: true }));
   const output = path.join(source, 'dist');
-  for (const dir of ['content/articles', 'assets/photos']) await fs.mkdir(path.join(source, dir), { recursive: true });
+  for (const dir of ['content/articles', 'content/photos', 'assets/photos']) await fs.mkdir(path.join(source, dir), { recursive: true });
   await fs.cp(path.join(root, 'templates'), path.join(source, 'templates'), { recursive: true });
   await fs.writeFile(path.join(source, 'CNAME'), 'ashokmisra.in\n');
-  await fs.writeFile(path.join(source, 'assets/photos/test.svg'), '<svg xmlns="http://www.w3.org/2000/svg"/>');
-  const photo = (title, collection, published = true) => ({ title, collection, image: '/assets/photos/test.svg', caption: 'A "caption" </script><script>alert(1)</script>', published });
-  const saveGallery = photos => fs.writeFile(path.join(source, 'content/gallery.json'), JSON.stringify({ photos }));
+  for (const name of ['test', 'first', 'hidden', 'later', 'earlier', 'missing']) await fs.writeFile(path.join(source, `assets/photos/${name}.svg`), '<svg xmlns="http://www.w3.org/2000/svg"/>');
+  const photo = (title, collection, published = true) => ({ title, collection, image: `/assets/photos/${title}.svg`, caption: 'A "caption" </script><script>alert(1)</script>', published });
+  const saveOrder = images => fs.writeFile(path.join(source, 'content/gallery-order.json'), JSON.stringify({ images }));
+  const saveGallery = async photos => {
+    await fs.rm(path.join(source, 'content/photos'), { recursive: true });
+    await fs.mkdir(path.join(source, 'content/photos'));
+    await Promise.all(photos.map(p => fs.writeFile(path.join(source, `content/photos/${p.title}.json`), JSON.stringify(p))));
+  };
   const article = (published, order = 10) => fs.writeFile(path.join(source, 'content/articles/new-reflection.md'), `---\ntitle: 'A "new" & thoughtful article'\nexcerpt: 'An introduction <with> punctuation'\norder: ${order}\npublished: ${published}\n---\n\n## A heading\n\nSome **important** words.\n\n![An image](/assets/photos/test.svg)\n\n<script>alert(1)</script>\n\n[Unsafe](javascript:alert(1))\n`);
   await saveGallery([photo('first', 'jhansi'), photo('hidden', 'other', false), photo('later', 'western')]);
+  await saveOrder(['/assets/photos/first.svg', '/assets/photos/hidden.svg', '/assets/photos/later.svg']);
   await article(false);
   await buildSite(source, output);
   let home = await fs.readFile(path.join(output, 'index.html'), 'utf8');
@@ -47,11 +53,14 @@ test('CMS additions, ordering, safe text, publishing and removal produce a compl
   for (const script of home.matchAll(/<script(?:\s[^>]*)?>([\s\S]*?)<\/script>/g)) {
     if (script[1].trim()) assert.doesNotThrow(() => new vm.Script(script[1]));
   }
-  // Moving an item in the CMS changes only its array position.
-  await saveGallery([photo('later', 'western'), photo('first', 'jhansi'), photo('hidden', 'other', false)]);
+  // Only the thumbnail order changes; descriptions stay attached to their image.
+  await saveOrder(['/assets/photos/later.svg', '/assets/photos/first.svg', '/assets/photos/hidden.svg']);
   await buildSite(source, output);
   home = await fs.readFile(path.join(output, 'index.html'), 'utf8');
   assert.deepEqual(JSON.parse(home.match(/const GALLERY=(.*);/)[1]).map(p => p.collection), ['western', 'jhansi']);
+  // New published photographs appear at the end before being added to the grid.
+  await fs.writeFile(path.join(source, 'content/photos/earlier.json'), JSON.stringify(photo('earlier', 'other')));
+  assert.deepEqual((await loadContent(source)).photos.map(p => p.title), ['later', 'first', 'earlier']);
   await article(true, 5);
   await buildSite(source, output);
   const page = await fs.readFile(path.join(output, 'thoughts/new-reflection.html'), 'utf8');
@@ -76,7 +85,14 @@ test('CMS additions, ordering, safe text, publishing and removal produce a compl
   assert.match(await fs.readFile(path.join(output, 'index.html'), 'utf8'), /const GALLERY=\[\];/);
   assert.ok(!(await fs.readdir(output)).includes('content'));
   assert.ok(!(await fs.readdir(output)).includes('templates'));
+  // Clearing the grid resets ordering without deleting photo records.
+  await saveGallery([photo('later', 'western'), photo('first', 'jhansi')]);
+  await saveOrder(null);
+  assert.deepEqual((await loadContent(source)).photos.map(p => p.title), ['first', 'later']);
+  await saveOrder(['/assets/photos/first.svg', '/assets/photos/first.svg']);
+  await assert.rejects(loadContent(source), /same photo more than once/);
+  await saveOrder([]);
   await saveGallery([photo('missing', 'western')]);
-  await fs.rm(path.join(source, 'assets/photos/test.svg'));
+  await fs.rm(path.join(source, 'assets/photos/missing.svg'));
   await assert.rejects(buildSite(source, output), /image does not exist/);
 });

@@ -25,65 +25,92 @@ media:
     rename: safe
 content:
   - name: gallery
-    label: Gallery photographs
+    label: Gallery order
     type: file
-    path: content/gallery.json
+    path: content/gallery-order.json
     format: json
     fields:
-      - name: photos
-        label: Photographs · drag the left handle to reorder, then Save
-        type: object
-        list:
-          collapsible:
-            collapsed: true
-            summary: "{index}. {title}"
-        fields:
-          - name: title
-            label: Photo name
-            type: string
-            required: true
-            description: A short name to find this photograph in the editor.
-          - name: image
-            label: Photograph
-            type: image
-            required: true
-            options:
-              media: photos
-          - name: caption
-            label: Description
-            type: text
-            required: true
-          - name: date_label
-            label: Date or occasion
-            type: string
-            description: For example, 21 Jun 2025 or Railway Week 2018.
-          - name: collection
-            label: Collection
-            type: select
-            required: true
-            options:
-              values:
-                - name: western
-                  label: Western Railway
-                - name: jhansi
-                  label: Jhansi years
-                - name: other
-                  label: Other moments
-          - name: position
-            label: Image focus
-            type: select
-            options:
-              values:
-                - center
-                - top
-                - bottom
-                - left
-                - right
-                - center 65%
-          - name: published
-            label: Show on website
-            type: boolean
-            description: The first six published photos appear in the homepage preview. Website updates automatically after saving and the build completes.
+      - name: images
+        label: Drag photos to reorder, then Save
+        type: image
+        description: Order runs left to right, then top to bottom. Add and edit
+          photographs in Photo details; use Select here to position new ones.
+          Unlisted published photos follow at the end. To hide a photo, turn off
+          Show on website in Photo details.
+        options:
+          media: photos
+          multiple: true
+          unique: true
+  - name: photos
+    label: Photo details
+    type: collection
+    path: content/photos
+    format: json
+    filename: "{primary}.json"
+    subfolders: false
+    operations:
+      rename: false
+    view:
+      primary: title
+      fields:
+        - image
+        - title
+        - date_label
+        - published
+      sort:
+        - title
+      default:
+        sort: title
+        order: asc
+    fields:
+      - name: title
+        label: Photo name
+        type: string
+        required: true
+        description: A short name to find this photograph in the editor.
+      - name: image
+        label: Photograph
+        type: image
+        required: true
+        options:
+          media: photos
+      - name: caption
+        label: Description
+        type: text
+        required: true
+      - name: date_label
+        label: Date or occasion
+        type: string
+        description: For example, 21 Jun 2025 or Railway Week 2018.
+      - name: collection
+        label: Collection
+        type: select
+        required: true
+        options:
+          values:
+            - name: western
+              label: Western Railway
+            - name: jhansi
+              label: Jhansi years
+            - name: other
+              label: Other moments
+      - name: position
+        label: Image focus
+        type: select
+        options:
+          values:
+            - center
+            - top
+            - bottom
+            - left
+            - right
+            - center 65%
+      - name: published
+        label: Show on website
+        type: boolean
+        description: Published photos appear automatically at the end until positioned
+          in Gallery order. Turn off to hide this photo. The first six published
+          photos form the homepage preview.
   - name: articles
     label: Articles
     type: collection
@@ -128,15 +155,19 @@ content:
         type: image
         options:
           media: illustrations
-        description: Upload a graphic or choose an existing illustration. Artwork is uploaded here, not generated automatically.
+        description: Upload a graphic or choose an existing illustration. Artwork is
+          uploaded here, not generated automatically.
       - name: cover_alt
         label: Image description for accessibility
         type: string
-        description: Describe meaningful visual content. Leave blank for a purely decorative graphic.
+        description: Describe meaningful visual content. Leave blank for a purely
+          decorative graphic.
       - name: cover_motion
         label: Gentle cover animation
         type: boolean
-        description: Animates details in the two original illustrations, or adds a gentle camera movement to uploaded images. Readers can pause it; reduced-motion preferences are respected.
+        description: Animates details in the two original illustrations, or adds a
+          gentle camera movement to uploaded images. Readers can pause it;
+          reduced-motion preferences are respected.
       - name: cover_caption
         label: Cover caption
         type: string
@@ -144,7 +175,8 @@ content:
         label: Display order
         type: number
         required: true
-        description: Lower numbers appear first. The first two published articles appear on the home page; every published article appears in Thoughts.
+        description: Lower numbers appear first. The first two published articles appear
+          on the home page; every published article appears in Thoughts.
         options:
           min: 0
       - name: reading_minutes
@@ -163,4 +195,6 @@ content:
       - name: published
         label: Show on website
         type: boolean
-        description: Turn on and save to publish. Turning off removes it from the website. This GitHub repository is public, so unpublished text is not private.
+        description: Turn on and save to publish. Turning off removes it from the
+          website. This GitHub repository is public, so unpublished text is not
+          private.
