@@ -35,7 +35,6 @@ async function entries(source, folder, extension) {
     const id = path.basename(file, extension);
     if (!/^[a-z0-9][a-z0-9_-]*$/.test(id)) throw new Error(`Use lowercase words and hyphens in filename: ${file}`);
     const text = await fs.readFile(path.join(source, folder, file), 'utf8');
-    if (extension === '.json') return { ...JSON.parse(text), id };
     const match = text.match(/^---\r?\n([\s\S]*?)\r?\n---(?:\r?\n|$)([\s\S]*)$/);
     if (!match) throw new Error(`${file}: missing article frontmatter.`);
     return { ...parse(match[1]), body: match[2].trim(), id };
@@ -43,10 +42,17 @@ async function entries(source, folder, extension) {
 }
 
 export async function loadContent(source = root) {
-  const photos = (await entries(source, 'content/gallery', '.json')).filter(p => p.published === true);
+  const gallery = JSON.parse(await fs.readFile(path.join(source, 'content/gallery.json'), 'utf8'));
+  if (!Array.isArray(gallery.photos)) throw new Error('Gallery photographs must be a list.');
+  // Array position is the order saved by the CMS drag handles. Keep it intact,
+  // including when unpublished photographs are omitted from the public site.
+  const photos = gallery.photos.map((photo, index) => {
+    if (!photo || typeof photo !== 'object' || Array.isArray(photo)) throw new Error(`Gallery photo ${index + 1} is invalid.`);
+    return { ...photo, id: `Gallery photo ${index + 1}` };
+  }).filter(p => p.published === true);
   const articles = (await entries(source, 'content/articles', '.md')).filter(a => a.published === true);
   for (const p of photos) {
-    required(p.title, 'title', p.id); required(p.caption, 'caption', p.id); checkOrder(p.order, p.id);
+    required(p.title, 'title', p.id); required(p.caption, 'caption', p.id);
     p.image = await imagePath(required(p.image, 'image', p.id), source, p.id);
     if (!['western', 'jhansi', 'other'].includes(p.collection)) throw new Error(`${p.id}: choose a photo collection.`);
     if (p.position && !/^(center|top|bottom|left|right|center \d{1,3}%)$/.test(p.position)) throw new Error(`${p.id}: invalid image focus.`);
@@ -59,7 +65,7 @@ export async function loadContent(source = root) {
     a.minutes = Number.isInteger(a.reading_minutes) && a.reading_minutes > 0 ? a.reading_minutes : Math.max(1, Math.ceil(wordCount / 250));
     a.url = `/thoughts/${a.id}.html`;
   }
-  return { photos: photos.sort(compare), articles: articles.sort(compare) };
+  return { photos, articles: articles.sort(compare) };
 }
 
 function homeCard(a, i) {
