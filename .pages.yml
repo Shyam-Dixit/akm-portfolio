@@ -31,13 +31,12 @@ content:
     format: json
     fields:
       - name: photos
-        label: Photographs · drag to reorder
+        label: Photographs · drag the left handle to reorder, then Save
         type: object
         list:
           collapsible:
             collapsed: true
             summary: "{index}. {title}"
-        description: Drag a photo by the handle on its left, then Save. The first six published photos appear in the preview. Open a photo to edit its image and description. Use Add an item to add a photograph.
         fields:
           - name: title
             label: Photo name
@@ -84,7 +83,7 @@ content:
           - name: published
             label: Show on website
             type: boolean
-            description: Turn on and save to publish. Website updates automatically after the build completes.
+            description: The first six published photos appear in the homepage preview. Website updates automatically after saving and the build completes.
   - name: articles
     label: Articles
     type: collection
