@@ -1,17 +1,17 @@
 ---
-title: "You Observe a Lot by Watching"
-published: true
-order: 10
-category: "Observation"
-excerpt: "Why do most of us pass through familiar places without remembering what we have just seen? Perhaps our minds are occupied elsewhere."
-listing_excerpt: "Why do most of us pass through familiar places without remembering what we have just seen? Perhaps our minds are occupied elsewhere."
-cover: "/assets/illustrations/observation.svg"
-cover_caption: "A closer look at the everyday"
+title: You Observe a Lot by Watching
+excerpt: Why do most of us pass through familiar places without remembering what
+  we have just seen? Perhaps our minds are occupied elsewhere.
+listing_excerpt: Why do most of us pass through familiar places without
+  remembering what we have just seen? Perhaps our minds are occupied elsewhere.
+category: Observation
+cover: /assets/illustrations/observation.svg
 cover_motion: true
-cover_alt: ""
+cover_caption: A closer look at the everyday
+order: 10
 reading_minutes: 2
+published: true
 ---
-
 Why do most of us pass through familiar places without remembering what we have just seen? Perhaps our minds are occupied elsewhere. Today, our attention is divided even further by phone calls, music, messages and the endless distractions that fit into the palm of our hand.
 
 Human beings possess an extraordinary power of observation, yet we seem to exercise it less and less.
@@ -30,4 +30,4 @@ Notice the people who keep our neighbourhoods clean. Observe how their uniforms,
 
 The eyes must see, but the mind must also register. Observation is not merely looking; it is paying attention.
 
-Only then do we truly begin to observe a great deal simply by watching.
+Only then do we truly begin to observe a great deal simply by watching. test
