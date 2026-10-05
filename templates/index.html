@@ -45,7 +45,7 @@ a{color:inherit}
 .pl-puff.p2{animation-delay:.7s}
 .pl-puff.p3{animation-delay:1.4s}
 @keyframes plpuff{0%{opacity:0;transform:translate(0,0) scale(.4)}15%{opacity:.85}100%{opacity:0;transform:translate(-14px,-22px) scale(1.5)}}
-.pl-cap{color:rgba(232,201,122,.9);font-size:12px;letter-spacing:.35em;text-transform:uppercase;font-family:'Space Mono',monospace}
+.pl-cap{color:rgba(232,201,122,.9);font-size:12px;letter-spacing:clamp(.12em,.7vw,.35em);text-transform:uppercase;font-family:'Space Mono',monospace;max-width:calc(100vw - 48px);text-align:center;line-height:1.6}
 
 /* ---------- nav ---------- */
 nav{position:fixed;top:0;left:0;right:0;z-index:100;display:flex;align-items:center;justify-content:space-between;padding:18px var(--pd);transition:transform .5s var(--ease), background .4s, box-shadow .4s, padding .4s}
@@ -357,7 +357,7 @@ footer{background:var(--navy-xd);color:rgba(250,250,245,.7);position:relative;ov
       <g class="pl-wheel"><circle cx="136" cy="50" r="6" fill="#0D2B42" stroke="#D4A843" stroke-width="1.6"/><line x1="136" y1="45.4" x2="136" y2="54.6" stroke="#D4A843" stroke-width="1.2"/><line x1="131.4" y1="50" x2="140.6" y2="50" stroke="#D4A843" stroke-width="1.2"/></g>
     </g>
   </svg>
-  <div class="pl-cap">Departing Shortly</div>
+  <div class="pl-cap">Your journey begins shortly</div>
 </div>
 
 <div id="journey-track" hidden aria-hidden="true"><svg>
